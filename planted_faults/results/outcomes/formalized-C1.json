@@ -1,0 +1,43 @@
+{
+  "arm": "formalized",
+  "fault": "C1",
+  "category": "Plan rule to Workers",
+  "rule": "Catalog repeats price validation that base owns (C3, no duplicated logic)",
+  "nov3_level": "Prompt only",
+  "result": "Caught at root",
+  "evidence": "rule:base-owns-validation: Business modules do not repeat structural validation that base owns; violated at lib/catalog.mjs:17",
+  "checks_fired_at_root": [
+    "rule:base-owns-validation"
+  ],
+  "root_failures": [
+    {
+      "id": "rule:base-owns-validation",
+      "status": "failed",
+      "detail": "Business modules do not repeat structural validation that base owns; violated at lib/catalog.mjs:17"
+    }
+  ],
+  "module_repairs": [],
+  "suite_runs": [
+    {
+      "passed": 125,
+      "failed": 0,
+      "error": 0,
+      "failing_cases": []
+    }
+  ],
+  "run_accepted": false,
+  "states": {
+    "__contract_integration__": "ACCEPTED",
+    "__contract_composition__": "FAILED",
+    "foundation": "ACCEPTED",
+    "merchandising": "ACCEPTED",
+    "fulfillment": "ACCEPTED",
+    "exchange-views": "ACCEPTED",
+    "transports": "ACCEPTED"
+  },
+  "fault_in_final_workspace": true,
+  "escape_file_written": false,
+  "bridge_requests": 7,
+  "elapsed_s": 302.4,
+  "error": null
+}

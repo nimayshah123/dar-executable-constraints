@@ -1,0 +1,20 @@
+{
+  "arm": "as-run",
+  "fault": "P4",
+  "category": "Root plan",
+  "rule": "Root replaces the independent suite with file existence checks",
+  "nov3_level": "Blocked by code",
+  "result": "Blocked at plan",
+  "evidence": "ValueError: acceptance category build: check exists:lib/base.mjs has insufficient evidence kind file_exists",
+  "checks_fired_at_root": [],
+  "root_failures": [],
+  "module_repairs": [],
+  "suite_runs": [],
+  "run_accepted": false,
+  "states": {},
+  "fault_in_final_workspace": null,
+  "escape_file_written": false,
+  "bridge_requests": 1,
+  "elapsed_s": 0.3,
+  "error": "ValueError: acceptance category build: check exists:lib/base.mjs has insufficient evidence kind file_exists"
+}

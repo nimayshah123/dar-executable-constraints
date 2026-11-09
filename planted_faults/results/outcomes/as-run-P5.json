@@ -1,0 +1,20 @@
+{
+  "arm": "as-run",
+  "fault": "P5",
+  "category": "Root plan",
+  "rule": "Root edits the host acceptance profile (functional tests marked not applicable)",
+  "nov3_level": "Blocked by code",
+  "result": "Blocked at plan",
+  "evidence": "ValueError: planner changed the host acceptance profile",
+  "checks_fired_at_root": [],
+  "root_failures": [],
+  "module_repairs": [],
+  "suite_runs": [],
+  "run_accepted": false,
+  "states": {},
+  "fault_in_final_workspace": null,
+  "escape_file_written": false,
+  "bridge_requests": 1,
+  "elapsed_s": 0.3,
+  "error": "ValueError: planner changed the host acceptance profile"
+}

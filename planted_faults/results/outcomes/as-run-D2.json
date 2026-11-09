@@ -1,0 +1,42 @@
+{
+  "arm": "as-run",
+  "fault": "D2",
+  "category": "Worker delivery",
+  "rule": "Worker also writes a sibling's file (lib/base.mjs with a loosened limit)",
+  "nov3_level": "Blocked by code",
+  "result": "Blocked at delivery",
+  "evidence": "fulfillment: functional work unit must deliver all current owned files in one response",
+  "checks_fired_at_root": [],
+  "root_failures": [],
+  "module_repairs": [
+    {
+      "task_id": "fulfillment",
+      "errors": [
+        "functional work unit must deliver all current owned files in one response"
+      ]
+    }
+  ],
+  "suite_runs": [
+    {
+      "passed": 125,
+      "failed": 0,
+      "error": 0,
+      "failing_cases": []
+    }
+  ],
+  "run_accepted": true,
+  "states": {
+    "__contract_integration__": "ACCEPTED",
+    "__contract_composition__": "ACCEPTED",
+    "foundation": "ACCEPTED",
+    "merchandising": "ACCEPTED",
+    "fulfillment": "ACCEPTED",
+    "exchange-views": "ACCEPTED",
+    "transports": "ACCEPTED"
+  },
+  "fault_in_final_workspace": null,
+  "escape_file_written": false,
+  "bridge_requests": 8,
+  "elapsed_s": 305.6,
+  "error": null
+}

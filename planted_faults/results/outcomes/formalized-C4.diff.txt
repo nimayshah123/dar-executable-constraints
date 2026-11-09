@@ -1,0 +1,3 @@
+lib/interchange.mjs
+- const result=(sku?catalog:fulfillment)(ctx,cmd);
++ const result=sku?catalog(ctx,cmd):(()=>{const d=ctx.data,s=d.skus.find(x=>x.id===cmd.skuId);if(!s)raise('NOT_FOUND');const w=d.warehouses.find(x=>x.id===cmd.warehouseId);if(!w)raise('NOT_FOUND');if(d.lots.some(l=>l.id===cmd.lotId))raise('ALREADY_EXISTS');if(!(s.active&&w.active))raise('INACTIVE');if(!(cmd.expiresAt===null||cmd.expiresAt>ctx.now))raise('EXPIRED');d.lots.push({id:cmd.lotId,skuId:cmd.skuId,warehouseId:cmd.warehouseId,expiresAt:cmd.expiresAt,onHand:cmd.qty,reserved:0});return {changed:true};})();

@@ -1,0 +1,2874 @@
+[
+ {
+  "seed": 1000,
+  "scale": 1,
+  "project": "Willow",
+  "modules": [
+   "upload",
+   "billing",
+   "webhooks",
+   "quota",
+   "ledger",
+   "pricing"
+  ],
+  "settings": {
+   "upload": [
+    "max_workers",
+    "ttl_s"
+   ],
+   "billing": [
+    "queue_depth",
+    "retry_limit"
+   ],
+   "webhooks": [
+    "max_workers",
+    "timeout_s"
+   ],
+   "quota": [
+    "batch_size",
+    "retry_limit"
+   ],
+   "ledger": [
+    "timeout_s",
+    "retry_limit"
+   ],
+   "pricing": [
+    "ttl_s",
+    "timeout_s"
+   ]
+  },
+  "files": [
+   "adapters.py",
+   "forms.py",
+   "tokens.py",
+   "retry.py",
+   "paths.py",
+   "fixtures.py",
+   "events.py",
+   "types.py",
+   "loader.py"
+  ],
+  "workers": [
+   "alpha",
+   "beta",
+   "gamma",
+   "delta"
+  ],
+  "reqs": [
+   {
+    "id": "R01",
+    "kind": "conditional",
+    "cls": "relation",
+    "p": {
+     "a": "billing",
+     "ka": "retry_limit",
+     "t": 3,
+     "b": "quota",
+     "kb": "batch_size",
+     "op": "<=",
+     "u": 200
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R02",
+    "kind": "conditional",
+    "cls": "relation",
+    "p": {
+     "a": "ledger",
+     "ka": "timeout_s",
+     "t": 85,
+     "b": "quota",
+     "kb": "retry_limit",
+     "op": "<=",
+     "u": 2
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R03",
+    "kind": "depends",
+    "cls": "relation",
+    "p": {
+     "a": "upload",
+     "b": "pricing"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R04",
+    "kind": "setting_eq",
+    "cls": "fact",
+    "p": {
+     "m": "ledger",
+     "k": "timeout_s",
+     "v": 95,
+     "old": 20
+    },
+    "formalized": false,
+    "revised": true
+   },
+   {
+    "id": "R05",
+    "kind": "worker_eq",
+    "cls": "fact",
+    "p": {
+     "m": "pricing",
+     "w": "alpha"
+    },
+    "formalized": false,
+    "revised": false
+   },
+   {
+    "id": "R06",
+    "kind": "setting_eq",
+    "cls": "fact",
+    "p": {
+     "m": "pricing",
+     "k": "timeout_s",
+     "v": 35
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R07",
+    "kind": "file_owner",
+    "cls": "fact",
+    "p": {
+     "f": "tokens.py",
+     "m": "upload"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R08",
+    "kind": "same_worker",
+    "cls": "relation",
+    "p": {
+     "a": "quota",
+     "b": "upload"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R09",
+    "kind": "not_depends",
+    "cls": "relation",
+    "p": {
+     "a": "quota",
+     "b": "pricing"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R10",
+    "kind": "setting_eq",
+    "cls": "fact",
+    "p": {
+     "m": "webhooks",
+     "k": "max_workers",
+     "v": 14
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R11",
+    "kind": "diff_worker",
+    "cls": "relation",
+    "p": {
+     "a": "billing",
+     "b": "upload"
+    },
+    "formalized": false,
+    "revised": false
+   },
+   {
+    "id": "R12",
+    "kind": "file_owner",
+    "cls": "fact",
+    "p": {
+     "f": "types.py",
+     "m": "upload"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R13",
+    "kind": "worker_eq",
+    "cls": "fact",
+    "p": {
+     "m": "webhooks",
+     "w": "alpha"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R14",
+    "kind": "before",
+    "cls": "relation",
+    "p": {
+     "a": "pricing",
+     "b": "ledger"
+    },
+    "formalized": false,
+    "revised": false
+   },
+   {
+    "id": "R15",
+    "kind": "setting_eq",
+    "cls": "fact",
+    "p": {
+     "m": "billing",
+     "k": "retry_limit",
+     "v": 5,
+     "old": 7
+    },
+    "formalized": true,
+    "revised": true
+   },
+   {
+    "id": "R16",
+    "kind": "depends",
+    "cls": "relation",
+    "p": {
+     "a": "pricing",
+     "b": "webhooks"
+    },
+    "formalized": true,
+    "revised": false
+   }
+  ],
+  "free": {
+   "settings": [
+    "billing.queue_depth",
+    "upload.max_workers",
+    "pricing.ttl_s",
+    "upload.ttl_s",
+    "webhooks.timeout_s",
+    "ledger.retry_limit"
+   ],
+   "files": [
+    "adapters.py",
+    "forms.py",
+    "retry.py",
+    "paths.py",
+    "fixtures.py",
+    "events.py",
+    "loader.py"
+   ],
+   "workers": [
+    "ledger"
+   ]
+  },
+  "reference_plan": {
+   "modules": {
+    "upload": {
+     "worker": "beta",
+     "depends_on": [
+      "pricing"
+     ],
+     "settings": {
+      "max_workers": 4,
+      "ttl_s": 450
+     },
+     "files": [
+      "tokens.py",
+      "types.py"
+     ]
+    },
+    "billing": {
+     "worker": "alpha",
+     "depends_on": [],
+     "settings": {
+      "queue_depth": 230,
+      "retry_limit": 5
+     },
+     "files": []
+    },
+    "webhooks": {
+     "worker": "alpha",
+     "depends_on": [],
+     "settings": {
+      "max_workers": 14,
+      "timeout_s": 120
+     },
+     "files": [
+      "events.py"
+     ]
+    },
+    "quota": {
+     "worker": "beta",
+     "depends_on": [],
+     "settings": {
+      "batch_size": 100,
+      "retry_limit": 1
+     },
+     "files": [
+      "forms.py",
+      "fixtures.py",
+      "loader.py"
+     ]
+    },
+    "ledger": {
+     "worker": "gamma",
+     "depends_on": [],
+     "settings": {
+      "timeout_s": 95,
+      "retry_limit": 8
+     },
+     "files": []
+    },
+    "pricing": {
+     "worker": "alpha",
+     "depends_on": [
+      "webhooks"
+     ],
+     "settings": {
+      "ttl_s": 330,
+      "timeout_s": 35
+     },
+     "files": [
+      "adapters.py",
+      "retry.py",
+      "paths.py"
+     ]
+    }
+   },
+   "order": [
+    "webhooks",
+    "pricing",
+    "billing",
+    "quota",
+    "ledger",
+    "upload"
+   ]
+  },
+  "source": "Running notes from the Willow planning meetings. Attendees rotated between Ravi, Jonah, Priya, Sofia, Maya. The plan covers modules upload, billing, webhooks, quota, ledger, pricing.\n\nKickoff (Mon 3 Nov)\nPriya made the point that pricing must depend on webhooks. Priya asked whether we should rewrite webhooks in Rust; consensus was not this quarter. Sofia suggested a short demo for the client at the next checkpoint. The staging cluster was flaky again on Tuesday, which slowed everyone down. We agreed that code review turnaround should stay under a day. We spent a while on naming conventions and agreed to revisit them later. Jonah would like ledger on alpha if convenient, but that is not a requirement. Hard requirement from the client: max_workers on webhooks is set to 14.\n\nArchitecture sync (Tue 4 Nov)\nSofia's first draft put billing's retry_limit at 7. billing and upload must go to different workers, for separation of duties. Ravi noted that the CI pipeline takes too long on large branches. We discussed whether webhooks needs its own database and are leaning towards no. A ttl_s around 300 for upload might be nice; the team can choose. Maya's first draft put ledger's timeout_s at 20. Load tests from the old system are not comparable, so nobody should rely on those numbers. Nobody remembers why pricing was split out originally.\n\nOps review (Wed 5 Nov)\nMaya asked whether we should rewrite pricing in Rust; consensus was not this quarter. upload has to declare a dependency on pricing, since it consumes pricing's output. There is some concern that quota logs are far too verbose. We agreed that code review turnaround should stay under a day. Budget review moved to next Thursday.\n\nClient call (Thu 6 Nov)\nMaya will be on leave for part of next week, so expect slower replies. Ravi flagged that two dashboards disagree about weekly active users; unrelated to this plan. Jonah suggested a short demo for the client at the next checkpoint. pricing must be owned by worker alpha; nobody else has the credentials. Correction: ledger's timeout_s is 95, not 20 as in the earlier draft; the earlier number is withdrawn. We may want a design review for billing after launch. Sofia reminded everyone that the on-call rota changes next month. The old runbook for quota is out of date and needs a rewrite at some point. Sofia explained the coupling: if ledger.timeout_s exceeds 85, then quota.retry_limit has to be at most 2. Hard requirement from the client: timeout_s on pricing is set to 35.\n\nPlanning (Fri 7 Nov)\nSofia shared a dashboard with last month's error rates for the old system. pricing has to run before ledger in the execution order, even though neither depends on the other. In the legacy system pricing ran with ttl_s 240, which is irrelevant for the new plan. Correction: billing's retry_limit is 5, not 7 as in the earlier draft; the earlier number is withdrawn. We discussed whether upload needs its own database and are leaning towards no. Ravi is collecting feedback on API naming from the mobile team. Maya suggested a short demo for the client at the next checkpoint. Retro feedback: fewer meetings, more written updates. Because of the load profile, whenever billing's retry_limit is above 3, quota's batch_size must be no more than 200. The security review is scheduled for the end of the month. quota and upload must be handled by the same worker because they share a local cache.\n\nWrap-up (Mon 10 Nov)\nThe file types.py belongs to upload and must be owned by that module. The file tokens.py belongs to upload and must be owned by that module. There was a long tangent about the office move. Ravi flagged that two dashboards disagree about weekly active users; unrelated to this plan. There was a long tangent about the office move. Hard rule: no dependency path from quota to pricing, direct or transitive. Someone raised the idea of a shared metrics library; parked for now. Ravi suggested a short demo for the client at the next checkpoint. Only alpha can take webhooks, so it has to be assigned there. In the legacy system ledger ran with retry_limit 7, which is irrelevant for the new plan. Priya suggested a short demo for the client at the next checkpoint.\n\nAnything not stated as required above is left to the team's judgment.",
+  "skeleton": "Project Willow: produce the work plan as JSON.\nModules: upload, billing, webhooks, quota, ledger, pricing\nSettings each module must define:\n  upload: max_workers (integer 2..32), ttl_s (integer 30..600)\n  billing: queue_depth (integer 10..500), retry_limit (integer 1..9)\n  webhooks: max_workers (integer 2..32), timeout_s (integer 5..120)\n  quota: batch_size (integer 100..900), retry_limit (integer 1..9)\n  ledger: timeout_s (integer 5..120), retry_limit (integer 1..9)\n  pricing: ttl_s (integer 30..600), timeout_s (integer 5..120)\nFiles to assign (each owned by exactly one module): adapters.py, forms.py, tokens.py, retry.py, paths.py, fixtures.py, events.py, types.py, loader.py\nWorkers: alpha, beta, gamma, delta\nOutput exactly one JSON object and nothing else:\n{\"modules\": {\"<module>\": {\"worker\": \"<worker>\", \"depends_on\": [\"<module>\", ...], \"settings\": {\"<key>\": <int>, ...}, \"files\": [\"<file>\", ...]}, ...}, \"order\": [\"<module>\", ...]}\nValidity rules: every module appears once; every file is owned by exactly one module; settings are integers in range; \"order\" lists every module once; every dependency comes earlier in \"order\"; no dependency cycles.\nFollow every hard requirement you were given. Where nothing is required, decide yourself.",
+  "ledger": "R01: plan.modules.billing.settings.retry_limit > 3  =>  plan.modules.quota.settings.batch_size <= 200\nR02: plan.modules.ledger.settings.timeout_s > 85  =>  plan.modules.quota.settings.retry_limit <= 2\nR03: \"pricing\" in plan.modules.upload.depends_on\nR06: plan.modules.pricing.settings.timeout_s == 35\nR07: \"tokens.py\" in plan.modules.upload.files\nR08: plan.modules.quota.worker == plan.modules.upload.worker\nR09: not reachable(quota -> pricing) through depends_on, direct or transitive\nR10: plan.modules.webhooks.settings.max_workers == 14\nR12: \"types.py\" in plan.modules.upload.files\nR13: plan.modules.webhooks.worker == \"alpha\"\nR15: plan.modules.billing.settings.retry_limit == 5\nR16: \"webhooks\" in plan.modules.pricing.depends_on"
+ },
+ {
+  "seed": 1001,
+  "scale": 1,
+  "project": "Kestrel",
+  "modules": [
+   "scheduler",
+   "checkout",
+   "catalog",
+   "indexer",
+   "webhooks",
+   "profile"
+  ],
+  "settings": {
+   "scheduler": [
+    "queue_depth",
+    "timeout_s"
+   ],
+   "checkout": [
+    "timeout_s",
+    "batch_size"
+   ],
+   "catalog": [
+    "max_workers",
+    "ttl_s"
+   ],
+   "indexer": [
+    "timeout_s",
+    "retry_limit"
+   ],
+   "webhooks": [
+    "timeout_s",
+    "ttl_s"
+   ],
+   "profile": [
+    "ttl_s",
+    "timeout_s"
+   ]
+  },
+  "files": [
+   "parser.py",
+   "types.py",
+   "rules.py",
+   "serial.py",
+   "mapper.py",
+   "guard.py",
+   "routes.py",
+   "render.py",
+   "limits.py"
+  ],
+  "workers": [
+   "alpha",
+   "beta",
+   "gamma",
+   "delta"
+  ],
+  "reqs": [
+   {
+    "id": "R01",
+    "kind": "setting_eq",
+    "cls": "fact",
+    "p": {
+     "m": "checkout",
+     "k": "batch_size",
+     "v": 750
+    },
+    "formalized": false,
+    "revised": false
+   },
+   {
+    "id": "R02",
+    "kind": "before",
+    "cls": "relation",
+    "p": {
+     "a": "indexer",
+     "b": "checkout"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R03",
+    "kind": "file_owner",
+    "cls": "fact",
+    "p": {
+     "f": "mapper.py",
+     "m": "webhooks"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R04",
+    "kind": "same_worker",
+    "cls": "relation",
+    "p": {
+     "a": "webhooks",
+     "b": "profile"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R05",
+    "kind": "worker_eq",
+    "cls": "fact",
+    "p": {
+     "m": "checkout",
+     "w": "gamma"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R06",
+    "kind": "conditional",
+    "cls": "relation",
+    "p": {
+     "a": "checkout",
+     "ka": "timeout_s",
+     "t": 10,
+     "b": "webhooks",
+     "kb": "ttl_s",
+     "op": "<=",
+     "u": 90
+    },
+    "formalized": false,
+    "revised": false
+   },
+   {
+    "id": "R07",
+    "kind": "setting_eq",
+    "cls": "fact",
+    "p": {
+     "m": "indexer",
+     "k": "retry_limit",
+     "v": 9
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R08",
+    "kind": "diff_worker",
+    "cls": "relation",
+    "p": {
+     "a": "checkout",
+     "b": "profile"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R09",
+    "kind": "depends",
+    "cls": "relation",
+    "p": {
+     "a": "webhooks",
+     "b": "indexer"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R10",
+    "kind": "conditional",
+    "cls": "relation",
+    "p": {
+     "a": "indexer",
+     "ka": "timeout_s",
+     "t": 5,
+     "b": "catalog",
+     "kb": "max_workers",
+     "op": ">=",
+     "u": 32
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R11",
+    "kind": "depends",
+    "cls": "relation",
+    "p": {
+     "a": "scheduler",
+     "b": "indexer"
+    },
+    "formalized": false,
+    "revised": false
+   },
+   {
+    "id": "R12",
+    "kind": "not_depends",
+    "cls": "relation",
+    "p": {
+     "a": "webhooks",
+     "b": "scheduler"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R13",
+    "kind": "worker_eq",
+    "cls": "fact",
+    "p": {
+     "m": "indexer",
+     "w": "alpha"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R14",
+    "kind": "file_owner",
+    "cls": "fact",
+    "p": {
+     "f": "types.py",
+     "m": "webhooks"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R15",
+    "kind": "setting_eq",
+    "cls": "fact",
+    "p": {
+     "m": "indexer",
+     "k": "timeout_s",
+     "v": 15,
+     "old": 75
+    },
+    "formalized": false,
+    "revised": true
+   },
+   {
+    "id": "R16",
+    "kind": "setting_eq",
+    "cls": "fact",
+    "p": {
+     "m": "checkout",
+     "k": "timeout_s",
+     "v": 20,
+     "old": 100
+    },
+    "formalized": true,
+    "revised": true
+   }
+  ],
+  "free": {
+   "settings": [
+    "webhooks.timeout_s",
+    "catalog.ttl_s",
+    "profile.ttl_s",
+    "scheduler.timeout_s",
+    "scheduler.queue_depth",
+    "profile.timeout_s"
+   ],
+   "files": [
+    "parser.py",
+    "rules.py",
+    "serial.py",
+    "guard.py",
+    "routes.py",
+    "render.py",
+    "limits.py"
+   ],
+   "workers": [
+    "scheduler",
+    "catalog"
+   ]
+  },
+  "reference_plan": {
+   "modules": {
+    "scheduler": {
+     "worker": "beta",
+     "depends_on": [
+      "indexer"
+     ],
+     "settings": {
+      "queue_depth": 200,
+      "timeout_s": 15
+     },
+     "files": [
+      "routes.py",
+      "limits.py"
+     ]
+    },
+    "checkout": {
+     "worker": "gamma",
+     "depends_on": [],
+     "settings": {
+      "timeout_s": 20,
+      "batch_size": 750
+     },
+     "files": [
+      "rules.py",
+      "serial.py"
+     ]
+    },
+    "catalog": {
+     "worker": "beta",
+     "depends_on": [],
+     "settings": {
+      "max_workers": 32,
+      "ttl_s": 390
+     },
+     "files": [
+      "guard.py"
+     ]
+    },
+    "indexer": {
+     "worker": "alpha",
+     "depends_on": [],
+     "settings": {
+      "timeout_s": 15,
+      "retry_limit": 9
+     },
+     "files": [
+      "render.py"
+     ]
+    },
+    "webhooks": {
+     "worker": "beta",
+     "depends_on": [
+      "indexer"
+     ],
+     "settings": {
+      "timeout_s": 80,
+      "ttl_s": 30
+     },
+     "files": [
+      "types.py",
+      "mapper.py"
+     ]
+    },
+    "profile": {
+     "worker": "beta",
+     "depends_on": [],
+     "settings": {
+      "ttl_s": 60,
+      "timeout_s": 85
+     },
+     "files": [
+      "parser.py"
+     ]
+    }
+   },
+   "order": [
+    "indexer",
+    "scheduler",
+    "profile",
+    "catalog",
+    "checkout",
+    "webhooks"
+   ]
+  },
+  "source": "Running notes from the Kestrel planning meetings. Attendees rotated between Priya, Maya, Lena, Sofia, Jonah. The plan covers modules scheduler, checkout, catalog, indexer, webhooks, profile.\n\nKickoff (Mon 3 Nov)\nJonah reminded everyone that the on-call rota changes next month. We may want a design review for catalog after launch. Sofia noted that the CI pipeline takes too long on large branches. Sofia made the point that webhooks must depend on indexer. We may want a design review for webhooks after launch. Jonah shared a dashboard with last month's error rates for the old system. In the legacy system catalog ran with ttl_s 60, which is irrelevant for the new plan.\n\nArchitecture sync (Tue 4 Nov)\nPriya gave an update on the vendor contract; nothing blocking yet. We agreed that code review turnaround should stay under a day. Maya confirmed that indexer's retry_limit has to be exactly 9. Jonah's first draft put checkout's timeout_s at 100. There is some concern that catalog logs are far too verbose. The staging cluster was flaky again on Tuesday, which slowed everyone down. A timeout_s around 15 for profile might be nice; the team can choose. Load tests from the old system are not comparable, so nobody should rely on those numbers.\n\nOps review (Wed 5 Nov)\nwebhooks and profile must be handled by the same worker because they share a local cache. The file types.py belongs to webhooks and must be owned by that module. Lena flagged that two dashboards disagree about weekly active users; unrelated to this plan. Retro feedback: fewer meetings, more written updates. There was a long tangent about the office move. Sofia's first draft put indexer's timeout_s at 75. Nobody remembers why profile was split out originally. Maya would like catalog on delta if convenient, but that is not a requirement.\n\nClient call (Thu 6 Nov)\nindexer must be owned by worker alpha; nobody else has the credentials. Nobody remembers why profile was split out originally. Maya asked whether we should rewrite webhooks in Rust; consensus was not this quarter. webhooks must not depend on scheduler, not even indirectly through another module; legal flagged that coupling. Maya shared a dashboard with last month's error rates for the old system. Historically scheduler caused most incidents, mostly through configuration drift. Because of the load profile, whenever indexer's timeout_s is above 5, catalog's max_workers must be at least 32. Priya flagged that two dashboards disagree about weekly active users; unrelated to this plan.\n\nPlanning (Fri 7 Nov)\nOnly gamma can take checkout, so it has to be assigned there. Priya confirmed that checkout's batch_size has to be exactly 750. scheduler has to declare a dependency on indexer, since it consumes indexer's output. Jonah shared a dashboard with last month's error rates for the old system. Sofia is collecting feedback on API naming from the mobile team. Documentation is behind and Lena volunteered to catch up. In the legacy system profile ran with timeout_s 25, which is irrelevant for the new plan. Correction: checkout's timeout_s is 20, not 100 as in the earlier draft; the earlier number is withdrawn. Audit insists checkout and profile are never handled by the same worker. Load tests from the old system are not comparable, so nobody should rely on those numbers. Correction: indexer's timeout_s is 15, not 75 as in the earlier draft; the earlier number is withdrawn.\n\nWrap-up (Mon 10 Nov)\nWe agreed that code review turnaround should stay under a day. The file mapper.py belongs to webhooks and must be owned by that module. Jonah suggested a short demo for the client at the next checkpoint. Maya will be on leave for part of next week, so expect slower replies. Jonah explained the coupling: if checkout.timeout_s exceeds 10, then webhooks.ttl_s has to be at most 90. There was a long tangent about the office move. The rollout sequence needs indexer ahead of checkout; that ordering is required.\n\nAnything not stated as required above is left to the team's judgment.",
+  "skeleton": "Project Kestrel: produce the work plan as JSON.\nModules: scheduler, checkout, catalog, indexer, webhooks, profile\nSettings each module must define:\n  scheduler: queue_depth (integer 10..500), timeout_s (integer 5..120)\n  checkout: timeout_s (integer 5..120), batch_size (integer 100..900)\n  catalog: max_workers (integer 2..32), ttl_s (integer 30..600)\n  indexer: timeout_s (integer 5..120), retry_limit (integer 1..9)\n  webhooks: timeout_s (integer 5..120), ttl_s (integer 30..600)\n  profile: ttl_s (integer 30..600), timeout_s (integer 5..120)\nFiles to assign (each owned by exactly one module): parser.py, types.py, rules.py, serial.py, mapper.py, guard.py, routes.py, render.py, limits.py\nWorkers: alpha, beta, gamma, delta\nOutput exactly one JSON object and nothing else:\n{\"modules\": {\"<module>\": {\"worker\": \"<worker>\", \"depends_on\": [\"<module>\", ...], \"settings\": {\"<key>\": <int>, ...}, \"files\": [\"<file>\", ...]}, ...}, \"order\": [\"<module>\", ...]}\nValidity rules: every module appears once; every file is owned by exactly one module; settings are integers in range; \"order\" lists every module once; every dependency comes earlier in \"order\"; no dependency cycles.\nFollow every hard requirement you were given. Where nothing is required, decide yourself.",
+  "ledger": "R02: index(plan.order, \"indexer\") < index(plan.order, \"checkout\")\nR03: \"mapper.py\" in plan.modules.webhooks.files\nR04: plan.modules.webhooks.worker == plan.modules.profile.worker\nR05: plan.modules.checkout.worker == \"gamma\"\nR07: plan.modules.indexer.settings.retry_limit == 9\nR08: plan.modules.checkout.worker != plan.modules.profile.worker\nR09: \"indexer\" in plan.modules.webhooks.depends_on\nR10: plan.modules.indexer.settings.timeout_s > 5  =>  plan.modules.catalog.settings.max_workers >= 32\nR12: not reachable(webhooks -> scheduler) through depends_on, direct or transitive\nR13: plan.modules.indexer.worker == \"alpha\"\nR14: \"types.py\" in plan.modules.webhooks.files\nR16: plan.modules.checkout.settings.timeout_s == 20"
+ },
+ {
+  "seed": 1002,
+  "scale": 1,
+  "project": "Willow",
+  "modules": [
+   "indexer",
+   "feed",
+   "session",
+   "notify",
+   "ingest",
+   "webhooks"
+  ],
+  "settings": {
+   "indexer": [
+    "max_workers",
+    "ttl_s"
+   ],
+   "feed": [
+    "queue_depth",
+    "max_workers"
+   ],
+   "session": [
+    "queue_depth",
+    "retry_limit"
+   ],
+   "notify": [
+    "retry_limit",
+    "timeout_s"
+   ],
+   "ingest": [
+    "batch_size",
+    "ttl_s"
+   ],
+   "webhooks": [
+    "retry_limit",
+    "ttl_s"
+   ]
+  },
+  "files": [
+   "loader.py",
+   "flags.py",
+   "client.py",
+   "mapper.py",
+   "policy.py",
+   "guard.py",
+   "core.py",
+   "forms.py",
+   "bench.py"
+  ],
+  "workers": [
+   "alpha",
+   "beta",
+   "gamma",
+   "delta"
+  ],
+  "reqs": [
+   {
+    "id": "R01",
+    "kind": "file_owner",
+    "cls": "fact",
+    "p": {
+     "f": "client.py",
+     "m": "session"
+    },
+    "formalized": false,
+    "revised": false
+   },
+   {
+    "id": "R02",
+    "kind": "conditional",
+    "cls": "relation",
+    "p": {
+     "a": "notify",
+     "ka": "timeout_s",
+     "t": 80,
+     "b": "ingest",
+     "kb": "batch_size",
+     "op": ">=",
+     "u": 800
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R03",
+    "kind": "worker_eq",
+    "cls": "fact",
+    "p": {
+     "m": "ingest",
+     "w": "alpha"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R04",
+    "kind": "setting_eq",
+    "cls": "fact",
+    "p": {
+     "m": "notify",
+     "k": "timeout_s",
+     "v": 90,
+     "old": 15
+    },
+    "formalized": true,
+    "revised": true
+   },
+   {
+    "id": "R05",
+    "kind": "setting_eq",
+    "cls": "fact",
+    "p": {
+     "m": "webhooks",
+     "k": "ttl_s",
+     "v": 510,
+     "old": 330
+    },
+    "formalized": true,
+    "revised": true
+   },
+   {
+    "id": "R06",
+    "kind": "file_owner",
+    "cls": "fact",
+    "p": {
+     "f": "bench.py",
+     "m": "session"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R07",
+    "kind": "worker_eq",
+    "cls": "fact",
+    "p": {
+     "m": "session",
+     "w": "alpha"
+    },
+    "formalized": false,
+    "revised": false
+   },
+   {
+    "id": "R08",
+    "kind": "same_worker",
+    "cls": "relation",
+    "p": {
+     "a": "feed",
+     "b": "webhooks"
+    },
+    "formalized": false,
+    "revised": false
+   },
+   {
+    "id": "R09",
+    "kind": "depends",
+    "cls": "relation",
+    "p": {
+     "a": "session",
+     "b": "notify"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R10",
+    "kind": "diff_worker",
+    "cls": "relation",
+    "p": {
+     "a": "session",
+     "b": "webhooks"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R11",
+    "kind": "setting_eq",
+    "cls": "fact",
+    "p": {
+     "m": "notify",
+     "k": "retry_limit",
+     "v": 4
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R12",
+    "kind": "depends",
+    "cls": "relation",
+    "p": {
+     "a": "ingest",
+     "b": "session"
+    },
+    "formalized": false,
+    "revised": false
+   },
+   {
+    "id": "R13",
+    "kind": "setting_eq",
+    "cls": "fact",
+    "p": {
+     "m": "ingest",
+     "k": "ttl_s",
+     "v": 390
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R14",
+    "kind": "conditional",
+    "cls": "relation",
+    "p": {
+     "a": "notify",
+     "ka": "retry_limit",
+     "t": 1,
+     "b": "feed",
+     "kb": "max_workers",
+     "op": "<=",
+     "u": 6
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R15",
+    "kind": "not_depends",
+    "cls": "relation",
+    "p": {
+     "a": "feed",
+     "b": "indexer"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R16",
+    "kind": "before",
+    "cls": "relation",
+    "p": {
+     "a": "feed",
+     "b": "session"
+    },
+    "formalized": true,
+    "revised": false
+   }
+  ],
+  "free": {
+   "settings": [
+    "webhooks.retry_limit",
+    "session.retry_limit",
+    "session.queue_depth",
+    "feed.queue_depth",
+    "indexer.max_workers",
+    "indexer.ttl_s"
+   ],
+   "files": [
+    "loader.py",
+    "flags.py",
+    "mapper.py",
+    "policy.py",
+    "guard.py",
+    "core.py",
+    "forms.py"
+   ],
+   "workers": [
+    "indexer",
+    "notify"
+   ]
+  },
+  "reference_plan": {
+   "modules": {
+    "indexer": {
+     "worker": "alpha",
+     "depends_on": [],
+     "settings": {
+      "max_workers": 18,
+      "ttl_s": 30
+     },
+     "files": [
+      "mapper.py",
+      "forms.py"
+     ]
+    },
+    "feed": {
+     "worker": "delta",
+     "depends_on": [],
+     "settings": {
+      "queue_depth": 400,
+      "max_workers": 2
+     },
+     "files": [
+      "flags.py"
+     ]
+    },
+    "session": {
+     "worker": "alpha",
+     "depends_on": [
+      "notify"
+     ],
+     "settings": {
+      "queue_depth": 270,
+      "retry_limit": 2
+     },
+     "files": [
+      "loader.py",
+      "client.py",
+      "guard.py",
+      "bench.py"
+     ]
+    },
+    "notify": {
+     "worker": "gamma",
+     "depends_on": [],
+     "settings": {
+      "retry_limit": 4,
+      "timeout_s": 90
+     },
+     "files": [
+      "policy.py",
+      "core.py"
+     ]
+    },
+    "ingest": {
+     "worker": "alpha",
+     "depends_on": [
+      "session"
+     ],
+     "settings": {
+      "batch_size": 900,
+      "ttl_s": 390
+     },
+     "files": []
+    },
+    "webhooks": {
+     "worker": "delta",
+     "depends_on": [],
+     "settings": {
+      "retry_limit": 6,
+      "ttl_s": 510
+     },
+     "files": []
+    }
+   },
+   "order": [
+    "webhooks",
+    "indexer",
+    "notify",
+    "feed",
+    "session",
+    "ingest"
+   ]
+  },
+  "source": "Running notes from the Willow planning meetings. Attendees rotated between Sofia, Ravi, Tomas, Maya, Lena. The plan covers modules indexer, feed, session, notify, ingest, webhooks.\n\nKickoff (Mon 3 Nov)\nThe file bench.py belongs to session and must be owned by that module. The staging cluster was flaky again on Tuesday, which slowed everyone down. Ravi's first draft put webhooks's ttl_s at 330. Lena will check whether the legacy exporter can finally be retired. Nobody remembers why ingest was split out originally. Sofia explained the coupling: if notify.retry_limit exceeds 1, then feed.max_workers has to be at most 6. Historically webhooks caused most incidents, mostly through configuration drift.\n\nArchitecture sync (Tue 4 Nov)\nWe agreed that code review turnaround should stay under a day. Sofia's first draft put notify's timeout_s at 15. feed must not depend on indexer, not even indirectly through another module; legal flagged that coupling. There was a long tangent about the office move. Lena is collecting feedback on API naming from the mobile team. We discussed whether indexer needs its own database and are leaning towards no. There is some concern that feed logs are far too verbose.\n\nOps review (Wed 5 Nov)\nLena flagged that two dashboards disagree about weekly active users; unrelated to this plan. Sofia is collecting feedback on API naming from the mobile team. Retro feedback: fewer meetings, more written updates. Historically session caused most incidents, mostly through configuration drift. The security review is scheduled for the end of the month. In the legacy system notify ran with timeout_s 90, which is irrelevant for the new plan.\n\nClient call (Thu 6 Nov)\nBecause of the load profile, whenever notify's timeout_s is above 80, ingest's batch_size must be at least 800. The old runbook for notify is out of date and needs a rewrite at some point. Ravi would like notify on beta if convenient, but that is not a requirement. Nobody remembers why session was split out originally. Correction: notify's timeout_s is 90, not 15 as in the earlier draft; the earlier number is withdrawn. We discussed whether session needs its own database and are leaning towards no. Correction: webhooks's ttl_s is 510, not 330 as in the earlier draft; the earlier number is withdrawn. We spent a while on naming conventions and agreed to revisit them later. We discussed whether feed needs its own database and are leaning towards no. Lena confirmed that notify's retry_limit has to be exactly 4. Lena is collecting feedback on API naming from the mobile team. The rollout sequence needs feed ahead of session; that ordering is required.\n\nPlanning (Fri 7 Nov)\nAudit insists session and webhooks are never handled by the same worker. Sofia reminded everyone that the on-call rota changes next month. session must be owned by worker alpha; nobody else has the credentials. A retry_limit around 5 for session might be nice; the team can choose. session has to declare a dependency on notify, since it consumes notify's output. We talked about adopting a new linter, but there was no decision. Lena reminded everyone that the on-call rota changes next month. We discussed whether session needs its own database and are leaning towards no. The old runbook for session is out of date and needs a rewrite at some point. In the legacy system feed ran with max_workers 10, which is irrelevant for the new plan.\n\nWrap-up (Mon 10 Nov)\nThe staging cluster was flaky again on Tuesday, which slowed everyone down. Sofia suggested a short demo for the client at the next checkpoint. ingest has to declare a dependency on session, since it consumes session's output. Load tests from the old system are not comparable, so nobody should rely on those numbers. Maya flagged that two dashboards disagree about weekly active users; unrelated to this plan. ingest must be owned by worker alpha; nobody else has the credentials. Keep feed and webhooks on one worker; that is a requirement, not a preference. The file client.py belongs to session and must be owned by that module. Sofia suggested a short demo for the client at the next checkpoint. Hard requirement from the client: ttl_s on ingest is set to 390. Someone raised the idea of a shared metrics library; parked for now.\n\nAnything not stated as required above is left to the team's judgment.",
+  "skeleton": "Project Willow: produce the work plan as JSON.\nModules: indexer, feed, session, notify, ingest, webhooks\nSettings each module must define:\n  indexer: max_workers (integer 2..32), ttl_s (integer 30..600)\n  feed: queue_depth (integer 10..500), max_workers (integer 2..32)\n  session: queue_depth (integer 10..500), retry_limit (integer 1..9)\n  notify: retry_limit (integer 1..9), timeout_s (integer 5..120)\n  ingest: batch_size (integer 100..900), ttl_s (integer 30..600)\n  webhooks: retry_limit (integer 1..9), ttl_s (integer 30..600)\nFiles to assign (each owned by exactly one module): loader.py, flags.py, client.py, mapper.py, policy.py, guard.py, core.py, forms.py, bench.py\nWorkers: alpha, beta, gamma, delta\nOutput exactly one JSON object and nothing else:\n{\"modules\": {\"<module>\": {\"worker\": \"<worker>\", \"depends_on\": [\"<module>\", ...], \"settings\": {\"<key>\": <int>, ...}, \"files\": [\"<file>\", ...]}, ...}, \"order\": [\"<module>\", ...]}\nValidity rules: every module appears once; every file is owned by exactly one module; settings are integers in range; \"order\" lists every module once; every dependency comes earlier in \"order\"; no dependency cycles.\nFollow every hard requirement you were given. Where nothing is required, decide yourself.",
+  "ledger": "R02: plan.modules.notify.settings.timeout_s > 80  =>  plan.modules.ingest.settings.batch_size >= 800\nR03: plan.modules.ingest.worker == \"alpha\"\nR04: plan.modules.notify.settings.timeout_s == 90\nR05: plan.modules.webhooks.settings.ttl_s == 510\nR06: \"bench.py\" in plan.modules.session.files\nR09: \"notify\" in plan.modules.session.depends_on\nR10: plan.modules.session.worker != plan.modules.webhooks.worker\nR11: plan.modules.notify.settings.retry_limit == 4\nR13: plan.modules.ingest.settings.ttl_s == 390\nR14: plan.modules.notify.settings.retry_limit > 1  =>  plan.modules.feed.settings.max_workers <= 6\nR15: not reachable(feed -> indexer) through depends_on, direct or transitive\nR16: index(plan.order, \"feed\") < index(plan.order, \"session\")"
+ },
+ {
+  "seed": 1003,
+  "scale": 1,
+  "project": "Tundra",
+  "modules": [
+   "upload",
+   "billing",
+   "catalog",
+   "media",
+   "auth",
+   "notify"
+  ],
+  "settings": {
+   "upload": [
+    "ttl_s",
+    "batch_size"
+   ],
+   "billing": [
+    "timeout_s",
+    "batch_size"
+   ],
+   "catalog": [
+    "batch_size",
+    "max_workers"
+   ],
+   "media": [
+    "queue_depth",
+    "batch_size"
+   ],
+   "auth": [
+    "retry_limit",
+    "timeout_s"
+   ],
+   "notify": [
+    "queue_depth",
+    "timeout_s"
+   ]
+  },
+  "files": [
+   "locks.py",
+   "guard.py",
+   "limits.py",
+   "flags.py",
+   "mapper.py",
+   "bench.py",
+   "stubs.py",
+   "hooks.py",
+   "client.py"
+  ],
+  "workers": [
+   "alpha",
+   "beta",
+   "gamma",
+   "delta"
+  ],
+  "reqs": [
+   {
+    "id": "R01",
+    "kind": "setting_eq",
+    "cls": "fact",
+    "p": {
+     "m": "upload",
+     "k": "batch_size",
+     "v": 200
+    },
+    "formalized": false,
+    "revised": false
+   },
+   {
+    "id": "R02",
+    "kind": "same_worker",
+    "cls": "relation",
+    "p": {
+     "a": "notify",
+     "b": "billing"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R03",
+    "kind": "conditional",
+    "cls": "relation",
+    "p": {
+     "a": "catalog",
+     "ka": "max_workers",
+     "t": 16,
+     "b": "auth",
+     "kb": "retry_limit",
+     "op": "<=",
+     "u": 2
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R04",
+    "kind": "conditional",
+    "cls": "relation",
+    "p": {
+     "a": "billing",
+     "ka": "batch_size",
+     "t": 100,
+     "b": "media",
+     "kb": "queue_depth",
+     "op": ">=",
+     "u": 490
+    },
+    "formalized": false,
+    "revised": false
+   },
+   {
+    "id": "R05",
+    "kind": "file_owner",
+    "cls": "fact",
+    "p": {
+     "f": "guard.py",
+     "m": "media"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R06",
+    "kind": "worker_eq",
+    "cls": "fact",
+    "p": {
+     "m": "upload",
+     "w": "gamma"
+    },
+    "formalized": false,
+    "revised": false
+   },
+   {
+    "id": "R07",
+    "kind": "setting_eq",
+    "cls": "fact",
+    "p": {
+     "m": "billing",
+     "k": "batch_size",
+     "v": 200
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R08",
+    "kind": "setting_eq",
+    "cls": "fact",
+    "p": {
+     "m": "catalog",
+     "k": "max_workers",
+     "v": 18,
+     "old": 22
+    },
+    "formalized": true,
+    "revised": true
+   },
+   {
+    "id": "R09",
+    "kind": "worker_eq",
+    "cls": "fact",
+    "p": {
+     "m": "catalog",
+     "w": "beta"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R10",
+    "kind": "before",
+    "cls": "relation",
+    "p": {
+     "a": "auth",
+     "b": "billing"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R11",
+    "kind": "depends",
+    "cls": "relation",
+    "p": {
+     "a": "notify",
+     "b": "catalog"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R12",
+    "kind": "diff_worker",
+    "cls": "relation",
+    "p": {
+     "a": "media",
+     "b": "upload"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R13",
+    "kind": "file_owner",
+    "cls": "fact",
+    "p": {
+     "f": "hooks.py",
+     "m": "media"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R14",
+    "kind": "depends",
+    "cls": "relation",
+    "p": {
+     "a": "notify",
+     "b": "media"
+    },
+    "formalized": false,
+    "revised": false
+   },
+   {
+    "id": "R15",
+    "kind": "not_depends",
+    "cls": "relation",
+    "p": {
+     "a": "media",
+     "b": "auth"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R16",
+    "kind": "setting_eq",
+    "cls": "fact",
+    "p": {
+     "m": "catalog",
+     "k": "batch_size",
+     "v": 500,
+     "old": 550
+    },
+    "formalized": true,
+    "revised": true
+   }
+  ],
+  "free": {
+   "settings": [
+    "auth.timeout_s",
+    "media.batch_size",
+    "notify.timeout_s",
+    "billing.timeout_s",
+    "upload.ttl_s",
+    "notify.queue_depth"
+   ],
+   "files": [
+    "locks.py",
+    "limits.py",
+    "flags.py",
+    "mapper.py",
+    "bench.py",
+    "stubs.py",
+    "client.py"
+   ],
+   "workers": [
+    "auth"
+   ]
+  },
+  "reference_plan": {
+   "modules": {
+    "upload": {
+     "worker": "gamma",
+     "depends_on": [],
+     "settings": {
+      "ttl_s": 270,
+      "batch_size": 200
+     },
+     "files": []
+    },
+    "billing": {
+     "worker": "beta",
+     "depends_on": [],
+     "settings": {
+      "timeout_s": 85,
+      "batch_size": 200
+     },
+     "files": [
+      "mapper.py",
+      "bench.py",
+      "stubs.py"
+     ]
+    },
+    "catalog": {
+     "worker": "beta",
+     "depends_on": [],
+     "settings": {
+      "batch_size": 500,
+      "max_workers": 18
+     },
+     "files": [
+      "flags.py"
+     ]
+    },
+    "media": {
+     "worker": "beta",
+     "depends_on": [],
+     "settings": {
+      "queue_depth": 500,
+      "batch_size": 400
+     },
+     "files": [
+      "guard.py",
+      "hooks.py"
+     ]
+    },
+    "auth": {
+     "worker": "beta",
+     "depends_on": [],
+     "settings": {
+      "retry_limit": 1,
+      "timeout_s": 30
+     },
+     "files": [
+      "locks.py",
+      "limits.py",
+      "client.py"
+     ]
+    },
+    "notify": {
+     "worker": "beta",
+     "depends_on": [
+      "catalog",
+      "media"
+     ],
+     "settings": {
+      "queue_depth": 280,
+      "timeout_s": 30
+     },
+     "files": []
+    }
+   },
+   "order": [
+    "catalog",
+    "auth",
+    "media",
+    "billing",
+    "upload",
+    "notify"
+   ]
+  },
+  "source": "Running notes from the Tundra planning meetings. Attendees rotated between Priya, Maya, Sofia, Ken, Lena. The plan covers modules upload, billing, catalog, media, auth, notify.\n\nKickoff (Mon 3 Nov)\ncatalog must be owned by worker beta; nobody else has the credentials. Sofia would like auth on beta if convenient, but that is not a requirement. Priya shared a dashboard with last month's error rates for the old system. The file hooks.py belongs to media and must be owned by that module. We may want a design review for upload after launch. Lena will check whether the legacy exporter can finally be retired. Maya suggested a short demo for the client at the next checkpoint. Keep notify and billing on one worker; that is a requirement, not a preference. Priya is collecting feedback on API naming from the mobile team.\n\nArchitecture sync (Tue 4 Nov)\nPriya's first draft put catalog's max_workers at 22. A ttl_s around 270 for upload might be nice; the team can choose. There was a long tangent about the office move. Historically media caused most incidents, mostly through configuration drift. The old runbook for media is out of date and needs a rewrite at some point. In the legacy system notify ran with timeout_s 10, which is irrelevant for the new plan. Documentation is behind and Maya volunteered to catch up.\n\nOps review (Wed 5 Nov)\nLena asked whether we should rewrite media in Rust; consensus was not this quarter. Hard requirement from the client: batch_size on upload is set to 200. We discussed whether billing needs its own database and are leaning towards no. Priya's first draft put catalog's batch_size at 550. Budget review moved to next Thursday. Priya reminded everyone that the on-call rota changes next month. Priya explained the coupling: if catalog.max_workers exceeds 16, then auth.retry_limit has to be at most 2. Priya is collecting feedback on API naming from the mobile team.\n\nClient call (Thu 6 Nov)\nWe may want a design review for notify after launch. The old runbook for upload is out of date and needs a rewrite at some point. Budget review moved to next Thursday. Priya flagged that two dashboards disagree about weekly active users; unrelated to this plan. Because of the load profile, whenever billing's batch_size is above 100, media's queue_depth must be at least 490. Maya is collecting feedback on API naming from the mobile team. In the legacy system billing ran with batch_size 550, which is irrelevant for the new plan.\n\nPlanning (Fri 7 Nov)\nMaya was firm that guard.py has to live under media. media must not depend on auth, not even indirectly through another module; legal flagged that coupling. Maya will check whether the legacy exporter can finally be retired. Lena will be on leave for part of next week, so expect slower replies. We discussed whether notify needs its own database and are leaning towards no. Priya suggested a short demo for the client at the next checkpoint. For billing, batch_size = 200 is non-negotiable; ops sized capacity around it.\n\nWrap-up (Mon 10 Nov)\nWe spent a while on naming conventions and agreed to revisit them later. Priya shared a dashboard with last month's error rates for the old system. Correction: catalog's max_workers is 18, not 22 as in the earlier draft; the earlier number is withdrawn. media and upload must go to different workers, for separation of duties. The security review is scheduled for the end of the month. The rollout sequence needs auth ahead of billing; that ordering is required. notify has to declare a dependency on catalog, since it consumes catalog's output. Ken flagged that two dashboards disagree about weekly active users; unrelated to this plan. upload must be owned by worker gamma; nobody else has the credentials. Correction: catalog's batch_size is 500, not 550 as in the earlier draft; the earlier number is withdrawn. Maya made the point that notify must depend on media.\n\nAnything not stated as required above is left to the team's judgment.",
+  "skeleton": "Project Tundra: produce the work plan as JSON.\nModules: upload, billing, catalog, media, auth, notify\nSettings each module must define:\n  upload: ttl_s (integer 30..600), batch_size (integer 100..900)\n  billing: timeout_s (integer 5..120), batch_size (integer 100..900)\n  catalog: batch_size (integer 100..900), max_workers (integer 2..32)\n  media: queue_depth (integer 10..500), batch_size (integer 100..900)\n  auth: retry_limit (integer 1..9), timeout_s (integer 5..120)\n  notify: queue_depth (integer 10..500), timeout_s (integer 5..120)\nFiles to assign (each owned by exactly one module): locks.py, guard.py, limits.py, flags.py, mapper.py, bench.py, stubs.py, hooks.py, client.py\nWorkers: alpha, beta, gamma, delta\nOutput exactly one JSON object and nothing else:\n{\"modules\": {\"<module>\": {\"worker\": \"<worker>\", \"depends_on\": [\"<module>\", ...], \"settings\": {\"<key>\": <int>, ...}, \"files\": [\"<file>\", ...]}, ...}, \"order\": [\"<module>\", ...]}\nValidity rules: every module appears once; every file is owned by exactly one module; settings are integers in range; \"order\" lists every module once; every dependency comes earlier in \"order\"; no dependency cycles.\nFollow every hard requirement you were given. Where nothing is required, decide yourself.",
+  "ledger": "R02: plan.modules.notify.worker == plan.modules.billing.worker\nR03: plan.modules.catalog.settings.max_workers > 16  =>  plan.modules.auth.settings.retry_limit <= 2\nR05: \"guard.py\" in plan.modules.media.files\nR07: plan.modules.billing.settings.batch_size == 200\nR08: plan.modules.catalog.settings.max_workers == 18\nR09: plan.modules.catalog.worker == \"beta\"\nR10: index(plan.order, \"auth\") < index(plan.order, \"billing\")\nR11: \"catalog\" in plan.modules.notify.depends_on\nR12: plan.modules.media.worker != plan.modules.upload.worker\nR13: \"hooks.py\" in plan.modules.media.files\nR15: not reachable(media -> auth) through depends_on, direct or transitive\nR16: plan.modules.catalog.settings.batch_size == 500"
+ },
+ {
+  "seed": 1004,
+  "scale": 1,
+  "project": "Harbor",
+  "modules": [
+   "alerts",
+   "gateway",
+   "shipping",
+   "media",
+   "metrics",
+   "quota"
+  ],
+  "settings": {
+   "alerts": [
+    "batch_size",
+    "queue_depth"
+   ],
+   "gateway": [
+    "batch_size",
+    "timeout_s"
+   ],
+   "shipping": [
+    "max_workers",
+    "queue_depth"
+   ],
+   "media": [
+    "ttl_s",
+    "retry_limit"
+   ],
+   "metrics": [
+    "ttl_s",
+    "timeout_s"
+   ],
+   "quota": [
+    "retry_limit",
+    "max_workers"
+   ]
+  },
+  "files": [
+   "bench.py",
+   "client.py",
+   "views.py",
+   "paths.py",
+   "models.py",
+   "stubs.py",
+   "mapper.py",
+   "events.py",
+   "hooks.py"
+  ],
+  "workers": [
+   "alpha",
+   "beta",
+   "gamma",
+   "delta"
+  ],
+  "reqs": [
+   {
+    "id": "R01",
+    "kind": "depends",
+    "cls": "relation",
+    "p": {
+     "a": "alerts",
+     "b": "metrics"
+    },
+    "formalized": false,
+    "revised": false
+   },
+   {
+    "id": "R02",
+    "kind": "worker_eq",
+    "cls": "fact",
+    "p": {
+     "m": "shipping",
+     "w": "beta"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R03",
+    "kind": "conditional",
+    "cls": "relation",
+    "p": {
+     "a": "media",
+     "ka": "ttl_s",
+     "t": 330,
+     "b": "media",
+     "kb": "retry_limit",
+     "op": ">=",
+     "u": 7
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R04",
+    "kind": "setting_eq",
+    "cls": "fact",
+    "p": {
+     "m": "alerts",
+     "k": "batch_size",
+     "v": 300,
+     "old": 250
+    },
+    "formalized": true,
+    "revised": true
+   },
+   {
+    "id": "R05",
+    "kind": "setting_eq",
+    "cls": "fact",
+    "p": {
+     "m": "quota",
+     "k": "max_workers",
+     "v": 30
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R06",
+    "kind": "not_depends",
+    "cls": "relation",
+    "p": {
+     "a": "media",
+     "b": "metrics"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R07",
+    "kind": "diff_worker",
+    "cls": "relation",
+    "p": {
+     "a": "alerts",
+     "b": "metrics"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R08",
+    "kind": "before",
+    "cls": "relation",
+    "p": {
+     "a": "gateway",
+     "b": "shipping"
+    },
+    "formalized": false,
+    "revised": false
+   },
+   {
+    "id": "R09",
+    "kind": "file_owner",
+    "cls": "fact",
+    "p": {
+     "f": "stubs.py",
+     "m": "gateway"
+    },
+    "formalized": false,
+    "revised": false
+   },
+   {
+    "id": "R10",
+    "kind": "same_worker",
+    "cls": "relation",
+    "p": {
+     "a": "metrics",
+     "b": "gateway"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R11",
+    "kind": "setting_eq",
+    "cls": "fact",
+    "p": {
+     "m": "metrics",
+     "k": "timeout_s",
+     "v": 90,
+     "old": 50
+    },
+    "formalized": false,
+    "revised": true
+   },
+   {
+    "id": "R12",
+    "kind": "conditional",
+    "cls": "relation",
+    "p": {
+     "a": "quota",
+     "ka": "max_workers",
+     "t": 24,
+     "b": "gateway",
+     "kb": "timeout_s",
+     "op": "<=",
+     "u": 10
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R13",
+    "kind": "worker_eq",
+    "cls": "fact",
+    "p": {
+     "m": "media",
+     "w": "beta"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R14",
+    "kind": "setting_eq",
+    "cls": "fact",
+    "p": {
+     "m": "media",
+     "k": "ttl_s",
+     "v": 360
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R15",
+    "kind": "depends",
+    "cls": "relation",
+    "p": {
+     "a": "shipping",
+     "b": "alerts"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R16",
+    "kind": "file_owner",
+    "cls": "fact",
+    "p": {
+     "f": "client.py",
+     "m": "alerts"
+    },
+    "formalized": true,
+    "revised": false
+   }
+  ],
+  "free": {
+   "settings": [
+    "quota.retry_limit",
+    "shipping.queue_depth",
+    "gateway.batch_size",
+    "metrics.ttl_s",
+    "shipping.max_workers",
+    "alerts.queue_depth"
+   ],
+   "files": [
+    "bench.py",
+    "views.py",
+    "paths.py",
+    "models.py",
+    "mapper.py",
+    "events.py",
+    "hooks.py"
+   ],
+   "workers": [
+    "quota"
+   ]
+  },
+  "reference_plan": {
+   "modules": {
+    "alerts": {
+     "worker": "gamma",
+     "depends_on": [
+      "metrics"
+     ],
+     "settings": {
+      "batch_size": 300,
+      "queue_depth": 230
+     },
+     "files": [
+      "client.py"
+     ]
+    },
+    "gateway": {
+     "worker": "beta",
+     "depends_on": [],
+     "settings": {
+      "batch_size": 350,
+      "timeout_s": 5
+     },
+     "files": [
+      "stubs.py",
+      "hooks.py"
+     ]
+    },
+    "shipping": {
+     "worker": "beta",
+     "depends_on": [
+      "alerts"
+     ],
+     "settings": {
+      "max_workers": 2,
+      "queue_depth": 270
+     },
+     "files": [
+      "paths.py"
+     ]
+    },
+    "media": {
+     "worker": "beta",
+     "depends_on": [],
+     "settings": {
+      "ttl_s": 360,
+      "retry_limit": 9
+     },
+     "files": [
+      "models.py"
+     ]
+    },
+    "metrics": {
+     "worker": "beta",
+     "depends_on": [],
+     "settings": {
+      "ttl_s": 60,
+      "timeout_s": 90
+     },
+     "files": [
+      "bench.py",
+      "views.py",
+      "mapper.py"
+     ]
+    },
+    "quota": {
+     "worker": "beta",
+     "depends_on": [],
+     "settings": {
+      "retry_limit": 4,
+      "max_workers": 30
+     },
+     "files": [
+      "events.py"
+     ]
+    }
+   },
+   "order": [
+    "gateway",
+    "metrics",
+    "alerts",
+    "quota",
+    "media",
+    "shipping"
+   ]
+  },
+  "source": "Running notes from the Harbor planning meetings. Attendees rotated between Jonah, Sofia, Ken, Lena, Priya. The plan covers modules alerts, gateway, shipping, media, metrics, quota.\n\nKickoff (Mon 3 Nov)\nLena reminded everyone that the on-call rota changes next month. Sofia is collecting feedback on API naming from the mobile team. Sofia confirmed that media's ttl_s has to be exactly 360. We spent a while on naming conventions and agreed to revisit them later. Budget review moved to next Thursday. media must not depend on metrics, not even indirectly through another module; legal flagged that coupling. shipping has to declare a dependency on alerts, since it consumes alerts's output. Priya is collecting feedback on API naming from the mobile team. Ken's first draft put alerts's batch_size at 250. We may want a design review for quota after launch.\n\nArchitecture sync (Tue 4 Nov)\nThe security review is scheduled for the end of the month. We discussed whether shipping needs its own database and are leaning towards no. We discussed whether gateway needs its own database and are leaning towards no. Nobody remembers why alerts was split out originally. Ken asked whether we should rewrite media in Rust; consensus was not this quarter. The rollout sequence needs gateway ahead of shipping; that ordering is required. A max_workers around 14 for shipping might be nice; the team can choose. Jonah suggested a short demo for the client at the next checkpoint.\n\nOps review (Wed 5 Nov)\nLena is collecting feedback on API naming from the mobile team. Retro feedback: fewer meetings, more written updates. Documentation is behind and Priya volunteered to catch up. Priya's first draft put metrics's timeout_s at 50. Correction: alerts's batch_size is 300, not 250 as in the earlier draft; the earlier number is withdrawn. Ken made the point that alerts must depend on metrics. Retro feedback: fewer meetings, more written updates.\n\nClient call (Thu 6 Nov)\nThe security review is scheduled for the end of the month. The file client.py belongs to alerts and must be owned by that module. Historically quota caused most incidents, mostly through configuration drift. Historically shipping caused most incidents, mostly through configuration drift. We spent a while on naming conventions and agreed to revisit them later. Ken was firm that stubs.py has to live under gateway. Because of the load profile, whenever quota's max_workers is above 24, gateway's timeout_s must be no more than 10. Priya gave an update on the vendor contract; nothing blocking yet. Only beta can take media, so it has to be assigned there. Someone raised the idea of a shared metrics library; parked for now. Only beta can take shipping, so it has to be assigned there.\n\nPlanning (Fri 7 Nov)\nCorrection: metrics's timeout_s is 90, not 50 as in the earlier draft; the earlier number is withdrawn. For quota, max_workers = 30 is non-negotiable; ops sized capacity around it. Because of the load profile, whenever media's ttl_s is above 330, media's retry_limit must be at least 7. Sofia shared a dashboard with last month's error rates for the old system. We talked about adopting a new linter, but there was no decision. In the legacy system media ran with ttl_s 90, which is irrelevant for the new plan. Sofia gave an update on the vendor contract; nothing blocking yet. Lena will check whether the legacy exporter can finally be retired. metrics and gateway must be handled by the same worker because they share a local cache. Jonah asked whether we should rewrite shipping in Rust; consensus was not this quarter. alerts and metrics must go to different workers, for separation of duties.\n\nWrap-up (Mon 10 Nov)\nLoad tests from the old system are not comparable, so nobody should rely on those numbers. Jonah would like quota on alpha if convenient, but that is not a requirement. We agreed that code review turnaround should stay under a day. The client said they are happy with progress so far. Budget review moved to next Thursday. Jonah is collecting feedback on API naming from the mobile team. In the legacy system media ran with ttl_s 120, which is irrelevant for the new plan.\n\nAnything not stated as required above is left to the team's judgment.",
+  "skeleton": "Project Harbor: produce the work plan as JSON.\nModules: alerts, gateway, shipping, media, metrics, quota\nSettings each module must define:\n  alerts: batch_size (integer 100..900), queue_depth (integer 10..500)\n  gateway: batch_size (integer 100..900), timeout_s (integer 5..120)\n  shipping: max_workers (integer 2..32), queue_depth (integer 10..500)\n  media: ttl_s (integer 30..600), retry_limit (integer 1..9)\n  metrics: ttl_s (integer 30..600), timeout_s (integer 5..120)\n  quota: retry_limit (integer 1..9), max_workers (integer 2..32)\nFiles to assign (each owned by exactly one module): bench.py, client.py, views.py, paths.py, models.py, stubs.py, mapper.py, events.py, hooks.py\nWorkers: alpha, beta, gamma, delta\nOutput exactly one JSON object and nothing else:\n{\"modules\": {\"<module>\": {\"worker\": \"<worker>\", \"depends_on\": [\"<module>\", ...], \"settings\": {\"<key>\": <int>, ...}, \"files\": [\"<file>\", ...]}, ...}, \"order\": [\"<module>\", ...]}\nValidity rules: every module appears once; every file is owned by exactly one module; settings are integers in range; \"order\" lists every module once; every dependency comes earlier in \"order\"; no dependency cycles.\nFollow every hard requirement you were given. Where nothing is required, decide yourself.",
+  "ledger": "R02: plan.modules.shipping.worker == \"beta\"\nR03: plan.modules.media.settings.ttl_s > 330  =>  plan.modules.media.settings.retry_limit >= 7\nR04: plan.modules.alerts.settings.batch_size == 300\nR05: plan.modules.quota.settings.max_workers == 30\nR06: not reachable(media -> metrics) through depends_on, direct or transitive\nR07: plan.modules.alerts.worker != plan.modules.metrics.worker\nR10: plan.modules.metrics.worker == plan.modules.gateway.worker\nR12: plan.modules.quota.settings.max_workers > 24  =>  plan.modules.gateway.settings.timeout_s <= 10\nR13: plan.modules.media.worker == \"beta\"\nR14: plan.modules.media.settings.ttl_s == 360\nR15: \"alerts\" in plan.modules.shipping.depends_on\nR16: \"client.py\" in plan.modules.alerts.files"
+ },
+ {
+  "seed": 1005,
+  "scale": 1,
+  "project": "Harbor",
+  "modules": [
+   "media",
+   "session",
+   "profile",
+   "feed",
+   "backup",
+   "sync"
+  ],
+  "settings": {
+   "media": [
+    "timeout_s",
+    "ttl_s"
+   ],
+   "session": [
+    "max_workers",
+    "ttl_s"
+   ],
+   "profile": [
+    "batch_size",
+    "max_workers"
+   ],
+   "feed": [
+    "retry_limit",
+    "ttl_s"
+   ],
+   "backup": [
+    "ttl_s",
+    "batch_size"
+   ],
+   "sync": [
+    "max_workers",
+    "timeout_s"
+   ]
+  },
+  "files": [
+   "store.py",
+   "views.py",
+   "worker.py",
+   "retry.py",
+   "serial.py",
+   "locks.py",
+   "types.py",
+   "schema.sql",
+   "models.py"
+  ],
+  "workers": [
+   "alpha",
+   "beta",
+   "gamma",
+   "delta"
+  ],
+  "reqs": [
+   {
+    "id": "R01",
+    "kind": "before",
+    "cls": "relation",
+    "p": {
+     "a": "feed",
+     "b": "sync"
+    },
+    "formalized": false,
+    "revised": false
+   },
+   {
+    "id": "R02",
+    "kind": "setting_eq",
+    "cls": "fact",
+    "p": {
+     "m": "sync",
+     "k": "timeout_s",
+     "v": 100
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R03",
+    "kind": "same_worker",
+    "cls": "relation",
+    "p": {
+     "a": "backup",
+     "b": "media"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R04",
+    "kind": "not_depends",
+    "cls": "relation",
+    "p": {
+     "a": "backup",
+     "b": "sync"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R05",
+    "kind": "file_owner",
+    "cls": "fact",
+    "p": {
+     "f": "types.py",
+     "m": "feed"
+    },
+    "formalized": false,
+    "revised": false
+   },
+   {
+    "id": "R06",
+    "kind": "file_owner",
+    "cls": "fact",
+    "p": {
+     "f": "locks.py",
+     "m": "session"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R07",
+    "kind": "worker_eq",
+    "cls": "fact",
+    "p": {
+     "m": "session",
+     "w": "alpha"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R08",
+    "kind": "diff_worker",
+    "cls": "relation",
+    "p": {
+     "a": "backup",
+     "b": "sync"
+    },
+    "formalized": false,
+    "revised": false
+   },
+   {
+    "id": "R09",
+    "kind": "depends",
+    "cls": "relation",
+    "p": {
+     "a": "profile",
+     "b": "feed"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R10",
+    "kind": "depends",
+    "cls": "relation",
+    "p": {
+     "a": "session",
+     "b": "media"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R11",
+    "kind": "setting_eq",
+    "cls": "fact",
+    "p": {
+     "m": "feed",
+     "k": "ttl_s",
+     "v": 240
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R12",
+    "kind": "conditional",
+    "cls": "relation",
+    "p": {
+     "a": "feed",
+     "ka": "ttl_s",
+     "t": 180,
+     "b": "backup",
+     "kb": "ttl_s",
+     "op": ">=",
+     "u": 540
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R13",
+    "kind": "worker_eq",
+    "cls": "fact",
+    "p": {
+     "m": "sync",
+     "w": "alpha"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R14",
+    "kind": "setting_eq",
+    "cls": "fact",
+    "p": {
+     "m": "profile",
+     "k": "batch_size",
+     "v": 450,
+     "old": 500
+    },
+    "formalized": true,
+    "revised": true
+   },
+   {
+    "id": "R15",
+    "kind": "setting_eq",
+    "cls": "fact",
+    "p": {
+     "m": "media",
+     "k": "ttl_s",
+     "v": 480,
+     "old": 510
+    },
+    "formalized": false,
+    "revised": true
+   },
+   {
+    "id": "R16",
+    "kind": "conditional",
+    "cls": "relation",
+    "p": {
+     "a": "sync",
+     "ka": "timeout_s",
+     "t": 95,
+     "b": "session",
+     "kb": "ttl_s",
+     "op": ">=",
+     "u": 540
+    },
+    "formalized": true,
+    "revised": false
+   }
+  ],
+  "free": {
+   "settings": [
+    "feed.retry_limit",
+    "media.timeout_s",
+    "sync.max_workers",
+    "session.max_workers",
+    "profile.max_workers",
+    "backup.batch_size"
+   ],
+   "files": [
+    "store.py",
+    "views.py",
+    "worker.py",
+    "retry.py",
+    "serial.py",
+    "schema.sql",
+    "models.py"
+   ],
+   "workers": [
+    "profile",
+    "feed"
+   ]
+  },
+  "reference_plan": {
+   "modules": {
+    "media": {
+     "worker": "delta",
+     "depends_on": [],
+     "settings": {
+      "timeout_s": 20,
+      "ttl_s": 480
+     },
+     "files": []
+    },
+    "session": {
+     "worker": "alpha",
+     "depends_on": [
+      "media"
+     ],
+     "settings": {
+      "max_workers": 26,
+      "ttl_s": 600
+     },
+     "files": [
+      "serial.py",
+      "locks.py"
+     ]
+    },
+    "profile": {
+     "worker": "delta",
+     "depends_on": [
+      "feed"
+     ],
+     "settings": {
+      "batch_size": 450,
+      "max_workers": 2
+     },
+     "files": [
+      "views.py"
+     ]
+    },
+    "feed": {
+     "worker": "beta",
+     "depends_on": [],
+     "settings": {
+      "retry_limit": 5,
+      "ttl_s": 240
+     },
+     "files": [
+      "types.py",
+      "schema.sql"
+     ]
+    },
+    "backup": {
+     "worker": "delta",
+     "depends_on": [],
+     "settings": {
+      "ttl_s": 600,
+      "batch_size": 400
+     },
+     "files": [
+      "store.py",
+      "retry.py"
+     ]
+    },
+    "sync": {
+     "worker": "alpha",
+     "depends_on": [],
+     "settings": {
+      "max_workers": 18,
+      "timeout_s": 100
+     },
+     "files": [
+      "worker.py",
+      "models.py"
+     ]
+    }
+   },
+   "order": [
+    "feed",
+    "sync",
+    "backup",
+    "media",
+    "profile",
+    "session"
+   ]
+  },
+  "source": "Running notes from the Harbor planning meetings. Attendees rotated between Maya, Jonah, Lena, Priya, Tomas. The plan covers modules media, session, profile, feed, backup, sync.\n\nKickoff (Mon 3 Nov)\nJonah reminded everyone that the on-call rota changes next month. Jonah's first draft put media's ttl_s at 510. There is some concern that sync logs are far too verbose. session must be owned by worker alpha; nobody else has the credentials. Historically sync caused most incidents, mostly through configuration drift. Jonah suggested a short demo for the client at the next checkpoint. backup and media must be handled by the same worker because they share a local cache. In the legacy system feed ran with ttl_s 570, which is irrelevant for the new plan. Maya noted that the CI pipeline takes too long on large branches. Jonah reminded everyone that the on-call rota changes next month. Hard requirement from the client: ttl_s on feed is set to 240.\n\nArchitecture sync (Tue 4 Nov)\nThe staging cluster was flaky again on Tuesday, which slowed everyone down. The file locks.py belongs to session and must be owned by that module. The security review is scheduled for the end of the month. There is some concern that sync logs are far too verbose. Priya was firm that types.py has to live under feed. There is some concern that profile logs are far too verbose. Tomas gave an update on the vendor contract; nothing blocking yet.\n\nOps review (Wed 5 Nov)\nSomeone raised the idea of a shared metrics library; parked for now. Because of the load profile, whenever feed's ttl_s is above 180, backup's ttl_s must be at least 540. Historically feed caused most incidents, mostly through configuration drift. Lena's first draft put profile's batch_size at 500. The staging cluster was flaky again on Tuesday, which slowed everyone down. The client said they are happy with progress so far.\n\nClient call (Thu 6 Nov)\nThere is some concern that media logs are far too verbose. Correction: media's ttl_s is 480, not 510 as in the earlier draft; the earlier number is withdrawn. Priya would like profile on delta if convenient, but that is not a requirement. sync must be owned by worker alpha; nobody else has the credentials. Priya gave an update on the vendor contract; nothing blocking yet. feed has to run before sync in the execution order, even though neither depends on the other. We talked about adopting a new linter, but there was no decision. Priya flagged that two dashboards disagree about weekly active users; unrelated to this plan.\n\nPlanning (Fri 7 Nov)\nIn the legacy system profile ran with batch_size 550, which is irrelevant for the new plan. Lena made the point that session must depend on media. Historically backup caused most incidents, mostly through configuration drift. Jonah shared a dashboard with last month's error rates for the old system. Because of the load profile, whenever sync's timeout_s is above 95, session's ttl_s must be at least 540. Budget review moved to next Thursday. Hard requirement from the client: timeout_s on sync is set to 100. Lena flagged that two dashboards disagree about weekly active users; unrelated to this plan. backup must not depend on sync, not even indirectly through another module; legal flagged that coupling. Nobody remembers why feed was split out originally. Jonah noted that the CI pipeline takes too long on large branches.\n\nWrap-up (Mon 10 Nov)\nNobody remembers why session was split out originally. A timeout_s around 30 for media might be nice; the team can choose. There is some concern that feed logs are far too verbose. The staging cluster was flaky again on Tuesday, which slowed everyone down. We talked about adopting a new linter, but there was no decision. Load tests from the old system are not comparable, so nobody should rely on those numbers. profile has to declare a dependency on feed, since it consumes feed's output. Nobody remembers why session was split out originally. backup and sync must go to different workers, for separation of duties. Correction: profile's batch_size is 450, not 500 as in the earlier draft; the earlier number is withdrawn.\n\nAnything not stated as required above is left to the team's judgment.",
+  "skeleton": "Project Harbor: produce the work plan as JSON.\nModules: media, session, profile, feed, backup, sync\nSettings each module must define:\n  media: timeout_s (integer 5..120), ttl_s (integer 30..600)\n  session: max_workers (integer 2..32), ttl_s (integer 30..600)\n  profile: batch_size (integer 100..900), max_workers (integer 2..32)\n  feed: retry_limit (integer 1..9), ttl_s (integer 30..600)\n  backup: ttl_s (integer 30..600), batch_size (integer 100..900)\n  sync: max_workers (integer 2..32), timeout_s (integer 5..120)\nFiles to assign (each owned by exactly one module): store.py, views.py, worker.py, retry.py, serial.py, locks.py, types.py, schema.sql, models.py\nWorkers: alpha, beta, gamma, delta\nOutput exactly one JSON object and nothing else:\n{\"modules\": {\"<module>\": {\"worker\": \"<worker>\", \"depends_on\": [\"<module>\", ...], \"settings\": {\"<key>\": <int>, ...}, \"files\": [\"<file>\", ...]}, ...}, \"order\": [\"<module>\", ...]}\nValidity rules: every module appears once; every file is owned by exactly one module; settings are integers in range; \"order\" lists every module once; every dependency comes earlier in \"order\"; no dependency cycles.\nFollow every hard requirement you were given. Where nothing is required, decide yourself.",
+  "ledger": "R02: plan.modules.sync.settings.timeout_s == 100\nR03: plan.modules.backup.worker == plan.modules.media.worker\nR04: not reachable(backup -> sync) through depends_on, direct or transitive\nR06: \"locks.py\" in plan.modules.session.files\nR07: plan.modules.session.worker == \"alpha\"\nR09: \"feed\" in plan.modules.profile.depends_on\nR10: \"media\" in plan.modules.session.depends_on\nR11: plan.modules.feed.settings.ttl_s == 240\nR12: plan.modules.feed.settings.ttl_s > 180  =>  plan.modules.backup.settings.ttl_s >= 540\nR13: plan.modules.sync.worker == \"alpha\"\nR14: plan.modules.profile.settings.batch_size == 450\nR16: plan.modules.sync.settings.timeout_s > 95  =>  plan.modules.session.settings.ttl_s >= 540"
+ },
+ {
+  "seed": 1006,
+  "scale": 1,
+  "project": "Meridian",
+  "modules": [
+   "quota",
+   "profile",
+   "archive",
+   "indexer",
+   "catalog",
+   "search"
+  ],
+  "settings": {
+   "quota": [
+    "max_workers",
+    "retry_limit"
+   ],
+   "profile": [
+    "ttl_s",
+    "max_workers"
+   ],
+   "archive": [
+    "timeout_s",
+    "queue_depth"
+   ],
+   "indexer": [
+    "queue_depth",
+    "ttl_s"
+   ],
+   "catalog": [
+    "max_workers",
+    "retry_limit"
+   ],
+   "search": [
+    "queue_depth",
+    "timeout_s"
+   ]
+  },
+  "files": [
+   "core.py",
+   "render.py",
+   "views.py",
+   "handlers.py",
+   "events.py",
+   "worker.py",
+   "serial.py",
+   "paths.py",
+   "codec.py"
+  ],
+  "workers": [
+   "alpha",
+   "beta",
+   "gamma",
+   "delta"
+  ],
+  "reqs": [
+   {
+    "id": "R01",
+    "kind": "file_owner",
+    "cls": "fact",
+    "p": {
+     "f": "paths.py",
+     "m": "profile"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R02",
+    "kind": "conditional",
+    "cls": "relation",
+    "p": {
+     "a": "catalog",
+     "ka": "retry_limit",
+     "t": 8,
+     "b": "quota",
+     "kb": "max_workers",
+     "op": "<=",
+     "u": 4
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R03",
+    "kind": "worker_eq",
+    "cls": "fact",
+    "p": {
+     "m": "catalog",
+     "w": "alpha"
+    },
+    "formalized": false,
+    "revised": false
+   },
+   {
+    "id": "R04",
+    "kind": "depends",
+    "cls": "relation",
+    "p": {
+     "a": "search",
+     "b": "profile"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R05",
+    "kind": "conditional",
+    "cls": "relation",
+    "p": {
+     "a": "archive",
+     "ka": "queue_depth",
+     "t": 230,
+     "b": "indexer",
+     "kb": "ttl_s",
+     "op": "<=",
+     "u": 60
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R06",
+    "kind": "depends",
+    "cls": "relation",
+    "p": {
+     "a": "indexer",
+     "b": "quota"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R07",
+    "kind": "setting_eq",
+    "cls": "fact",
+    "p": {
+     "m": "catalog",
+     "k": "retry_limit",
+     "v": 9
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R08",
+    "kind": "worker_eq",
+    "cls": "fact",
+    "p": {
+     "m": "quota",
+     "w": "delta"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R09",
+    "kind": "diff_worker",
+    "cls": "relation",
+    "p": {
+     "a": "profile",
+     "b": "search"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R10",
+    "kind": "setting_eq",
+    "cls": "fact",
+    "p": {
+     "m": "search",
+     "k": "timeout_s",
+     "v": 50,
+     "old": 55
+    },
+    "formalized": true,
+    "revised": true
+   },
+   {
+    "id": "R11",
+    "kind": "setting_eq",
+    "cls": "fact",
+    "p": {
+     "m": "search",
+     "k": "queue_depth",
+     "v": 350
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R12",
+    "kind": "same_worker",
+    "cls": "relation",
+    "p": {
+     "a": "profile",
+     "b": "archive"
+    },
+    "formalized": false,
+    "revised": false
+   },
+   {
+    "id": "R13",
+    "kind": "file_owner",
+    "cls": "fact",
+    "p": {
+     "f": "events.py",
+     "m": "profile"
+    },
+    "formalized": false,
+    "revised": false
+   },
+   {
+    "id": "R14",
+    "kind": "setting_eq",
+    "cls": "fact",
+    "p": {
+     "m": "archive",
+     "k": "queue_depth",
+     "v": 260,
+     "old": 390
+    },
+    "formalized": true,
+    "revised": true
+   },
+   {
+    "id": "R15",
+    "kind": "not_depends",
+    "cls": "relation",
+    "p": {
+     "a": "indexer",
+     "b": "archive"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R16",
+    "kind": "before",
+    "cls": "relation",
+    "p": {
+     "a": "profile",
+     "b": "catalog"
+    },
+    "formalized": false,
+    "revised": false
+   }
+  ],
+  "free": {
+   "settings": [
+    "archive.timeout_s",
+    "quota.retry_limit",
+    "indexer.queue_depth",
+    "catalog.max_workers",
+    "profile.ttl_s",
+    "profile.max_workers"
+   ],
+   "files": [
+    "core.py",
+    "render.py",
+    "views.py",
+    "handlers.py",
+    "worker.py",
+    "serial.py",
+    "codec.py"
+   ],
+   "workers": [
+    "indexer"
+   ]
+  },
+  "reference_plan": {
+   "modules": {
+    "quota": {
+     "worker": "delta",
+     "depends_on": [],
+     "settings": {
+      "max_workers": 2,
+      "retry_limit": 7
+     },
+     "files": [
+      "handlers.py"
+     ]
+    },
+    "profile": {
+     "worker": "beta",
+     "depends_on": [],
+     "settings": {
+      "ttl_s": 540,
+      "max_workers": 8
+     },
+     "files": [
+      "events.py",
+      "paths.py",
+      "codec.py"
+     ]
+    },
+    "archive": {
+     "worker": "beta",
+     "depends_on": [],
+     "settings": {
+      "timeout_s": 35,
+      "queue_depth": 260
+     },
+     "files": []
+    },
+    "indexer": {
+     "worker": "gamma",
+     "depends_on": [
+      "quota"
+     ],
+     "settings": {
+      "queue_depth": 190,
+      "ttl_s": 30
+     },
+     "files": [
+      "core.py",
+      "serial.py"
+     ]
+    },
+    "catalog": {
+     "worker": "alpha",
+     "depends_on": [],
+     "settings": {
+      "max_workers": 6,
+      "retry_limit": 9
+     },
+     "files": [
+      "render.py",
+      "views.py",
+      "worker.py"
+     ]
+    },
+    "search": {
+     "worker": "delta",
+     "depends_on": [
+      "profile"
+     ],
+     "settings": {
+      "queue_depth": 350,
+      "timeout_s": 50
+     },
+     "files": []
+    }
+   },
+   "order": [
+    "quota",
+    "profile",
+    "search",
+    "archive",
+    "indexer",
+    "catalog"
+   ]
+  },
+  "source": "Running notes from the Meridian planning meetings. Attendees rotated between Ken, Sofia, Priya, Ravi, Jonah. The plan covers modules quota, profile, archive, indexer, catalog, search.\n\nKickoff (Mon 3 Nov)\nRavi will check whether the legacy exporter can finally be retired. indexer must not depend on archive, not even indirectly through another module; legal flagged that coupling. Ravi's first draft put search's timeout_s at 55. Load tests from the old system are not comparable, so nobody should rely on those numbers. The rollout sequence needs profile ahead of catalog; that ordering is required. The client said they are happy with progress so far. The client said they are happy with progress so far.\n\nArchitecture sync (Tue 4 Nov)\nJonah made the point that search must depend on profile. Only delta can take quota, so it has to be assigned there. We talked about adopting a new linter, but there was no decision. Priya gave an update on the vendor contract; nothing blocking yet. Jonah gave an update on the vendor contract; nothing blocking yet. Budget review moved to next Thursday. We agreed that code review turnaround should stay under a day.\n\nOps review (Wed 5 Nov)\nCorrection: search's timeout_s is 50, not 55 as in the earlier draft; the earlier number is withdrawn. The file events.py belongs to profile and must be owned by that module. We talked about adopting a new linter, but there was no decision. The old runbook for indexer is out of date and needs a rewrite at some point. Because of the load profile, whenever catalog's retry_limit is above 8, quota's max_workers must be no more than 4. Priya's first draft put archive's queue_depth at 390. We talked about adopting a new linter, but there was no decision. Priya will be on leave for part of next week, so expect slower replies. The staging cluster was flaky again on Tuesday, which slowed everyone down.\n\nClient call (Thu 6 Nov)\nJonah flagged that two dashboards disagree about weekly active users; unrelated to this plan. We spent a while on naming conventions and agreed to revisit them later. We spent a while on naming conventions and agreed to revisit them later. catalog must be owned by worker alpha; nobody else has the credentials. In the legacy system profile ran with max_workers 20, which is irrelevant for the new plan. indexer has to declare a dependency on quota, since it consumes quota's output. Jonah gave an update on the vendor contract; nothing blocking yet. profile and search must go to different workers, for separation of duties. A timeout_s around 90 for archive might be nice; the team can choose. We talked about adopting a new linter, but there was no decision.\n\nPlanning (Fri 7 Nov)\nWe may want a design review for archive after launch. Ken asked whether we should rewrite quota in Rust; consensus was not this quarter. Nobody remembers why search was split out originally. Sofia was firm that paths.py has to live under profile. There was a long tangent about the office move. There was a long tangent about the office move. Ravi will check whether the legacy exporter can finally be retired. Ken would like indexer on delta if convenient, but that is not a requirement.\n\nWrap-up (Mon 10 Nov)\nNobody remembers why profile was split out originally. Correction: archive's queue_depth is 260, not 390 as in the earlier draft; the earlier number is withdrawn. We agreed that code review turnaround should stay under a day. Ravi gave an update on the vendor contract; nothing blocking yet. Priya explained the coupling: if archive.queue_depth exceeds 230, then indexer.ttl_s has to be at most 60. In the legacy system indexer ran with queue_depth 430, which is irrelevant for the new plan. Ken shared a dashboard with last month's error rates for the old system. Keep profile and archive on one worker; that is a requirement, not a preference. Hard requirement from the client: retry_limit on catalog is set to 9. Hard requirement from the client: queue_depth on search is set to 350.\n\nAnything not stated as required above is left to the team's judgment.",
+  "skeleton": "Project Meridian: produce the work plan as JSON.\nModules: quota, profile, archive, indexer, catalog, search\nSettings each module must define:\n  quota: max_workers (integer 2..32), retry_limit (integer 1..9)\n  profile: ttl_s (integer 30..600), max_workers (integer 2..32)\n  archive: timeout_s (integer 5..120), queue_depth (integer 10..500)\n  indexer: queue_depth (integer 10..500), ttl_s (integer 30..600)\n  catalog: max_workers (integer 2..32), retry_limit (integer 1..9)\n  search: queue_depth (integer 10..500), timeout_s (integer 5..120)\nFiles to assign (each owned by exactly one module): core.py, render.py, views.py, handlers.py, events.py, worker.py, serial.py, paths.py, codec.py\nWorkers: alpha, beta, gamma, delta\nOutput exactly one JSON object and nothing else:\n{\"modules\": {\"<module>\": {\"worker\": \"<worker>\", \"depends_on\": [\"<module>\", ...], \"settings\": {\"<key>\": <int>, ...}, \"files\": [\"<file>\", ...]}, ...}, \"order\": [\"<module>\", ...]}\nValidity rules: every module appears once; every file is owned by exactly one module; settings are integers in range; \"order\" lists every module once; every dependency comes earlier in \"order\"; no dependency cycles.\nFollow every hard requirement you were given. Where nothing is required, decide yourself.",
+  "ledger": "R01: \"paths.py\" in plan.modules.profile.files\nR02: plan.modules.catalog.settings.retry_limit > 8  =>  plan.modules.quota.settings.max_workers <= 4\nR04: \"profile\" in plan.modules.search.depends_on\nR05: plan.modules.archive.settings.queue_depth > 230  =>  plan.modules.indexer.settings.ttl_s <= 60\nR06: \"quota\" in plan.modules.indexer.depends_on\nR07: plan.modules.catalog.settings.retry_limit == 9\nR08: plan.modules.quota.worker == \"delta\"\nR09: plan.modules.profile.worker != plan.modules.search.worker\nR10: plan.modules.search.settings.timeout_s == 50\nR11: plan.modules.search.settings.queue_depth == 350\nR14: plan.modules.archive.settings.queue_depth == 260\nR15: not reachable(indexer -> archive) through depends_on, direct or transitive"
+ },
+ {
+  "seed": 1007,
+  "scale": 1,
+  "project": "Tundra",
+  "modules": [
+   "pricing",
+   "returns",
+   "tenant",
+   "sync",
+   "backup",
+   "shipping"
+  ],
+  "settings": {
+   "pricing": [
+    "retry_limit",
+    "queue_depth"
+   ],
+   "returns": [
+    "ttl_s",
+    "retry_limit"
+   ],
+   "tenant": [
+    "queue_depth",
+    "ttl_s"
+   ],
+   "sync": [
+    "queue_depth",
+    "batch_size"
+   ],
+   "backup": [
+    "timeout_s",
+    "retry_limit"
+   ],
+   "shipping": [
+    "ttl_s",
+    "max_workers"
+   ]
+  },
+  "files": [
+   "mapper.py",
+   "models.py",
+   "config.yaml",
+   "limits.py",
+   "render.py",
+   "stubs.py",
+   "serial.py",
+   "rules.py",
+   "locks.py"
+  ],
+  "workers": [
+   "alpha",
+   "beta",
+   "gamma",
+   "delta"
+  ],
+  "reqs": [
+   {
+    "id": "R01",
+    "kind": "file_owner",
+    "cls": "fact",
+    "p": {
+     "f": "models.py",
+     "m": "returns"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R02",
+    "kind": "diff_worker",
+    "cls": "relation",
+    "p": {
+     "a": "backup",
+     "b": "shipping"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R03",
+    "kind": "depends",
+    "cls": "relation",
+    "p": {
+     "a": "returns",
+     "b": "pricing"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R04",
+    "kind": "setting_eq",
+    "cls": "fact",
+    "p": {
+     "m": "tenant",
+     "k": "queue_depth",
+     "v": 490
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R05",
+    "kind": "setting_eq",
+    "cls": "fact",
+    "p": {
+     "m": "sync",
+     "k": "batch_size",
+     "v": 600
+    },
+    "formalized": false,
+    "revised": false
+   },
+   {
+    "id": "R06",
+    "kind": "conditional",
+    "cls": "relation",
+    "p": {
+     "a": "sync",
+     "ka": "batch_size",
+     "t": 450,
+     "b": "shipping",
+     "kb": "ttl_s",
+     "op": ">=",
+     "u": 570
+    },
+    "formalized": false,
+    "revised": false
+   },
+   {
+    "id": "R07",
+    "kind": "same_worker",
+    "cls": "relation",
+    "p": {
+     "a": "pricing",
+     "b": "returns"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R08",
+    "kind": "depends",
+    "cls": "relation",
+    "p": {
+     "a": "returns",
+     "b": "tenant"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R09",
+    "kind": "setting_eq",
+    "cls": "fact",
+    "p": {
+     "m": "pricing",
+     "k": "queue_depth",
+     "v": 370,
+     "old": 310
+    },
+    "formalized": false,
+    "revised": true
+   },
+   {
+    "id": "R10",
+    "kind": "file_owner",
+    "cls": "fact",
+    "p": {
+     "f": "mapper.py",
+     "m": "sync"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R11",
+    "kind": "conditional",
+    "cls": "relation",
+    "p": {
+     "a": "pricing",
+     "ka": "queue_depth",
+     "t": 340,
+     "b": "shipping",
+     "kb": "max_workers",
+     "op": ">=",
+     "u": 32
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R12",
+    "kind": "setting_eq",
+    "cls": "fact",
+    "p": {
+     "m": "returns",
+     "k": "retry_limit",
+     "v": 7,
+     "old": 1
+    },
+    "formalized": true,
+    "revised": true
+   },
+   {
+    "id": "R13",
+    "kind": "worker_eq",
+    "cls": "fact",
+    "p": {
+     "m": "backup",
+     "w": "delta"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R14",
+    "kind": "worker_eq",
+    "cls": "fact",
+    "p": {
+     "m": "pricing",
+     "w": "delta"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R15",
+    "kind": "not_depends",
+    "cls": "relation",
+    "p": {
+     "a": "returns",
+     "b": "sync"
+    },
+    "formalized": true,
+    "revised": false
+   },
+   {
+    "id": "R16",
+    "kind": "before",
+    "cls": "relation",
+    "p": {
+     "a": "sync",
+     "b": "backup"
+    },
+    "formalized": false,
+    "revised": false
+   }
+  ],
+  "free": {
+   "settings": [
+    "returns.ttl_s",
+    "sync.queue_depth",
+    "backup.timeout_s",
+    "pricing.retry_limit",
+    "tenant.ttl_s",
+    "backup.retry_limit"
+   ],
+   "files": [
+    "config.yaml",
+    "limits.py",
+    "render.py",
+    "stubs.py",
+    "serial.py",
+    "rules.py",
+    "locks.py"
+   ],
+   "workers": [
+    "tenant",
+    "sync"
+   ]
+  },
+  "reference_plan": {
+   "modules": {
+    "pricing": {
+     "worker": "delta",
+     "depends_on": [],
+     "settings": {
+      "retry_limit": 1,
+      "queue_depth": 370
+     },
+     "files": []
+    },
+    "returns": {
+     "worker": "delta",
+     "depends_on": [
+      "pricing",
+      "tenant"
+     ],
+     "settings": {
+      "ttl_s": 30,
+      "retry_limit": 7
+     },
+     "files": [
+      "models.py",
+      "limits.py"
+     ]
+    },
+    "tenant": {
+     "worker": "beta",
+     "depends_on": [],
+     "settings": {
+      "queue_depth": 490,
+      "ttl_s": 240
+     },
+     "files": [
+      "rules.py"
+     ]
+    },
+    "sync": {
+     "worker": "alpha",
+     "depends_on": [],
+     "settings": {
+      "queue_depth": 30,
+      "batch_size": 600
+     },
+     "files": [
+      "mapper.py",
+      "config.yaml"
+     ]
+    },
+    "backup": {
+     "worker": "delta",
+     "depends_on": [],
+     "settings": {
+      "timeout_s": 65,
+      "retry_limit": 5
+     },
+     "files": [
+      "render.py",
+      "locks.py"
+     ]
+    },
+    "shipping": {
+     "worker": "alpha",
+     "depends_on": [],
+     "settings": {
+      "ttl_s": 600,
+      "max_workers": 32
+     },
+     "files": [
+      "stubs.py",
+      "serial.py"
+     ]
+    }
+   },
+   "order": [
+    "tenant",
+    "sync",
+    "pricing",
+    "shipping",
+    "backup",
+    "returns"
+   ]
+  },
+  "source": "Running notes from the Tundra planning meetings. Attendees rotated between Maya, Ken, Sofia, Ravi, Tomas. The plan covers modules pricing, returns, tenant, sync, backup, shipping.\n\nKickoff (Mon 3 Nov)\nMaya is collecting feedback on API naming from the mobile team. Sofia reminded everyone that the on-call rota changes next month. Ravi will check whether the legacy exporter can finally be retired. Ravi flagged that two dashboards disagree about weekly active users; unrelated to this plan. Ken was firm that mapper.py has to live under sync. The rollout sequence needs sync ahead of backup; that ordering is required.\n\nArchitecture sync (Tue 4 Nov)\nThere is some concern that backup logs are far too verbose. Tomas's first draft put pricing's queue_depth at 310. pricing and returns must be handled by the same worker because they share a local cache. We spent a while on naming conventions and agreed to revisit them later. Ravi would like tenant on gamma if convenient, but that is not a requirement. The old runbook for pricing is out of date and needs a rewrite at some point. Retro feedback: fewer meetings, more written updates.\n\nOps review (Wed 5 Nov)\nTomas was firm that models.py has to live under returns. We talked about adopting a new linter, but there was no decision. Only delta can take backup, so it has to be assigned there. Ravi noted that the CI pipeline takes too long on large branches. returns has to declare a dependency on tenant, since it consumes tenant's output. The security review is scheduled for the end of the month. Tomas's first draft put returns's retry_limit at 1. Sofia will be on leave for part of next week, so expect slower replies. In the legacy system tenant ran with ttl_s 420, which is irrelevant for the new plan. Tomas is collecting feedback on API naming from the mobile team.\n\nClient call (Thu 6 Nov)\nKen made the point that returns must depend on pricing. Ravi shared a dashboard with last month's error rates for the old system. Tomas will be on leave for part of next week, so expect slower replies. The client said they are happy with progress so far. Documentation is behind and Maya volunteered to catch up. Sofia will check whether the legacy exporter can finally be retired. There is some concern that pricing logs are far too verbose.\n\nPlanning (Fri 7 Nov)\nBudget review moved to next Thursday. Audit insists backup and shipping are never handled by the same worker. Correction: pricing's queue_depth is 370, not 310 as in the earlier draft; the earlier number is withdrawn. The staging cluster was flaky again on Tuesday, which slowed everyone down. We discussed whether pricing needs its own database and are leaning towards no. Hard rule: no dependency path from returns to sync, direct or transitive. Hard requirement from the client: batch_size on sync is set to 600. Because of the load profile, whenever sync's batch_size is above 450, shipping's ttl_s must be at least 570. Historically backup caused most incidents, mostly through configuration drift. Because of the load profile, whenever pricing's queue_depth is above 340, shipping's max_workers must be at least 32. A retry_limit around 3 for pricing might be nice; the team can choose. Someone raised the idea of a shared metrics library; parked for now. Ravi flagged that two dashboards disagree about weekly active users; unrelated to this plan.\n\nWrap-up (Mon 10 Nov)\nRavi will be on leave for part of next week, so expect slower replies. pricing must be owned by worker delta; nobody else has the credentials. In the legacy system tenant ran with queue_depth 410, which is irrelevant for the new plan. Sofia confirmed that tenant's queue_depth has to be exactly 490. There is some concern that returns logs are far too verbose. Maya will be on leave for part of next week, so expect slower replies. Documentation is behind and Ken volunteered to catch up. Maya flagged that two dashboards disagree about weekly active users; unrelated to this plan. Correction: returns's retry_limit is 7, not 1 as in the earlier draft; the earlier number is withdrawn. Nobody remembers why sync was split out originally.\n\nAnything not stated as required above is left to the team's judgment.",
+  "skeleton": "Project Tundra: produce the work plan as JSON.\nModules: pricing, returns, tenant, sync, backup, shipping\nSettings each module must define:\n  pricing: retry_limit (integer 1..9), queue_depth (integer 10..500)\n  returns: ttl_s (integer 30..600), retry_limit (integer 1..9)\n  tenant: queue_depth (integer 10..500), ttl_s (integer 30..600)\n  sync: queue_depth (integer 10..500), batch_size (integer 100..900)\n  backup: timeout_s (integer 5..120), retry_limit (integer 1..9)\n  shipping: ttl_s (integer 30..600), max_workers (integer 2..32)\nFiles to assign (each owned by exactly one module): mapper.py, models.py, config.yaml, limits.py, render.py, stubs.py, serial.py, rules.py, locks.py\nWorkers: alpha, beta, gamma, delta\nOutput exactly one JSON object and nothing else:\n{\"modules\": {\"<module>\": {\"worker\": \"<worker>\", \"depends_on\": [\"<module>\", ...], \"settings\": {\"<key>\": <int>, ...}, \"files\": [\"<file>\", ...]}, ...}, \"order\": [\"<module>\", ...]}\nValidity rules: every module appears once; every file is owned by exactly one module; settings are integers in range; \"order\" lists every module once; every dependency comes earlier in \"order\"; no dependency cycles.\nFollow every hard requirement you were given. Where nothing is required, decide yourself.",
+  "ledger": "R01: \"models.py\" in plan.modules.returns.files\nR02: plan.modules.backup.worker != plan.modules.shipping.worker\nR03: \"pricing\" in plan.modules.returns.depends_on\nR04: plan.modules.tenant.settings.queue_depth == 490\nR07: plan.modules.pricing.worker == plan.modules.returns.worker\nR08: \"tenant\" in plan.modules.returns.depends_on\nR10: \"mapper.py\" in plan.modules.sync.files\nR11: plan.modules.pricing.settings.queue_depth > 340  =>  plan.modules.shipping.settings.max_workers >= 32\nR12: plan.modules.returns.settings.retry_limit == 7\nR13: plan.modules.backup.worker == \"delta\"\nR14: plan.modules.pricing.worker == \"delta\"\nR15: not reachable(returns -> sync) through depends_on, direct or transitive"
+ }
+]

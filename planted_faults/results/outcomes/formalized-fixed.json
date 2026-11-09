@@ -1,0 +1,35 @@
+{
+  "arm": "formalized",
+  "fault": "fixed",
+  "category": "none",
+  "rule": "Nov 3 files, duplicated check removed",
+  "nov3_level": null,
+  "result": "Accepted",
+  "evidence": "no fault planted; run accepted",
+  "checks_fired_at_root": [],
+  "root_failures": [],
+  "module_repairs": [],
+  "suite_runs": [
+    {
+      "passed": 125,
+      "failed": 0,
+      "error": 0,
+      "failing_cases": []
+    }
+  ],
+  "run_accepted": true,
+  "states": {
+    "__contract_integration__": "ACCEPTED",
+    "__contract_composition__": "ACCEPTED",
+    "foundation": "ACCEPTED",
+    "merchandising": "ACCEPTED",
+    "fulfillment": "ACCEPTED",
+    "exchange-views": "ACCEPTED",
+    "transports": "ACCEPTED"
+  },
+  "fault_in_final_workspace": null,
+  "escape_file_written": false,
+  "bridge_requests": 7,
+  "elapsed_s": 301.4,
+  "error": null
+}

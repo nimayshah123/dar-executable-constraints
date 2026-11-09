@@ -1,0 +1,3 @@
+lib/base.mjs
+- tmp=path.join(dir,'.state-'+randomUUID()+'.tmp');const fd=fs.openSync(tmp,'wx');try{fs.writeFileSync(fd,bytes,'utf8');fs.fsyncSync(fd);}finally{fs.closeSync(fd);}fs.renameSync(tmp,path.join(dir,'state.json'));
++ fs.writeFileSync(path.join(dir,'state.json'),bytes,'utf8');

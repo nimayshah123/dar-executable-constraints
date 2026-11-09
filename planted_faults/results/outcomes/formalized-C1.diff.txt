@@ -1,0 +1,3 @@
+lib/catalog.mjs
+- if(action==='put'){const value=
++ if(action==='put'){if(Object.hasOwn(c,'price'))ensure(Number.isSafeInteger(c.price)&&c.price>=1,'BAD_REQUEST');const value=

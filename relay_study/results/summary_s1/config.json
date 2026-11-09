@@ -1,0 +1,22 @@
+{
+  "tasks": 8,
+  "scale": 1,
+  "samples": 2,
+  "depths": 4,
+  "budget": 150,
+  "compress": "summary",
+  "rounds": 2,
+  "seed0": 1000,
+  "backend": "claude_cli",
+  "temperature": null,
+  "relay_model": "haiku",
+  "exec_model": "haiku",
+  "root_model": "sonnet",
+  "judge_model": "sonnet",
+  "loop_depths": "0,1,4",
+  "conds": "B,C",
+  "workers": 10,
+  "cache": "results/cache",
+  "out": "results/summary_s1",
+  "chains_only": false
+}

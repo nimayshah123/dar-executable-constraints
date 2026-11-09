@@ -1,0 +1,3 @@
+lib/catalog.mjs
+- const sku=get(ctx.data,'skus',skuId);ensure(sku.active,'INACTIVE');
++ const sku=get(ctx.data,'skus',skuId);

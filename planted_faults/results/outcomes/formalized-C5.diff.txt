@@ -1,0 +1,3 @@
+lib/views.mjs
+- const cmp=(a,b)=>a<b?-1:a>b?1:0;
++ const cmp=(a,b)=>a.localeCompare(b);

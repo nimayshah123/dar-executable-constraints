@@ -1,0 +1,1056 @@
+{
+  "fbs_commit": "7630497",
+  "node": "v25.8.1",
+  "results": [
+    {
+      "arm": "as-run",
+      "fault": "clean",
+      "category": "none",
+      "rule": "Nov 3 files as delivered",
+      "nov3_level": null,
+      "result": "Accepted",
+      "evidence": "no fault planted; run accepted",
+      "checks_fired_at_root": [],
+      "root_failures": [],
+      "module_repairs": [],
+      "suite_runs": [
+        {
+          "passed": 125,
+          "failed": 0,
+          "error": 0,
+          "failing_cases": []
+        }
+      ],
+      "run_accepted": true,
+      "states": {
+        "__contract_integration__": "ACCEPTED",
+        "__contract_composition__": "ACCEPTED",
+        "foundation": "ACCEPTED",
+        "merchandising": "ACCEPTED",
+        "fulfillment": "ACCEPTED",
+        "exchange-views": "ACCEPTED",
+        "transports": "ACCEPTED"
+      },
+      "fault_in_final_workspace": null,
+      "escape_file_written": false,
+      "bridge_requests": 7,
+      "elapsed_s": 304.3,
+      "error": null
+    },
+    {
+      "arm": "as-run",
+      "fault": "P1",
+      "category": "Root plan",
+      "rule": "Two modules own the same file (lib/base.mjs)",
+      "nov3_level": "Blocked by code",
+      "result": "Blocked at plan",
+      "evidence": "ValueError: decomposition must preserve artifact ownership exactly",
+      "checks_fired_at_root": [],
+      "root_failures": [],
+      "module_repairs": [],
+      "suite_runs": [],
+      "run_accepted": false,
+      "states": {},
+      "fault_in_final_workspace": null,
+      "escape_file_written": false,
+      "bridge_requests": 1,
+      "elapsed_s": 0.3,
+      "error": "ValueError: decomposition must preserve artifact ownership exactly"
+    },
+    {
+      "arm": "as-run",
+      "fault": "P2",
+      "category": "Root plan",
+      "rule": "A TASK line (R177, the hidden test scenarios) is left without any check",
+      "nov3_level": "Blocked by code",
+      "result": "Blocked at plan",
+      "evidence": "ValueError: uncovered source requirements: ['R177']",
+      "checks_fired_at_root": [],
+      "root_failures": [],
+      "module_repairs": [],
+      "suite_runs": [],
+      "run_accepted": false,
+      "states": {},
+      "fault_in_final_workspace": null,
+      "escape_file_written": false,
+      "bridge_requests": 1,
+      "elapsed_s": 0.3,
+      "error": "ValueError: uncovered source requirements: ['R177']"
+    },
+    {
+      "arm": "as-run",
+      "fault": "P3",
+      "category": "Root plan",
+      "rule": "A module owns a path outside the workspace (../views.mjs)",
+      "nov3_level": "Blocked by code",
+      "result": "Blocked at plan",
+      "evidence": "ValueError: decomposition must preserve artifact ownership exactly",
+      "checks_fired_at_root": [],
+      "root_failures": [],
+      "module_repairs": [],
+      "suite_runs": [],
+      "run_accepted": false,
+      "states": {},
+      "fault_in_final_workspace": null,
+      "escape_file_written": false,
+      "bridge_requests": 1,
+      "elapsed_s": 0.3,
+      "error": "ValueError: decomposition must preserve artifact ownership exactly"
+    },
+    {
+      "arm": "as-run",
+      "fault": "P4",
+      "category": "Root plan",
+      "rule": "Root replaces the independent suite with file existence checks",
+      "nov3_level": "Blocked by code",
+      "result": "Blocked at plan",
+      "evidence": "ValueError: acceptance category build: check exists:lib/base.mjs has insufficient evidence kind file_exists",
+      "checks_fired_at_root": [],
+      "root_failures": [],
+      "module_repairs": [],
+      "suite_runs": [],
+      "run_accepted": false,
+      "states": {},
+      "fault_in_final_workspace": null,
+      "escape_file_written": false,
+      "bridge_requests": 1,
+      "elapsed_s": 0.3,
+      "error": "ValueError: acceptance category build: check exists:lib/base.mjs has insufficient evidence kind file_exists"
+    },
+    {
+      "arm": "as-run",
+      "fault": "P5",
+      "category": "Root plan",
+      "rule": "Root edits the host acceptance profile (functional tests marked not applicable)",
+      "nov3_level": "Blocked by code",
+      "result": "Blocked at plan",
+      "evidence": "ValueError: planner changed the host acceptance profile",
+      "checks_fired_at_root": [],
+      "root_failures": [],
+      "module_repairs": [],
+      "suite_runs": [],
+      "run_accepted": false,
+      "states": {},
+      "fault_in_final_workspace": null,
+      "escape_file_written": false,
+      "bridge_requests": 1,
+      "elapsed_s": 0.3,
+      "error": "ValueError: planner changed the host acceptance profile"
+    },
+    {
+      "arm": "as-run",
+      "fault": "P6",
+      "category": "Root plan",
+      "rule": "Dependency cycle (foundation waits for transports)",
+      "nov3_level": "Blocked by code",
+      "result": "Blocked at plan",
+      "evidence": "CycleError: 检测到环形依赖: exchange-views -> foundation -> transports -> exchange-views",
+      "checks_fired_at_root": [],
+      "root_failures": [],
+      "module_repairs": [],
+      "suite_runs": [],
+      "run_accepted": false,
+      "states": {},
+      "fault_in_final_workspace": null,
+      "escape_file_written": false,
+      "bridge_requests": 1,
+      "elapsed_s": 0.3,
+      "error": "CycleError: 检测到环形依赖: exchange-views -> foundation -> transports -> exchange-views"
+    },
+    {
+      "arm": "as-run",
+      "fault": "D1",
+      "category": "Worker delivery",
+      "rule": "Worker omits one of its files (lib/views.mjs)",
+      "nov3_level": "Blocked by code",
+      "result": "Blocked at delivery",
+      "evidence": "exchange-views: functional work unit must deliver all current owned files in one response",
+      "checks_fired_at_root": [],
+      "root_failures": [],
+      "module_repairs": [
+        {
+          "task_id": "exchange-views",
+          "errors": [
+            "functional work unit must deliver all current owned files in one response"
+          ]
+        }
+      ],
+      "suite_runs": [
+        {
+          "passed": 125,
+          "failed": 0,
+          "error": 0,
+          "failing_cases": []
+        }
+      ],
+      "run_accepted": true,
+      "states": {
+        "__contract_integration__": "ACCEPTED",
+        "__contract_composition__": "ACCEPTED",
+        "foundation": "ACCEPTED",
+        "merchandising": "ACCEPTED",
+        "fulfillment": "ACCEPTED",
+        "exchange-views": "ACCEPTED",
+        "transports": "ACCEPTED"
+      },
+      "fault_in_final_workspace": null,
+      "escape_file_written": false,
+      "bridge_requests": 8,
+      "elapsed_s": 304.7,
+      "error": null
+    },
+    {
+      "arm": "as-run",
+      "fault": "D2",
+      "category": "Worker delivery",
+      "rule": "Worker also writes a sibling's file (lib/base.mjs with a loosened limit)",
+      "nov3_level": "Blocked by code",
+      "result": "Blocked at delivery",
+      "evidence": "fulfillment: functional work unit must deliver all current owned files in one response",
+      "checks_fired_at_root": [],
+      "root_failures": [],
+      "module_repairs": [
+        {
+          "task_id": "fulfillment",
+          "errors": [
+            "functional work unit must deliver all current owned files in one response"
+          ]
+        }
+      ],
+      "suite_runs": [
+        {
+          "passed": 125,
+          "failed": 0,
+          "error": 0,
+          "failing_cases": []
+        }
+      ],
+      "run_accepted": true,
+      "states": {
+        "__contract_integration__": "ACCEPTED",
+        "__contract_composition__": "ACCEPTED",
+        "foundation": "ACCEPTED",
+        "merchandising": "ACCEPTED",
+        "fulfillment": "ACCEPTED",
+        "exchange-views": "ACCEPTED",
+        "transports": "ACCEPTED"
+      },
+      "fault_in_final_workspace": null,
+      "escape_file_written": false,
+      "bridge_requests": 8,
+      "elapsed_s": 305.6,
+      "error": null
+    },
+    {
+      "arm": "as-run",
+      "fault": "D3",
+      "category": "Worker delivery",
+      "rule": "Worker writes outside the workspace (../../escape.mjs)",
+      "nov3_level": "Blocked by code",
+      "result": "Blocked at delivery",
+      "evidence": "merchandising: functional work unit must deliver all current owned files in one response",
+      "checks_fired_at_root": [],
+      "root_failures": [],
+      "module_repairs": [
+        {
+          "task_id": "merchandising",
+          "errors": [
+            "functional work unit must deliver all current owned files in one response"
+          ]
+        }
+      ],
+      "suite_runs": [
+        {
+          "passed": 125,
+          "failed": 0,
+          "error": 0,
+          "failing_cases": []
+        }
+      ],
+      "run_accepted": true,
+      "states": {
+        "__contract_integration__": "ACCEPTED",
+        "__contract_composition__": "ACCEPTED",
+        "foundation": "ACCEPTED",
+        "merchandising": "ACCEPTED",
+        "fulfillment": "ACCEPTED",
+        "exchange-views": "ACCEPTED",
+        "transports": "ACCEPTED"
+      },
+      "fault_in_final_workspace": null,
+      "escape_file_written": false,
+      "bridge_requests": 8,
+      "elapsed_s": 303.7,
+      "error": null
+    },
+    {
+      "arm": "as-run",
+      "fault": "D4",
+      "category": "Worker delivery",
+      "rule": "Worker delivers code that does not parse",
+      "nov3_level": "Blocked by code",
+      "result": "Blocked at delivery",
+      "evidence": "merchandising: node --check 失败 lib/catalog.mjs: D:\\dar_planted_faults\\runs\\as-run-D4\\run\\workspace\\lib\\catalog.mjs:20 } ^ SyntaxError: Unexpected token '}' at checkSyntax (node:internal/main/check_syntax:72:5) Node.js v25.8.1",
+      "checks_fired_at_root": [],
+      "root_failures": [],
+      "module_repairs": [
+        {
+          "task_id": "merchandising",
+          "errors": [
+            "node --check 失败 lib/catalog.mjs: D:\\dar_planted_faults\\runs\\as-run-D4\\run\\workspace\\lib\\catalog.mjs:20 } ^ SyntaxError: Unexpected token '}' at checkSyntax (node:internal/main/check_syntax:72:5) Node.js v25.8.1"
+          ]
+        }
+      ],
+      "suite_runs": [
+        {
+          "passed": 125,
+          "failed": 0,
+          "error": 0,
+          "failing_cases": []
+        }
+      ],
+      "run_accepted": true,
+      "states": {
+        "__contract_integration__": "ACCEPTED",
+        "__contract_composition__": "ACCEPTED",
+        "foundation": "ACCEPTED",
+        "merchandising": "ACCEPTED",
+        "fulfillment": "ACCEPTED",
+        "exchange-views": "ACCEPTED",
+        "transports": "ACCEPTED"
+      },
+      "fault_in_final_workspace": null,
+      "escape_file_written": false,
+      "bridge_requests": 8,
+      "elapsed_s": 179.2,
+      "error": null
+    },
+    {
+      "arm": "as-run",
+      "fault": "B1",
+      "category": "Behavior",
+      "rule": "Duplicate lot id returns INVALID_STATE instead of ALREADY_EXISTS (R96, R47)",
+      "nov3_level": "Caught at root",
+      "result": "Caught at root",
+      "evidence": "official suite failed: public-rollback-keeps-clock-audit-cache-and-state, public-http-flow-real-socket-restart-and-cli, stock-adjust-move-disabled-source-uniqueness-and-zero, csv-later-business-error-rolls-back-all-rows-and-prefix",
+      "checks_fired_at_root": [
+        "official"
+      ],
+      "root_failures": [
+        {
+          "id": "official",
+          "status": "failed",
+          "detail": "{\"report\": \"D:\\\\dar_planted_faults\\\\runs\\\\as-run-B1\\\\run\\\\official-acceptance-1.json\", \"summary\": {\"passed\": 121, \"failed\": 4, \"error\": 0, \"assertions\": 2599}, \"exit_code\": 1, \"failures\": [{\"name\": \"public-rollback-keeps-clock-audit-cache-and-state\", \"error\": null, \"assertions\": [{\"label\": \"public r..."
+        }
+      ],
+      "module_repairs": [],
+      "suite_runs": [
+        {
+          "passed": 121,
+          "failed": 4,
+          "error": 0,
+          "failing_cases": [
+            "public-rollback-keeps-clock-audit-cache-and-state",
+            "public-http-flow-real-socket-restart-and-cli",
+            "stock-adjust-move-disabled-source-uniqueness-and-zero",
+            "csv-later-business-error-rolls-back-all-rows-and-prefix"
+          ]
+        }
+      ],
+      "run_accepted": false,
+      "states": {
+        "__contract_integration__": "ACCEPTED",
+        "__contract_composition__": "FAILED",
+        "foundation": "ACCEPTED",
+        "merchandising": "ACCEPTED",
+        "fulfillment": "ACCEPTED",
+        "exchange-views": "ACCEPTED",
+        "transports": "ACCEPTED"
+      },
+      "fault_in_final_workspace": true,
+      "escape_file_written": false,
+      "bridge_requests": 7,
+      "elapsed_s": 174.9,
+      "error": null
+    },
+    {
+      "arm": "as-run",
+      "fault": "B2",
+      "category": "Behavior",
+      "rule": "Quote accepts an inactive SKU (R106)",
+      "nov3_level": "Caught at root",
+      "result": "Caught at root",
+      "evidence": "official suite failed: reference-business-state-errors-and-partial-allocation-rollback",
+      "checks_fired_at_root": [
+        "official"
+      ],
+      "root_failures": [
+        {
+          "id": "official",
+          "status": "failed",
+          "detail": "{\"report\": \"D:\\\\dar_planted_faults\\\\runs\\\\as-run-B2\\\\run\\\\official-acceptance-1.json\", \"summary\": {\"passed\": 124, \"failed\": 1, \"error\": 0, \"assertions\": 2599}, \"exit_code\": 1, \"failures\": [{\"name\": \"reference-business-state-errors-and-partial-allocation-rollback\", \"error\": null, \"assertions\": [{\"lab..."
+        }
+      ],
+      "module_repairs": [],
+      "suite_runs": [
+        {
+          "passed": 124,
+          "failed": 1,
+          "error": 0,
+          "failing_cases": [
+            "reference-business-state-errors-and-partial-allocation-rollback"
+          ]
+        }
+      ],
+      "run_accepted": false,
+      "states": {
+        "__contract_integration__": "ACCEPTED",
+        "__contract_composition__": "FAILED",
+        "foundation": "ACCEPTED",
+        "merchandising": "ACCEPTED",
+        "fulfillment": "ACCEPTED",
+        "exchange-views": "ACCEPTED",
+        "transports": "ACCEPTED"
+      },
+      "fault_in_final_workspace": true,
+      "escape_file_written": false,
+      "bridge_requests": 7,
+      "elapsed_s": 167.0,
+      "error": null
+    },
+    {
+      "arm": "as-run",
+      "fault": "B3",
+      "category": "Behavior",
+      "rule": "Commit overwrites the state file in place, without temp file, rename or fsync (R63 crash safety)",
+      "nov3_level": "Caught at root",
+      "result": "Missed",
+      "evidence": "no check fired; run accepted",
+      "checks_fired_at_root": [],
+      "root_failures": [],
+      "module_repairs": [],
+      "suite_runs": [
+        {
+          "passed": 125,
+          "failed": 0,
+          "error": 0,
+          "failing_cases": []
+        }
+      ],
+      "run_accepted": true,
+      "states": {
+        "__contract_integration__": "ACCEPTED",
+        "__contract_composition__": "ACCEPTED",
+        "foundation": "ACCEPTED",
+        "merchandising": "ACCEPTED",
+        "fulfillment": "ACCEPTED",
+        "exchange-views": "ACCEPTED",
+        "transports": "ACCEPTED"
+      },
+      "fault_in_final_workspace": true,
+      "escape_file_written": false,
+      "bridge_requests": 7,
+      "elapsed_s": 191.8,
+      "error": null
+    },
+    {
+      "arm": "as-run",
+      "fault": "B4",
+      "category": "Behavior",
+      "rule": "A corrupt store is silently reset to empty instead of STORE_CORRUPT (R61)",
+      "nov3_level": "Caught at root",
+      "result": "Missed",
+      "evidence": "no check fired; run accepted",
+      "checks_fired_at_root": [],
+      "root_failures": [],
+      "module_repairs": [],
+      "suite_runs": [
+        {
+          "passed": 125,
+          "failed": 0,
+          "error": 0,
+          "failing_cases": []
+        }
+      ],
+      "run_accepted": true,
+      "states": {
+        "__contract_integration__": "ACCEPTED",
+        "__contract_composition__": "ACCEPTED",
+        "foundation": "ACCEPTED",
+        "merchandising": "ACCEPTED",
+        "fulfillment": "ACCEPTED",
+        "exchange-views": "ACCEPTED",
+        "transports": "ACCEPTED"
+      },
+      "fault_in_final_workspace": true,
+      "escape_file_written": false,
+      "bridge_requests": 7,
+      "elapsed_s": 174.2,
+      "error": null
+    },
+    {
+      "arm": "as-run",
+      "fault": "C1",
+      "category": "Plan rule to Workers",
+      "rule": "Catalog repeats price validation that base owns (C3, no duplicated logic)",
+      "nov3_level": "Prompt only",
+      "result": "Missed",
+      "evidence": "no check fired; run accepted",
+      "checks_fired_at_root": [],
+      "root_failures": [],
+      "module_repairs": [],
+      "suite_runs": [
+        {
+          "passed": 125,
+          "failed": 0,
+          "error": 0,
+          "failing_cases": []
+        }
+      ],
+      "run_accepted": true,
+      "states": {
+        "__contract_integration__": "ACCEPTED",
+        "__contract_composition__": "ACCEPTED",
+        "foundation": "ACCEPTED",
+        "merchandising": "ACCEPTED",
+        "fulfillment": "ACCEPTED",
+        "exchange-views": "ACCEPTED",
+        "transports": "ACCEPTED"
+      },
+      "fault_in_final_workspace": true,
+      "escape_file_written": false,
+      "bridge_requests": 7,
+      "elapsed_s": 173.1,
+      "error": null
+    },
+    {
+      "arm": "as-run",
+      "fault": "C2",
+      "category": "Plan rule to Workers",
+      "rule": "Catalog imports views (I14, only engine and transports may)",
+      "nov3_level": "Prompt only",
+      "result": "Missed",
+      "evidence": "no check fired; run accepted",
+      "checks_fired_at_root": [],
+      "root_failures": [],
+      "module_repairs": [],
+      "suite_runs": [
+        {
+          "passed": 125,
+          "failed": 0,
+          "error": 0,
+          "failing_cases": []
+        }
+      ],
+      "run_accepted": true,
+      "states": {
+        "__contract_integration__": "ACCEPTED",
+        "__contract_composition__": "ACCEPTED",
+        "foundation": "ACCEPTED",
+        "merchandising": "ACCEPTED",
+        "fulfillment": "ACCEPTED",
+        "exchange-views": "ACCEPTED",
+        "transports": "ACCEPTED"
+      },
+      "fault_in_final_workspace": true,
+      "escape_file_written": false,
+      "bridge_requests": 7,
+      "elapsed_s": 172.2,
+      "error": null
+    },
+    {
+      "arm": "as-run",
+      "fault": "C3",
+      "category": "Plan rule to Workers",
+      "rule": "A handler writes its own audit record (I3, the engine is the only audit writer)",
+      "nov3_level": "Prompt only",
+      "result": "Missed",
+      "evidence": "no check fired; run accepted",
+      "checks_fired_at_root": [],
+      "root_failures": [],
+      "module_repairs": [],
+      "suite_runs": [
+        {
+          "passed": 125,
+          "failed": 0,
+          "error": 0,
+          "failing_cases": []
+        }
+      ],
+      "run_accepted": true,
+      "states": {
+        "__contract_integration__": "ACCEPTED",
+        "__contract_composition__": "ACCEPTED",
+        "foundation": "ACCEPTED",
+        "merchandising": "ACCEPTED",
+        "fulfillment": "ACCEPTED",
+        "exchange-views": "ACCEPTED",
+        "transports": "ACCEPTED"
+      },
+      "fault_in_final_workspace": true,
+      "escape_file_written": false,
+      "bridge_requests": 7,
+      "elapsed_s": 170.4,
+      "error": null
+    },
+    {
+      "arm": "as-run",
+      "fault": "C4",
+      "category": "Plan rule to Workers",
+      "rule": "CSV import creates lots itself instead of calling fulfillment (I10, one owner of lot changes)",
+      "nov3_level": "Prompt only",
+      "result": "Missed",
+      "evidence": "no check fired; run accepted",
+      "checks_fired_at_root": [],
+      "root_failures": [],
+      "module_repairs": [],
+      "suite_runs": [
+        {
+          "passed": 125,
+          "failed": 0,
+          "error": 0,
+          "failing_cases": []
+        }
+      ],
+      "run_accepted": true,
+      "states": {
+        "__contract_integration__": "ACCEPTED",
+        "__contract_composition__": "ACCEPTED",
+        "foundation": "ACCEPTED",
+        "merchandising": "ACCEPTED",
+        "fulfillment": "ACCEPTED",
+        "exchange-views": "ACCEPTED",
+        "transports": "ACCEPTED"
+      },
+      "fault_in_final_workspace": true,
+      "escape_file_written": false,
+      "bridge_requests": 7,
+      "elapsed_s": 178.2,
+      "error": null
+    },
+    {
+      "arm": "as-run",
+      "fault": "C5",
+      "category": "Plan rule to Workers",
+      "rule": "Inventory report sorts ids with localeCompare (R79, no locale order)",
+      "nov3_level": "Prompt only",
+      "result": "Caught at root",
+      "evidence": "official suite failed: FEFO-expiry-priority-warehouse-lot-ASCII-null",
+      "checks_fired_at_root": [
+        "official"
+      ],
+      "root_failures": [
+        {
+          "id": "official",
+          "status": "failed",
+          "detail": "{\"report\": \"D:\\\\dar_planted_faults\\\\runs\\\\as-run-C5\\\\run\\\\official-acceptance-1.json\", \"summary\": {\"passed\": 124, \"failed\": 1, \"error\": 0, \"assertions\": 2599}, \"exit_code\": 1, \"failures\": [{\"name\": \"FEFO-expiry-priority-warehouse-lot-ASCII-null\", \"error\": null, \"assertions\": [{\"label\": \"inventory re..."
+        }
+      ],
+      "module_repairs": [],
+      "suite_runs": [
+        {
+          "passed": 124,
+          "failed": 1,
+          "error": 0,
+          "failing_cases": [
+            "FEFO-expiry-priority-warehouse-lot-ASCII-null"
+          ]
+        }
+      ],
+      "run_accepted": false,
+      "states": {
+        "__contract_integration__": "ACCEPTED",
+        "__contract_composition__": "FAILED",
+        "foundation": "ACCEPTED",
+        "merchandising": "ACCEPTED",
+        "fulfillment": "ACCEPTED",
+        "exchange-views": "ACCEPTED",
+        "transports": "ACCEPTED"
+      },
+      "fault_in_final_workspace": true,
+      "escape_file_written": false,
+      "bridge_requests": 7,
+      "elapsed_s": 165.3,
+      "error": null
+    },
+    {
+      "arm": "formalized",
+      "fault": "clean",
+      "category": "none",
+      "rule": "Nov 3 files as delivered",
+      "nov3_level": null,
+      "result": "Caught at root",
+      "evidence": "rule:base-owns-validation: Business modules do not repeat structural validation that base owns; violated at lib/fulfillment.mjs:8",
+      "checks_fired_at_root": [
+        "rule:base-owns-validation"
+      ],
+      "root_failures": [
+        {
+          "id": "rule:base-owns-validation",
+          "status": "failed",
+          "detail": "Business modules do not repeat structural validation that base owns; violated at lib/fulfillment.mjs:8"
+        }
+      ],
+      "module_repairs": [],
+      "suite_runs": [
+        {
+          "passed": 125,
+          "failed": 0,
+          "error": 0,
+          "failing_cases": []
+        }
+      ],
+      "run_accepted": false,
+      "states": {
+        "__contract_integration__": "ACCEPTED",
+        "__contract_composition__": "FAILED",
+        "foundation": "ACCEPTED",
+        "merchandising": "ACCEPTED",
+        "fulfillment": "ACCEPTED",
+        "exchange-views": "ACCEPTED",
+        "transports": "ACCEPTED"
+      },
+      "fault_in_final_workspace": null,
+      "escape_file_written": false,
+      "bridge_requests": 7,
+      "elapsed_s": 166.1,
+      "error": null
+    },
+    {
+      "arm": "formalized",
+      "fault": "fixed",
+      "category": "none",
+      "rule": "Nov 3 files, duplicated check removed",
+      "nov3_level": null,
+      "result": "Accepted",
+      "evidence": "no fault planted; run accepted",
+      "checks_fired_at_root": [],
+      "root_failures": [],
+      "module_repairs": [],
+      "suite_runs": [
+        {
+          "passed": 125,
+          "failed": 0,
+          "error": 0,
+          "failing_cases": []
+        }
+      ],
+      "run_accepted": true,
+      "states": {
+        "__contract_integration__": "ACCEPTED",
+        "__contract_composition__": "ACCEPTED",
+        "foundation": "ACCEPTED",
+        "merchandising": "ACCEPTED",
+        "fulfillment": "ACCEPTED",
+        "exchange-views": "ACCEPTED",
+        "transports": "ACCEPTED"
+      },
+      "fault_in_final_workspace": null,
+      "escape_file_written": false,
+      "bridge_requests": 7,
+      "elapsed_s": 301.4,
+      "error": null
+    },
+    {
+      "arm": "formalized",
+      "fault": "B3",
+      "category": "Behavior",
+      "rule": "Commit overwrites the state file in place, without temp file, rename or fsync (R63 crash safety)",
+      "nov3_level": "Caught at root",
+      "result": "Missed",
+      "evidence": "no check fired; run accepted",
+      "checks_fired_at_root": [],
+      "root_failures": [],
+      "module_repairs": [],
+      "suite_runs": [
+        {
+          "passed": 125,
+          "failed": 0,
+          "error": 0,
+          "failing_cases": []
+        }
+      ],
+      "run_accepted": true,
+      "states": {
+        "__contract_integration__": "ACCEPTED",
+        "__contract_composition__": "ACCEPTED",
+        "foundation": "ACCEPTED",
+        "merchandising": "ACCEPTED",
+        "fulfillment": "ACCEPTED",
+        "exchange-views": "ACCEPTED",
+        "transports": "ACCEPTED"
+      },
+      "fault_in_final_workspace": true,
+      "escape_file_written": false,
+      "bridge_requests": 7,
+      "elapsed_s": 302.4,
+      "error": null
+    },
+    {
+      "arm": "formalized",
+      "fault": "B4",
+      "category": "Behavior",
+      "rule": "A corrupt store is silently reset to empty instead of STORE_CORRUPT (R61)",
+      "nov3_level": "Caught at root",
+      "result": "Caught at root",
+      "evidence": "behavior:store-corrupt: A corrupt store is reported as STORE_CORRUPT and never silently reset; corrupt store answered ok=True code=None",
+      "checks_fired_at_root": [
+        "behavior:store-corrupt"
+      ],
+      "root_failures": [
+        {
+          "id": "behavior:store-corrupt",
+          "status": "failed",
+          "detail": "A corrupt store is reported as STORE_CORRUPT and never silently reset; corrupt store answered ok=True code=None"
+        }
+      ],
+      "module_repairs": [],
+      "suite_runs": [
+        {
+          "passed": 125,
+          "failed": 0,
+          "error": 0,
+          "failing_cases": []
+        }
+      ],
+      "run_accepted": false,
+      "states": {
+        "__contract_integration__": "ACCEPTED",
+        "__contract_composition__": "FAILED",
+        "foundation": "ACCEPTED",
+        "merchandising": "ACCEPTED",
+        "fulfillment": "ACCEPTED",
+        "exchange-views": "ACCEPTED",
+        "transports": "ACCEPTED"
+      },
+      "fault_in_final_workspace": true,
+      "escape_file_written": false,
+      "bridge_requests": 7,
+      "elapsed_s": 302.9,
+      "error": null
+    },
+    {
+      "arm": "formalized",
+      "fault": "C1",
+      "category": "Plan rule to Workers",
+      "rule": "Catalog repeats price validation that base owns (C3, no duplicated logic)",
+      "nov3_level": "Prompt only",
+      "result": "Caught at root",
+      "evidence": "rule:base-owns-validation: Business modules do not repeat structural validation that base owns; violated at lib/catalog.mjs:17",
+      "checks_fired_at_root": [
+        "rule:base-owns-validation"
+      ],
+      "root_failures": [
+        {
+          "id": "rule:base-owns-validation",
+          "status": "failed",
+          "detail": "Business modules do not repeat structural validation that base owns; violated at lib/catalog.mjs:17"
+        }
+      ],
+      "module_repairs": [],
+      "suite_runs": [
+        {
+          "passed": 125,
+          "failed": 0,
+          "error": 0,
+          "failing_cases": []
+        }
+      ],
+      "run_accepted": false,
+      "states": {
+        "__contract_integration__": "ACCEPTED",
+        "__contract_composition__": "FAILED",
+        "foundation": "ACCEPTED",
+        "merchandising": "ACCEPTED",
+        "fulfillment": "ACCEPTED",
+        "exchange-views": "ACCEPTED",
+        "transports": "ACCEPTED"
+      },
+      "fault_in_final_workspace": true,
+      "escape_file_written": false,
+      "bridge_requests": 7,
+      "elapsed_s": 302.4,
+      "error": null
+    },
+    {
+      "arm": "formalized",
+      "fault": "C2",
+      "category": "Plan rule to Workers",
+      "rule": "Catalog imports views (I14, only engine and transports may)",
+      "nov3_level": "Prompt only",
+      "result": "Caught at root",
+      "evidence": "rule:views-import-boundary: Only the engine and transports import views; violated at lib/catalog.mjs:1",
+      "checks_fired_at_root": [
+        "rule:views-import-boundary"
+      ],
+      "root_failures": [
+        {
+          "id": "rule:views-import-boundary",
+          "status": "failed",
+          "detail": "Only the engine and transports import views; violated at lib/catalog.mjs:1"
+        }
+      ],
+      "module_repairs": [],
+      "suite_runs": [
+        {
+          "passed": 125,
+          "failed": 0,
+          "error": 0,
+          "failing_cases": []
+        }
+      ],
+      "run_accepted": false,
+      "states": {
+        "__contract_integration__": "ACCEPTED",
+        "__contract_composition__": "FAILED",
+        "foundation": "ACCEPTED",
+        "merchandising": "ACCEPTED",
+        "fulfillment": "ACCEPTED",
+        "exchange-views": "ACCEPTED",
+        "transports": "ACCEPTED"
+      },
+      "fault_in_final_workspace": true,
+      "escape_file_written": false,
+      "bridge_requests": 7,
+      "elapsed_s": 301.5,
+      "error": null
+    },
+    {
+      "arm": "formalized",
+      "fault": "C3",
+      "category": "Plan rule to Workers",
+      "rule": "A handler writes its own audit record (I3, the engine is the only audit writer)",
+      "nov3_level": "Prompt only",
+      "result": "Caught at root",
+      "evidence": "rule:single-audit-writer: Only the engine writes audit records; violated at lib/fulfillment.mjs:26",
+      "checks_fired_at_root": [
+        "rule:single-audit-writer"
+      ],
+      "root_failures": [
+        {
+          "id": "rule:single-audit-writer",
+          "status": "failed",
+          "detail": "Only the engine writes audit records; violated at lib/fulfillment.mjs:26"
+        }
+      ],
+      "module_repairs": [],
+      "suite_runs": [
+        {
+          "passed": 125,
+          "failed": 0,
+          "error": 0,
+          "failing_cases": []
+        }
+      ],
+      "run_accepted": false,
+      "states": {
+        "__contract_integration__": "ACCEPTED",
+        "__contract_composition__": "FAILED",
+        "foundation": "ACCEPTED",
+        "merchandising": "ACCEPTED",
+        "fulfillment": "ACCEPTED",
+        "exchange-views": "ACCEPTED",
+        "transports": "ACCEPTED"
+      },
+      "fault_in_final_workspace": true,
+      "escape_file_written": false,
+      "bridge_requests": 7,
+      "elapsed_s": 229.6,
+      "error": null
+    },
+    {
+      "arm": "formalized",
+      "fault": "C4",
+      "category": "Plan rule to Workers",
+      "rule": "CSV import creates lots itself instead of calling fulfillment (I10, one owner of lot changes)",
+      "nov3_level": "Prompt only",
+      "result": "Caught at root",
+      "evidence": "rule:single-lot-owner: Only fulfillment creates lots or changes lot quantities; violated at lib/interchange.mjs:58",
+      "checks_fired_at_root": [
+        "rule:single-lot-owner"
+      ],
+      "root_failures": [
+        {
+          "id": "rule:single-lot-owner",
+          "status": "failed",
+          "detail": "Only fulfillment creates lots or changes lot quantities; violated at lib/interchange.mjs:58"
+        }
+      ],
+      "module_repairs": [],
+      "suite_runs": [
+        {
+          "passed": 125,
+          "failed": 0,
+          "error": 0,
+          "failing_cases": []
+        }
+      ],
+      "run_accepted": false,
+      "states": {
+        "__contract_integration__": "ACCEPTED",
+        "__contract_composition__": "FAILED",
+        "foundation": "ACCEPTED",
+        "merchandising": "ACCEPTED",
+        "fulfillment": "ACCEPTED",
+        "exchange-views": "ACCEPTED",
+        "transports": "ACCEPTED"
+      },
+      "fault_in_final_workspace": true,
+      "escape_file_written": false,
+      "bridge_requests": 7,
+      "elapsed_s": 227.6,
+      "error": null
+    },
+    {
+      "arm": "formalized",
+      "fault": "C5",
+      "category": "Plan rule to Workers",
+      "rule": "Inventory report sorts ids with localeCompare (R79, no locale order)",
+      "nov3_level": "Prompt only",
+      "result": "Caught at root",
+      "evidence": "official suite failed: FEFO-expiry-priority-warehouse-lot-ASCII-null | rule:no-locale-order: No locale dependent ordering; violated at lib/views.mjs:22",
+      "checks_fired_at_root": [
+        "official",
+        "rule:no-locale-order"
+      ],
+      "root_failures": [
+        {
+          "id": "official",
+          "status": "failed",
+          "detail": "{\"report\": \"D:\\\\dar_planted_faults\\\\runs\\\\formalized-C5\\\\run\\\\official-acceptance-1.json\", \"summary\": {\"passed\": 124, \"failed\": 1, \"error\": 0, \"assertions\": 2599}, \"exit_code\": 1, \"failures\": [{\"name\": \"FEFO-expiry-priority-warehouse-lot-ASCII-null\", \"error\": null, \"assertions\": [{\"label\": \"inventor..."
+        },
+        {
+          "id": "rule:no-locale-order",
+          "status": "failed",
+          "detail": "No locale dependent ordering; violated at lib/views.mjs:22"
+        }
+      ],
+      "module_repairs": [],
+      "suite_runs": [
+        {
+          "passed": 124,
+          "failed": 1,
+          "error": 0,
+          "failing_cases": [
+            "FEFO-expiry-priority-warehouse-lot-ASCII-null"
+          ]
+        }
+      ],
+      "run_accepted": false,
+      "states": {
+        "__contract_integration__": "ACCEPTED",
+        "__contract_composition__": "FAILED",
+        "foundation": "ACCEPTED",
+        "merchandising": "ACCEPTED",
+        "fulfillment": "ACCEPTED",
+        "exchange-views": "ACCEPTED",
+        "transports": "ACCEPTED"
+      },
+      "fault_in_final_workspace": true,
+      "escape_file_written": false,
+      "bridge_requests": 7,
+      "elapsed_s": 229.2,
+      "error": null
+    }
+  ]
+}

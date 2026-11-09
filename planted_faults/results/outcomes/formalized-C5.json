@@ -1,0 +1,51 @@
+{
+  "arm": "formalized",
+  "fault": "C5",
+  "category": "Plan rule to Workers",
+  "rule": "Inventory report sorts ids with localeCompare (R79, no locale order)",
+  "nov3_level": "Prompt only",
+  "result": "Caught at root",
+  "evidence": "official suite failed: FEFO-expiry-priority-warehouse-lot-ASCII-null | rule:no-locale-order: No locale dependent ordering; violated at lib/views.mjs:22",
+  "checks_fired_at_root": [
+    "official",
+    "rule:no-locale-order"
+  ],
+  "root_failures": [
+    {
+      "id": "official",
+      "status": "failed",
+      "detail": "{\"report\": \"D:\\\\dar_planted_faults\\\\runs\\\\formalized-C5\\\\run\\\\official-acceptance-1.json\", \"summary\": {\"passed\": 124, \"failed\": 1, \"error\": 0, \"assertions\": 2599}, \"exit_code\": 1, \"failures\": [{\"name\": \"FEFO-expiry-priority-warehouse-lot-ASCII-null\", \"error\": null, \"assertions\": [{\"label\": \"inventor..."
+    },
+    {
+      "id": "rule:no-locale-order",
+      "status": "failed",
+      "detail": "No locale dependent ordering; violated at lib/views.mjs:22"
+    }
+  ],
+  "module_repairs": [],
+  "suite_runs": [
+    {
+      "passed": 124,
+      "failed": 1,
+      "error": 0,
+      "failing_cases": [
+        "FEFO-expiry-priority-warehouse-lot-ASCII-null"
+      ]
+    }
+  ],
+  "run_accepted": false,
+  "states": {
+    "__contract_integration__": "ACCEPTED",
+    "__contract_composition__": "FAILED",
+    "foundation": "ACCEPTED",
+    "merchandising": "ACCEPTED",
+    "fulfillment": "ACCEPTED",
+    "exchange-views": "ACCEPTED",
+    "transports": "ACCEPTED"
+  },
+  "fault_in_final_workspace": true,
+  "escape_file_written": false,
+  "bridge_requests": 7,
+  "elapsed_s": 229.2,
+  "error": null
+}

@@ -1,0 +1,5 @@
+﻿premise,premise_in_brief,conditional checks,premise value set at or below threshold,violated,caught by checker,passed vacuously
+premise formalized,premise kept in brief,414,0,0,0,0
+premise formalized,premise lost or distorted in brief,65,0,0,0,0
+premise not formalized,premise kept in brief,170,0,0,0,0
+premise not formalized,premise lost or distorted in brief,13,11,5,0,5

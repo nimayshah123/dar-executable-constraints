@@ -1,0 +1,3 @@
+lib/fulfillment.mjs
+- l.onHand=safe(n);return result(viewLot(l),true,l.id);
++ l.onHand=safe(n);ctx.data.audit.push({seq:safe((ctx.data.audit.at(-1)?.seq??0)+1),at:now,requestId:ctx.requestId,op:c.op,entityId:l.id});return result(viewLot(l),false,l.id);

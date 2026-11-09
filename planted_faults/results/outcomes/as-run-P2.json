@@ -1,0 +1,20 @@
+{
+  "arm": "as-run",
+  "fault": "P2",
+  "category": "Root plan",
+  "rule": "A TASK line (R177, the hidden test scenarios) is left without any check",
+  "nov3_level": "Blocked by code",
+  "result": "Blocked at plan",
+  "evidence": "ValueError: uncovered source requirements: ['R177']",
+  "checks_fired_at_root": [],
+  "root_failures": [],
+  "module_repairs": [],
+  "suite_runs": [],
+  "run_accepted": false,
+  "states": {},
+  "fault_in_final_workspace": null,
+  "escape_file_written": false,
+  "bridge_requests": 1,
+  "elapsed_s": 0.3,
+  "error": "ValueError: uncovered source requirements: ['R177']"
+}

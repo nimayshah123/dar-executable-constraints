@@ -1,0 +1,449 @@
+﻿experiment,brief_style,requirements,arm,task_seed,sample,handoffs,outcome,attempts,delivered_fully_compliant,violations_executed_formalized,violations_executed_unformalized,violations_executed_total,premise_bypasses_executed,first_attempt_violations,nl_corrections,programmatic_rejections,model_calls,input_tokens,output_tokens
+brief_s1,task aware brief,16,B,1000,0,0,delivered,1,1,0,0,0,0,0,0,0,2,5866,2545
+brief_s1,task aware brief,16,C,1000,0,0,delivered,1,1,0,0,0,0,0,0,0,1,3046,2509
+brief_s1,task aware brief,16,B,1000,0,1,delivered,1,1,0,0,0,0,0,0,0,2,4793,2520
+brief_s1,task aware brief,16,C,1000,0,1,delivered,1,1,0,0,0,0,0,0,0,1,1968,2040
+brief_s1,task aware brief,16,B,1000,0,4,delivered,3,1,0,0,0,0,3,2,0,6,15662,9936
+brief_s1,task aware brief,16,C,1000,0,4,delivered,2,1,0,0,0,0,2,0,1,2,4413,3372
+brief_s1,task aware brief,16,B,1000,1,0,delivered,1,1,0,0,0,0,0,0,0,2,5870,3089
+brief_s1,task aware brief,16,C,1000,1,0,delivered,1,1,0,0,0,0,0,0,0,1,3046,2276
+brief_s1,task aware brief,16,B,1000,1,1,delivered,2,1,0,0,0,0,1,1,0,4,10207,5472
+brief_s1,task aware brief,16,C,1000,1,1,delivered,1,1,0,0,0,0,0,0,0,1,1908,1956
+brief_s1,task aware brief,16,B,1000,1,4,delivered,2,1,0,0,0,0,1,1,0,4,10119,4940
+brief_s1,task aware brief,16,C,1000,1,4,delivered,1,1,0,0,0,0,0,0,0,1,1913,2120
+brief_s1,task aware brief,16,B,1001,0,0,delivered,1,1,0,0,0,0,0,0,0,2,5743,2413
+brief_s1,task aware brief,16,C,1001,0,0,delivered,1,1,0,0,0,0,0,0,0,1,2978,1991
+brief_s1,task aware brief,16,B,1001,0,1,delivered,1,1,0,0,0,0,0,0,0,2,4712,2679
+brief_s1,task aware brief,16,C,1001,0,1,delivered,1,1,0,0,0,0,0,0,0,1,1942,1370
+brief_s1,task aware brief,16,B,1001,0,4,delivered,2,1,0,0,0,0,0,1,0,4,9875,4290
+brief_s1,task aware brief,16,C,1001,0,4,delivered,1,1,0,0,0,0,0,0,0,1,1875,1827
+brief_s1,task aware brief,16,B,1001,1,0,delivered,1,1,0,0,0,0,0,0,0,2,5748,2735
+brief_s1,task aware brief,16,C,1001,1,0,delivered,1,1,0,0,0,0,0,0,0,1,2978,2041
+brief_s1,task aware brief,16,B,1001,1,1,delivered,1,1,0,0,0,0,0,0,0,2,4698,2054
+brief_s1,task aware brief,16,C,1001,1,1,delivered,1,1,0,0,0,0,0,0,0,1,1928,1654
+brief_s1,task aware brief,16,B,1001,1,4,delivered,1,1,0,0,0,0,0,0,0,2,4702,1807
+brief_s1,task aware brief,16,C,1001,1,4,delivered,1,1,0,0,0,0,0,0,0,1,1932,1544
+brief_s1,task aware brief,16,B,1002,0,0,delivered,1,1,0,0,0,0,0,0,0,2,5842,2409
+brief_s1,task aware brief,16,C,1002,0,0,delivered,1,1,0,0,0,0,0,0,0,1,3042,1920
+brief_s1,task aware brief,16,B,1002,0,1,delivered,1,1,0,0,0,0,0,0,0,2,4713,2239
+brief_s1,task aware brief,16,C,1002,0,1,delivered,1,1,0,0,0,0,0,0,0,1,1913,1542
+brief_s1,task aware brief,16,B,1002,0,4,delivered,1,1,0,0,0,0,0,0,0,2,4702,2475
+brief_s1,task aware brief,16,C,1002,0,4,delivered,1,1,0,0,0,0,0,0,0,1,1898,2233
+brief_s1,task aware brief,16,B,1002,1,0,delivered,1,1,0,0,0,0,0,0,0,2,5843,2286
+brief_s1,task aware brief,16,C,1002,1,0,delivered,1,1,0,0,0,0,0,0,0,1,3042,2204
+brief_s1,task aware brief,16,B,1002,1,1,delivered,1,1,0,0,0,0,0,0,0,2,4689,2293
+brief_s1,task aware brief,16,C,1002,1,1,delivered,1,1,0,0,0,0,0,0,0,1,1886,1578
+brief_s1,task aware brief,16,B,1002,1,4,delivered,1,1,0,0,0,0,0,0,0,2,4708,2055
+brief_s1,task aware brief,16,C,1002,1,4,delivered,1,1,0,0,0,0,0,0,0,1,1900,1371
+brief_s1,task aware brief,16,B,1003,0,0,delivered,1,1,0,0,0,0,0,0,0,2,5569,2295
+brief_s1,task aware brief,16,C,1003,0,0,delivered,1,1,0,0,0,0,0,0,0,1,2876,1567
+brief_s1,task aware brief,16,B,1003,0,1,delivered,1,1,0,0,0,0,0,0,0,2,4573,2122
+brief_s1,task aware brief,16,C,1003,0,1,delivered,1,1,0,0,0,0,0,0,0,1,1880,1670
+brief_s1,task aware brief,16,B,1003,0,4,delivered,2,1,0,0,0,0,0,1,0,4,9706,3739
+brief_s1,task aware brief,16,C,1003,0,4,delivered,2,1,0,0,0,0,0,0,1,2,4190,3685
+brief_s1,task aware brief,16,B,1003,1,0,delivered,1,1,0,0,0,0,0,0,0,2,5569,2916
+brief_s1,task aware brief,16,C,1003,1,0,delivered,1,1,0,0,0,0,0,0,0,1,2876,2231
+brief_s1,task aware brief,16,B,1003,1,1,delivered,1,1,0,0,0,0,0,0,0,2,4581,2412
+brief_s1,task aware brief,16,C,1003,1,1,delivered,1,1,0,0,0,0,0,0,0,1,1888,1732
+brief_s1,task aware brief,16,B,1003,1,4,delivered,1,1,0,0,0,0,0,0,0,2,4554,2313
+brief_s1,task aware brief,16,C,1003,1,4,delivered,1,1,0,0,0,0,0,0,0,1,1857,1688
+brief_s1,task aware brief,16,B,1004,0,0,delivered,1,1,0,0,0,0,0,0,0,2,5803,2250
+brief_s1,task aware brief,16,C,1004,0,0,delivered,1,1,0,0,0,0,0,0,0,1,3016,1928
+brief_s1,task aware brief,16,B,1004,0,1,delivered,1,1,0,0,0,0,0,0,0,2,4772,2764
+brief_s1,task aware brief,16,C,1004,0,1,delivered,1,1,0,0,0,0,0,0,0,1,1975,1652
+brief_s1,task aware brief,16,B,1004,0,4,delivered,1,1,0,0,0,0,0,0,0,2,4742,2389
+brief_s1,task aware brief,16,C,1004,0,4,delivered,1,1,0,0,0,0,0,0,0,1,1946,1905
+brief_s1,task aware brief,16,B,1004,1,0,delivered,1,1,0,0,0,0,0,0,0,2,5808,2402
+brief_s1,task aware brief,16,C,1004,1,0,delivered,1,1,0,0,0,0,0,0,0,1,3016,2414
+brief_s1,task aware brief,16,B,1004,1,1,delivered,1,1,0,0,0,0,0,0,0,2,4709,2408
+brief_s1,task aware brief,16,C,1004,1,1,delivered,1,1,0,0,0,0,0,0,0,1,1917,1697
+brief_s1,task aware brief,16,B,1004,1,4,delivered,1,1,0,0,0,0,0,0,0,2,4715,2969
+brief_s1,task aware brief,16,C,1004,1,4,delivered,1,1,0,0,0,0,0,0,0,1,1929,2042
+brief_s1,task aware brief,16,B,1005,0,0,delivered,1,1,0,0,0,0,0,0,0,2,5682,2741
+brief_s1,task aware brief,16,C,1005,0,0,delivered,1,1,0,0,0,0,0,0,0,1,2949,2366
+brief_s1,task aware brief,16,B,1005,0,1,delivered,1,1,0,0,0,0,0,0,0,2,4650,1904
+brief_s1,task aware brief,16,C,1005,0,1,delivered,1,1,0,0,0,0,0,0,0,1,1923,1503
+brief_s1,task aware brief,16,B,1005,0,4,delivered,1,1,0,0,0,0,0,0,0,2,4545,2279
+brief_s1,task aware brief,16,C,1005,0,4,delivered,1,1,0,0,0,0,0,0,0,1,1818,1386
+brief_s1,task aware brief,16,B,1005,1,0,delivered,1,1,0,0,0,0,0,0,0,2,5679,2708
+brief_s1,task aware brief,16,C,1005,1,0,delivered,1,1,0,0,0,0,0,0,0,1,2949,1886
+brief_s1,task aware brief,16,B,1005,1,1,delivered,1,1,0,0,0,0,0,0,0,2,4623,2038
+brief_s1,task aware brief,16,C,1005,1,1,delivered,1,1,0,0,0,0,0,0,0,1,1892,1477
+brief_s1,task aware brief,16,B,1005,1,4,delivered,1,1,0,0,0,0,0,0,0,2,4590,2201
+brief_s1,task aware brief,16,C,1005,1,4,delivered,1,1,0,0,0,0,0,0,0,1,1859,1693
+brief_s1,task aware brief,16,B,1006,0,0,delivered,1,1,0,0,0,0,0,0,0,2,5638,2941
+brief_s1,task aware brief,16,C,1006,0,0,delivered,1,1,0,0,0,0,0,0,0,1,2931,1936
+brief_s1,task aware brief,16,B,1006,0,1,delivered,1,1,0,0,0,0,0,0,0,2,4626,2291
+brief_s1,task aware brief,16,C,1006,0,1,delivered,1,1,0,0,0,0,0,0,0,1,1923,1675
+brief_s1,task aware brief,16,B,1006,0,4,delivered,2,1,0,0,0,0,1,1,0,4,10117,4648
+brief_s1,task aware brief,16,C,1006,0,4,delivered,2,1,0,0,0,0,0,0,1,2,4391,3761
+brief_s1,task aware brief,16,B,1006,1,0,delivered,1,1,0,0,0,0,0,0,0,2,5630,2308
+brief_s1,task aware brief,16,C,1006,1,0,delivered,1,1,0,0,0,0,0,0,0,1,2931,1848
+brief_s1,task aware brief,16,B,1006,1,1,delivered,1,1,0,0,0,0,0,0,0,2,4657,2359
+brief_s1,task aware brief,16,C,1006,1,1,delivered,1,1,0,0,0,0,0,0,0,1,1954,1539
+brief_s1,task aware brief,16,B,1006,1,4,delivered,1,1,0,0,0,0,0,0,0,2,4594,2173
+brief_s1,task aware brief,16,C,1006,1,4,delivered,1,1,0,0,0,0,0,0,0,1,1895,1696
+brief_s1,task aware brief,16,B,1007,0,0,delivered,1,1,0,0,0,0,0,0,0,2,5823,2791
+brief_s1,task aware brief,16,C,1007,0,0,delivered,1,1,0,0,0,0,0,0,0,1,2998,2168
+brief_s1,task aware brief,16,B,1007,0,1,delivered,1,1,0,0,0,0,0,0,0,2,4753,1860
+brief_s1,task aware brief,16,C,1007,0,1,delivered,1,1,0,0,0,0,0,0,0,1,1929,1549
+brief_s1,task aware brief,16,B,1007,0,4,delivered,1,1,0,0,0,0,0,0,0,2,4738,2353
+brief_s1,task aware brief,16,C,1007,0,4,delivered,1,1,0,0,0,0,0,0,0,1,1912,1690
+brief_s1,task aware brief,16,B,1007,1,0,delivered,1,1,0,0,0,0,0,0,0,2,5823,2630
+brief_s1,task aware brief,16,C,1007,1,0,delivered,1,1,0,0,0,0,0,0,0,1,2998,1738
+brief_s1,task aware brief,16,B,1007,1,1,delivered,1,1,0,0,0,0,0,0,0,2,4709,1998
+brief_s1,task aware brief,16,C,1007,1,1,delivered,1,1,0,0,0,0,0,0,0,1,1885,2073
+brief_s1,task aware brief,16,B,1007,1,4,delivered,2,1,0,0,0,0,0,1,0,4,10184,4207
+brief_s1,task aware brief,16,C,1007,1,4,delivered,1,1,0,0,0,0,0,0,0,1,1890,2253
+brief_s4,task aware brief,64,B,1000,0,0,delivered,1,1,0,0,0,0,0,0,0,2,12288,14023
+brief_s4,task aware brief,64,C,1000,0,0,delivered,1,1,0,0,0,0,0,0,0,1,6575,12074
+brief_s4,task aware brief,64,B,1000,0,1,delivered,1,1,0,0,0,0,0,0,0,2,9593,10724
+brief_s4,task aware brief,64,C,1000,0,1,delivered,2,1,0,0,0,0,0,0,1,2,9668,20817
+brief_s4,task aware brief,64,B,1000,0,4,delivered,2,1,0,0,0,0,0,1,0,4,21598,19820
+brief_s4,task aware brief,64,C,1000,0,4,delivered,1,1,0,0,0,0,0,0,0,1,3939,10360
+brief_s4,task aware brief,64,B,1000,1,0,delivered,1,1,0,0,0,0,0,0,0,2,12274,12394
+brief_s4,task aware brief,64,C,1000,1,0,delivered,1,1,0,0,0,0,0,0,0,1,6575,11348
+brief_s4,task aware brief,64,B,1000,1,1,delivered,1,1,0,0,0,0,0,0,0,2,9573,10181
+brief_s4,task aware brief,64,C,1000,1,1,delivered,1,1,0,0,0,0,0,0,0,1,3878,10675
+brief_s4,task aware brief,64,B,1000,1,4,delivered,1,1,0,0,0,0,0,0,0,2,9595,12424
+brief_s4,task aware brief,64,C,1000,1,4,delivered,1,1,0,0,0,0,0,0,0,1,3900,10030
+brief_s4,task aware brief,64,B,1001,0,0,delivered,1,1,0,0,0,0,0,0,0,2,12472,12385
+brief_s4,task aware brief,64,C,1001,0,0,delivered,1,1,0,0,0,0,0,0,0,1,6736,12493
+brief_s4,task aware brief,64,B,1001,0,1,delivered,1,1,0,0,0,0,0,0,0,2,9741,11294
+brief_s4,task aware brief,64,C,1001,0,1,delivered,1,1,0,0,0,0,0,0,0,1,4009,13804
+brief_s4,task aware brief,64,B,1001,0,4,delivered,1,1,0,0,0,0,0,0,0,2,9716,11829
+brief_s4,task aware brief,64,C,1001,0,4,delivered,1,1,0,0,0,0,0,0,0,1,3983,10277
+brief_s4,task aware brief,64,B,1001,1,0,delivered,1,1,0,0,0,0,0,0,0,2,12471,13382
+brief_s4,task aware brief,64,C,1001,1,0,delivered,1,1,0,0,0,0,0,0,0,1,6736,11530
+brief_s4,task aware brief,64,B,1001,1,1,delivered,2,1,0,0,0,0,0,1,0,4,21554,19556
+brief_s4,task aware brief,64,C,1001,1,1,delivered,1,1,0,0,0,0,0,0,0,1,4100,9036
+brief_s4,task aware brief,64,B,1001,1,4,delivered,1,1,0,0,0,0,0,0,0,2,9773,12178
+brief_s4,task aware brief,64,C,1001,1,4,delivered,1,1,0,0,0,0,0,0,0,1,4042,10331
+brief_s4,task aware brief,64,B,1002,0,0,delivered,1,1,0,0,0,0,0,0,0,2,12319,13583
+brief_s4,task aware brief,64,C,1002,0,0,delivered,1,1,0,0,0,0,0,0,0,1,6628,12317
+brief_s4,task aware brief,64,B,1002,0,1,delivered,1,1,0,0,0,0,0,0,0,2,9652,11879
+brief_s4,task aware brief,64,C,1002,0,1,delivered,1,1,0,0,0,0,0,0,0,1,3948,10833
+brief_s4,task aware brief,64,B,1002,0,4,delivered,1,1,0,0,0,0,0,0,0,2,9692,13711
+brief_s4,task aware brief,64,C,1002,0,4,delivered,1,1,0,0,0,0,0,0,0,1,3989,12876
+brief_s4,task aware brief,64,B,1002,1,0,delivered,1,1,0,0,0,0,0,0,0,2,12319,13618
+brief_s4,task aware brief,64,C,1002,1,0,delivered,1,1,0,0,0,0,0,0,0,1,6628,11934
+brief_s4,task aware brief,64,B,1002,1,1,delivered,2,1,0,0,0,0,2,1,0,4,21074,19144
+brief_s4,task aware brief,64,C,1002,1,1,delivered,1,0,0,2,2,0,2,0,0,1,3825,8612
+brief_s4,task aware brief,64,B,1002,1,4,delivered,2,1,0,0,0,0,2,1,0,4,20921,18821
+brief_s4,task aware brief,64,C,1002,1,4,delivered,1,0,0,2,2,0,2,0,0,1,3774,10759
+brief_s4,task aware brief,64,B,1003,0,0,delivered,1,1,0,0,0,0,0,0,0,2,12353,10309
+brief_s4,task aware brief,64,C,1003,0,0,delivered,1,1,0,0,0,0,0,0,0,1,6617,11864
+brief_s4,task aware brief,64,B,1003,0,1,delivered,2,1,0,0,0,0,14,1,0,4,21443,16015
+brief_s4,task aware brief,64,C,1003,0,1,delivered,1,0,0,3,3,0,3,0,0,1,3919,9904
+brief_s4,task aware brief,64,B,1003,0,4,delivered,2,1,0,0,0,0,15,1,0,4,21181,21642
+brief_s4,task aware brief,64,C,1003,0,4,delivered,1,0,0,3,3,0,3,0,0,1,3781,10108
+brief_s4,task aware brief,64,B,1003,1,0,delivered,1,1,0,0,0,0,0,0,0,2,12348,11832
+brief_s4,task aware brief,64,C,1003,1,0,delivered,1,1,0,0,0,0,0,0,0,1,6617,10646
+brief_s4,task aware brief,64,B,1003,1,1,delivered,1,1,0,0,0,0,0,0,0,2,9502,11415
+brief_s4,task aware brief,64,C,1003,1,1,delivered,1,1,0,0,0,0,0,0,0,1,3772,10532
+brief_s4,task aware brief,64,B,1003,1,4,delivered,2,1,0,0,0,0,0,1,0,4,21277,17358
+brief_s4,task aware brief,64,C,1003,1,4,delivered,1,1,0,0,0,0,0,0,0,1,3932,9614
+brief_s4,task aware brief,64,B,1004,0,0,delivered,1,1,0,0,0,0,0,0,0,2,12276,14578
+brief_s4,task aware brief,64,C,1004,0,0,delivered,1,0,0,1,1,0,1,0,0,1,6554,11926
+brief_s4,task aware brief,64,B,1004,0,1,delivered,1,1,0,0,0,0,0,0,0,2,9578,13773
+brief_s4,task aware brief,64,C,1004,0,1,delivered,1,1,0,0,0,0,0,0,0,1,3855,11589
+brief_s4,task aware brief,64,B,1004,0,4,delivered,2,1,0,0,0,0,8,1,0,4,22111,22007
+brief_s4,task aware brief,64,C,1004,0,4,delivered,2,1,0,0,0,0,0,0,1,2,10013,19564
+brief_s4,task aware brief,64,B,1004,1,0,delivered,1,1,0,0,0,0,0,0,0,2,12276,12756
+brief_s4,task aware brief,64,C,1004,1,0,delivered,1,1,0,0,0,0,0,0,0,1,6554,12583
+brief_s4,task aware brief,64,B,1004,1,1,delivered,1,1,0,0,0,0,0,0,0,2,9667,13703
+brief_s4,task aware brief,64,C,1004,1,1,delivered,1,1,0,0,0,0,0,0,0,1,3944,10343
+brief_s4,task aware brief,64,B,1004,1,4,delivered,1,1,0,0,0,0,0,0,0,2,9710,12682
+brief_s4,task aware brief,64,C,1004,1,4,delivered,1,1,0,0,0,0,0,0,0,1,3988,14411
+brief_s4,task aware brief,64,B,1005,0,0,delivered,1,1,0,0,0,0,0,0,0,2,12212,13285
+brief_s4,task aware brief,64,C,1005,0,0,delivered,1,1,0,0,0,0,0,0,0,1,6553,11872
+brief_s4,task aware brief,64,B,1005,0,1,delivered,1,1,0,0,0,0,0,0,0,2,9617,13124
+brief_s4,task aware brief,64,C,1005,0,1,delivered,1,1,0,0,0,0,0,0,0,1,3958,10049
+brief_s4,task aware brief,64,B,1005,0,4,delivered,1,1,0,0,0,0,0,0,0,2,9520,12900
+brief_s4,task aware brief,64,C,1005,0,4,delivered,1,1,0,0,0,0,0,0,0,1,3861,12192
+brief_s4,task aware brief,64,B,1005,1,0,delivered,1,1,0,0,0,0,0,0,0,2,12211,15283
+brief_s4,task aware brief,64,C,1005,1,0,delivered,1,1,0,0,0,0,0,0,0,1,6553,16633
+brief_s4,task aware brief,64,B,1005,1,1,delivered,1,1,0,0,0,0,0,0,0,2,9724,10020
+brief_s4,task aware brief,64,C,1005,1,1,delivered,1,1,0,0,0,0,0,0,0,1,4063,12416
+brief_s4,task aware brief,64,B,1005,1,4,delivered,1,1,0,0,0,0,0,0,0,2,9699,13575
+brief_s4,task aware brief,64,C,1005,1,4,delivered,1,1,0,0,0,0,0,0,0,1,4040,12775
+brief_s4,task aware brief,64,B,1006,0,0,delivered,1,1,0,0,0,0,0,0,0,2,12270,10362
+brief_s4,task aware brief,64,C,1006,0,0,delivered,1,1,0,0,0,0,0,0,0,1,6535,12780
+brief_s4,task aware brief,64,B,1006,0,1,delivered,1,1,0,0,0,0,0,0,0,2,9720,10970
+brief_s4,task aware brief,64,C,1006,0,1,delivered,1,1,0,0,0,0,0,0,0,1,3989,9481
+brief_s4,task aware brief,64,B,1006,0,4,delivered,1,1,0,0,0,0,0,0,0,2,9715,11444
+brief_s4,task aware brief,64,C,1006,0,4,delivered,1,1,0,0,0,0,0,0,0,1,3979,10115
+brief_s4,task aware brief,64,B,1006,1,0,delivered,1,1,0,0,0,0,0,0,0,2,12273,11954
+brief_s4,task aware brief,64,C,1006,1,0,delivered,1,1,0,0,0,0,0,0,0,1,6535,12711
+brief_s4,task aware brief,64,B,1006,1,1,delivered,1,1,0,0,0,0,0,0,0,2,9652,10653
+brief_s4,task aware brief,64,C,1006,1,1,delivered,1,1,0,0,0,0,0,0,0,1,3916,9345
+brief_s4,task aware brief,64,B,1006,1,4,delivered,1,1,0,0,0,0,0,0,0,2,9646,10424
+brief_s4,task aware brief,64,C,1006,1,4,delivered,1,1,0,0,0,0,0,0,0,1,3910,8328
+brief_s4,task aware brief,64,B,1007,0,0,delivered,1,1,0,0,0,0,0,0,0,2,12166,13290
+brief_s4,task aware brief,64,C,1007,0,0,delivered,1,1,0,0,0,0,0,0,0,1,6539,13222
+brief_s4,task aware brief,64,B,1007,0,1,delivered,1,1,0,0,0,0,0,0,0,2,9599,12991
+brief_s4,task aware brief,64,C,1007,0,1,delivered,1,1,0,0,0,0,0,0,0,1,3975,8959
+brief_s4,task aware brief,64,B,1007,0,4,delivered,1,1,0,0,0,0,0,0,0,2,9590,10389
+brief_s4,task aware brief,64,C,1007,0,4,delivered,1,1,0,0,0,0,0,0,0,1,3950,8983
+brief_s4,task aware brief,64,B,1007,1,0,delivered,1,1,0,0,0,0,0,0,0,2,12163,13535
+brief_s4,task aware brief,64,C,1007,1,0,delivered,1,1,0,0,0,0,0,0,0,1,6539,11788
+brief_s4,task aware brief,64,B,1007,1,1,delivered,1,1,0,0,0,0,0,0,0,2,9716,13524
+brief_s4,task aware brief,64,C,1007,1,1,delivered,1,1,0,0,0,0,0,0,0,1,4089,11406
+brief_s4,task aware brief,64,B,1007,1,4,delivered,1,1,0,0,0,0,0,0,0,2,9475,10000
+brief_s4,task aware brief,64,C,1007,1,4,delivered,1,1,0,0,0,0,0,0,0,1,3851,8705
+summary_s1,generic summary,16,B,1000,0,0,delivered,1,1,0,0,0,0,0,0,0,2,5866,2545
+summary_s1,generic summary,16,C,1000,0,0,delivered,1,1,0,0,0,0,0,0,0,1,3046,2509
+summary_s1,generic summary,16,B,1000,0,1,delivered,2,1,0,0,0,0,1,1,0,4,10236,4360
+summary_s1,generic summary,16,C,1000,0,1,delivered,1,1,0,0,0,0,0,0,0,1,1944,2228
+summary_s1,generic summary,16,B,1000,0,4,delivered,2,1,0,0,0,0,1,1,0,4,10169,4026
+summary_s1,generic summary,16,C,1000,0,4,delivered,1,1,0,0,0,0,0,0,0,1,1941,1877
+summary_s1,generic summary,16,B,1000,1,0,delivered,1,1,0,0,0,0,0,0,0,2,5870,3089
+summary_s1,generic summary,16,C,1000,1,0,delivered,1,1,0,0,0,0,0,0,0,1,3046,2276
+summary_s1,generic summary,16,B,1000,1,1,delivered,2,1,0,0,0,0,1,1,0,4,10323,4334
+summary_s1,generic summary,16,C,1000,1,1,delivered,1,1,0,0,0,0,0,0,0,1,1964,1928
+summary_s1,generic summary,16,B,1000,1,4,delivered,2,1,0,0,0,0,1,1,0,4,10192,4123
+summary_s1,generic summary,16,C,1000,1,4,delivered,1,1,0,0,0,0,0,0,0,1,1962,2380
+summary_s1,generic summary,16,B,1001,0,0,delivered,1,1,0,0,0,0,0,0,0,2,5743,2413
+summary_s1,generic summary,16,C,1001,0,0,delivered,1,1,0,0,0,0,0,0,0,1,2978,1991
+summary_s1,generic summary,16,B,1001,0,1,delivered,2,1,0,0,0,0,1,1,0,4,10127,4474
+summary_s1,generic summary,16,C,1001,0,1,delivered,1,1,0,0,0,0,0,0,0,1,1987,1903
+summary_s1,generic summary,16,B,1001,0,4,delivered,2,1,0,0,0,0,1,1,0,4,10003,4114
+summary_s1,generic summary,16,C,1001,0,4,delivered,1,1,0,0,0,0,0,0,0,1,1917,1645
+summary_s1,generic summary,16,B,1001,1,0,delivered,1,1,0,0,0,0,0,0,0,2,5748,2735
+summary_s1,generic summary,16,C,1001,1,0,delivered,1,1,0,0,0,0,0,0,0,1,2978,2041
+summary_s1,generic summary,16,B,1001,1,1,delivered,1,1,0,0,0,0,0,0,0,2,4742,2332
+summary_s1,generic summary,16,C,1001,1,1,delivered,1,1,0,0,0,0,0,0,0,1,1966,1846
+summary_s1,generic summary,16,B,1001,1,4,delivered,1,1,0,0,0,0,0,0,0,2,4692,2312
+summary_s1,generic summary,16,C,1001,1,4,delivered,1,1,0,0,0,0,0,0,0,1,1911,1891
+summary_s1,generic summary,16,B,1002,0,0,delivered,1,1,0,0,0,0,0,0,0,2,5842,2409
+summary_s1,generic summary,16,C,1002,0,0,delivered,1,1,0,0,0,0,0,0,0,1,3042,1920
+summary_s1,generic summary,16,B,1002,0,1,delivered,1,1,0,0,0,0,0,0,0,2,4739,2572
+summary_s1,generic summary,16,C,1002,0,1,delivered,1,1,0,0,0,0,0,0,0,1,1939,1384
+summary_s1,generic summary,16,B,1002,0,4,delivered,1,1,0,0,0,0,0,0,0,2,4711,2427
+summary_s1,generic summary,16,C,1002,0,4,delivered,1,1,0,0,0,0,0,0,0,1,1911,1767
+summary_s1,generic summary,16,B,1002,1,0,delivered,1,1,0,0,0,0,0,0,0,2,5843,2286
+summary_s1,generic summary,16,C,1002,1,0,delivered,1,1,0,0,0,0,0,0,0,1,3042,2204
+summary_s1,generic summary,16,B,1002,1,1,delivered,1,1,0,0,0,0,0,0,0,2,4708,2564
+summary_s1,generic summary,16,C,1002,1,1,delivered,1,1,0,0,0,0,0,0,0,1,1904,1932
+summary_s1,generic summary,16,B,1002,1,4,delivered,1,1,0,0,0,0,0,0,0,2,4684,2236
+summary_s1,generic summary,16,C,1002,1,4,delivered,1,1,0,0,0,0,0,0,0,1,1884,1806
+summary_s1,generic summary,16,B,1003,0,0,delivered,1,1,0,0,0,0,0,0,0,2,5569,2295
+summary_s1,generic summary,16,C,1003,0,0,delivered,1,1,0,0,0,0,0,0,0,1,2876,1567
+summary_s1,generic summary,16,B,1003,0,1,delivered,1,1,0,0,0,0,0,0,0,2,4632,2110
+summary_s1,generic summary,16,C,1003,0,1,delivered,1,1,0,0,0,0,0,0,0,1,1939,1709
+summary_s1,generic summary,16,B,1003,0,4,delivered,1,1,0,0,0,0,0,0,0,2,4549,2483
+summary_s1,generic summary,16,C,1003,0,4,delivered,1,1,0,0,0,0,0,0,0,1,1854,2058
+summary_s1,generic summary,16,B,1003,1,0,delivered,1,1,0,0,0,0,0,0,0,2,5569,2916
+summary_s1,generic summary,16,C,1003,1,0,delivered,1,1,0,0,0,0,0,0,0,1,2876,2231
+summary_s1,generic summary,16,B,1003,1,1,delivered,1,1,0,0,0,0,0,0,0,2,4593,2554
+summary_s1,generic summary,16,C,1003,1,1,delivered,1,1,0,0,0,0,0,0,0,1,1875,1848
+summary_s1,generic summary,16,B,1003,1,4,delivered,1,1,0,0,0,0,0,0,0,2,4561,1808
+summary_s1,generic summary,16,C,1003,1,4,delivered,1,1,0,0,0,0,0,0,0,1,1863,1719
+summary_s1,generic summary,16,B,1004,0,0,delivered,1,1,0,0,0,0,0,0,0,2,5803,2250
+summary_s1,generic summary,16,C,1004,0,0,delivered,1,1,0,0,0,0,0,0,0,1,3016,1928
+summary_s1,generic summary,16,B,1004,0,1,delivered,1,1,0,0,0,0,0,0,0,2,4672,2053
+summary_s1,generic summary,16,C,1004,0,1,delivered,1,1,0,0,0,0,0,0,0,1,1881,1405
+summary_s1,generic summary,16,B,1004,0,4,delivered,1,1,0,0,0,0,0,0,0,2,4658,2049
+summary_s1,generic summary,16,C,1004,0,4,delivered,1,1,0,0,0,0,0,0,0,1,1872,1443
+summary_s1,generic summary,16,B,1004,1,0,delivered,1,1,0,0,0,0,0,0,0,2,5808,2402
+summary_s1,generic summary,16,C,1004,1,0,delivered,1,1,0,0,0,0,0,0,0,1,3016,2414
+summary_s1,generic summary,16,B,1004,1,1,delivered,1,1,0,0,0,0,0,0,0,2,4816,2594
+summary_s1,generic summary,16,C,1004,1,1,delivered,1,1,0,0,0,0,0,0,0,1,2030,1597
+summary_s1,generic summary,16,B,1004,1,4,delivered,1,1,0,0,0,0,0,0,0,2,4766,2578
+summary_s1,generic summary,16,C,1004,1,4,delivered,1,1,0,0,0,0,0,0,0,1,1979,1307
+summary_s1,generic summary,16,B,1005,0,0,delivered,1,1,0,0,0,0,0,0,0,2,5682,2741
+summary_s1,generic summary,16,C,1005,0,0,delivered,1,1,0,0,0,0,0,0,0,1,2949,2366
+summary_s1,generic summary,16,B,1005,0,1,delivered,1,1,0,0,0,0,0,0,0,2,4632,2071
+summary_s1,generic summary,16,C,1005,0,1,delivered,1,1,0,0,0,0,0,0,0,1,1901,1613
+summary_s1,generic summary,16,B,1005,0,4,delivered,2,1,0,0,0,0,4,1,0,4,9915,3915
+summary_s1,generic summary,16,C,1005,0,4,delivered,1,1,0,0,0,0,0,0,0,1,1873,1454
+summary_s1,generic summary,16,B,1005,1,0,delivered,1,1,0,0,0,0,0,0,0,2,5679,2708
+summary_s1,generic summary,16,C,1005,1,0,delivered,1,1,0,0,0,0,0,0,0,1,2949,1886
+summary_s1,generic summary,16,B,1005,1,1,delivered,1,1,0,0,0,0,0,0,0,2,4632,2160
+summary_s1,generic summary,16,C,1005,1,1,delivered,1,1,0,0,0,0,0,0,0,1,1901,1707
+summary_s1,generic summary,16,B,1005,1,4,delivered,1,1,0,0,0,0,0,0,0,2,4602,1957
+summary_s1,generic summary,16,C,1005,1,4,delivered,1,1,0,0,0,0,0,0,0,1,1871,1865
+summary_s1,generic summary,16,B,1006,0,0,delivered,1,1,0,0,0,0,0,0,0,2,5638,2941
+summary_s1,generic summary,16,C,1006,0,0,delivered,1,1,0,0,0,0,0,0,0,1,2931,1936
+summary_s1,generic summary,16,B,1006,0,1,delivered,1,1,0,0,0,0,0,0,0,2,4648,2488
+summary_s1,generic summary,16,C,1006,0,1,delivered,1,1,0,0,0,0,0,0,0,1,1944,1499
+summary_s1,generic summary,16,B,1006,0,4,delivered,1,1,0,0,0,0,0,0,0,2,4622,2242
+summary_s1,generic summary,16,C,1006,0,4,delivered,1,1,0,0,0,0,0,0,0,1,1919,1337
+summary_s1,generic summary,16,B,1006,1,0,delivered,1,1,0,0,0,0,0,0,0,2,5630,2308
+summary_s1,generic summary,16,C,1006,1,0,delivered,1,1,0,0,0,0,0,0,0,1,2931,1848
+summary_s1,generic summary,16,B,1006,1,1,delivered,1,1,0,0,0,0,0,0,0,2,4654,2290
+summary_s1,generic summary,16,C,1006,1,1,delivered,1,1,0,0,0,0,0,0,0,1,1943,1832
+summary_s1,generic summary,16,B,1006,1,4,delivered,1,1,0,0,0,0,0,0,0,2,4589,2271
+summary_s1,generic summary,16,C,1006,1,4,delivered,1,1,0,0,0,0,0,0,0,1,1886,1838
+summary_s1,generic summary,16,B,1007,0,0,delivered,1,1,0,0,0,0,0,0,0,2,5823,2791
+summary_s1,generic summary,16,C,1007,0,0,delivered,1,1,0,0,0,0,0,0,0,1,2998,2168
+summary_s1,generic summary,16,B,1007,0,1,delivered,1,1,0,0,0,0,0,0,0,2,4704,2854
+summary_s1,generic summary,16,C,1007,0,1,delivered,1,1,0,0,0,0,0,0,0,1,1875,1559
+summary_s1,generic summary,16,B,1007,0,4,delivered,2,1,0,0,0,0,2,1,0,4,10051,4259
+summary_s1,generic summary,16,C,1007,0,4,delivered,1,1,0,0,0,0,0,0,0,1,1846,1851
+summary_s1,generic summary,16,B,1007,1,0,delivered,1,1,0,0,0,0,0,0,0,2,5823,2630
+summary_s1,generic summary,16,C,1007,1,0,delivered,1,1,0,0,0,0,0,0,0,1,2998,1738
+summary_s1,generic summary,16,B,1007,1,1,delivered,1,1,0,0,0,0,0,0,0,2,4717,2232
+summary_s1,generic summary,16,C,1007,1,1,delivered,1,1,0,0,0,0,0,0,0,1,1883,1887
+summary_s1,generic summary,16,B,1007,1,4,delivered,2,1,0,0,0,0,1,1,0,4,10004,3983
+summary_s1,generic summary,16,C,1007,1,4,delivered,1,1,0,0,0,0,0,0,0,1,1854,1544
+summary_s4,generic summary,64,B,1000,0,0,delivered,1,1,0,0,0,0,0,0,0,2,12288,14023
+summary_s4,generic summary,64,C,1000,0,0,delivered,1,1,0,0,0,0,0,0,0,1,6575,12074
+summary_s4,generic summary,64,B,1000,0,1,delivered,2,1,0,0,0,0,33,1,0,4,21453,28478
+summary_s4,generic summary,64,C,1000,0,1,delivered,1,0,0,8,8,0,8,0,0,1,3633,10796
+summary_s4,generic summary,64,B,1000,0,4,delivered,2,1,0,0,0,0,31,1,0,4,21506,26917
+summary_s4,generic summary,64,C,1000,0,4,delivered,1,0,0,8,8,0,8,0,0,1,3626,12661
+summary_s4,generic summary,64,B,1000,1,0,delivered,1,1,0,0,0,0,0,0,0,2,12274,12394
+summary_s4,generic summary,64,C,1000,1,0,delivered,1,1,0,0,0,0,0,0,0,1,6575,11348
+summary_s4,generic summary,64,B,1000,1,1,delivered,2,1,0,0,0,0,26,1,0,4,21560,22512
+summary_s4,generic summary,64,C,1000,1,1,delivered,1,0,0,7,7,0,7,0,0,1,3666,8312
+summary_s4,generic summary,64,B,1000,1,4,delivered,2,1,0,0,0,0,39,1,0,4,21175,19110
+summary_s4,generic summary,64,C,1000,1,4,delivered,1,0,1,13,14,1,14,0,0,1,3556,10845
+summary_s4,generic summary,64,B,1001,0,0,delivered,1,1,0,0,0,0,0,0,0,2,12472,12385
+summary_s4,generic summary,64,C,1001,0,0,delivered,1,1,0,0,0,0,0,0,0,1,6736,12493
+summary_s4,generic summary,64,B,1001,0,1,delivered,2,1,0,0,0,0,28,1,0,4,21976,19431
+summary_s4,generic summary,64,C,1001,0,1,delivered,1,0,0,7,7,0,7,0,0,1,3708,9108
+summary_s4,generic summary,64,B,1001,0,4,delivered,2,1,0,0,0,0,40,1,0,4,21768,23264
+summary_s4,generic summary,64,C,1001,0,4,delivered,1,0,0,10,10,0,10,0,0,1,3627,12570
+summary_s4,generic summary,64,B,1001,1,0,delivered,1,1,0,0,0,0,0,0,0,2,12471,13382
+summary_s4,generic summary,64,C,1001,1,0,delivered,1,1,0,0,0,0,0,0,0,1,6736,11530
+summary_s4,generic summary,64,B,1001,1,1,delivered,2,1,0,0,0,0,32,1,0,4,21560,21595
+summary_s4,generic summary,64,C,1001,1,1,delivered,1,0,0,10,10,0,10,0,0,1,3698,9084
+summary_s4,generic summary,64,B,1001,1,4,delivered,2,1,0,0,0,0,30,1,0,4,21573,20972
+summary_s4,generic summary,64,C,1001,1,4,delivered,1,0,0,9,9,0,9,0,0,1,3702,9474
+summary_s4,generic summary,64,B,1002,0,0,delivered,1,1,0,0,0,0,0,0,0,2,12319,13583
+summary_s4,generic summary,64,C,1002,0,0,delivered,1,1,0,0,0,0,0,0,0,1,6628,12317
+summary_s4,generic summary,64,B,1002,0,1,delivered,3,1,0,0,0,0,28,2,0,6,32893,41397
+summary_s4,generic summary,64,C,1002,0,1,delivered,1,0,0,7,7,0,7,0,0,1,3658,10423
+summary_s4,generic summary,64,B,1002,0,4,delivered,2,1,0,0,0,0,34,1,0,4,21091,19542
+summary_s4,generic summary,64,C,1002,0,4,delivered,1,0,0,9,9,0,9,0,0,1,3589,8153
+summary_s4,generic summary,64,B,1002,1,0,delivered,1,1,0,0,0,0,0,0,0,2,12319,13618
+summary_s4,generic summary,64,C,1002,1,0,delivered,1,1,0,0,0,0,0,0,0,1,6628,11934
+summary_s4,generic summary,64,B,1002,1,1,delivered,2,1,0,0,0,0,31,1,0,4,21641,29983
+summary_s4,generic summary,64,C,1002,1,1,delivered,1,0,0,8,8,0,8,0,0,1,3583,10323
+summary_s4,generic summary,64,B,1002,1,4,delivered,2,1,0,0,0,0,36,1,0,4,21540,25779
+summary_s4,generic summary,64,C,1002,1,4,delivered,1,0,0,7,7,0,7,0,0,1,3533,10040
+summary_s4,generic summary,64,B,1003,0,0,delivered,1,1,0,0,0,0,0,0,0,2,12353,10309
+summary_s4,generic summary,64,C,1003,0,0,delivered,1,1,0,0,0,0,0,0,0,1,6617,11864
+summary_s4,generic summary,64,B,1003,0,1,delivered,2,1,0,0,0,0,37,1,0,4,21469,22840
+summary_s4,generic summary,64,C,1003,0,1,delivered,1,0,0,7,7,0,7,0,0,1,3624,11905
+summary_s4,generic summary,64,B,1003,0,4,delivered,2,1,0,0,0,0,43,1,0,4,21563,21458
+summary_s4,generic summary,64,C,1003,0,4,delivered,1,0,0,9,9,0,9,0,0,1,3577,12254
+summary_s4,generic summary,64,B,1003,1,0,delivered,1,1,0,0,0,0,0,0,0,2,12348,11832
+summary_s4,generic summary,64,C,1003,1,0,delivered,1,1,0,0,0,0,0,0,0,1,6617,10646
+summary_s4,generic summary,64,B,1003,1,1,delivered,2,1,0,0,0,0,29,1,0,4,21720,28075
+summary_s4,generic summary,64,C,1003,1,1,delivered,1,0,0,5,5,0,5,0,0,1,3680,10230
+summary_s4,generic summary,64,B,1003,1,4,delivered,2,1,0,0,0,0,39,1,0,4,21747,32548
+summary_s4,generic summary,64,C,1003,1,4,delivered,1,0,2,9,11,2,11,0,0,1,3614,9383
+summary_s4,generic summary,64,B,1004,0,0,delivered,1,1,0,0,0,0,0,0,0,2,12276,14578
+summary_s4,generic summary,64,C,1004,0,0,delivered,1,0,0,1,1,0,1,0,0,1,6554,11926
+summary_s4,generic summary,64,B,1004,0,1,delivered,2,1,0,0,0,0,31,1,0,4,21406,21019
+summary_s4,generic summary,64,C,1004,0,1,delivered,1,0,0,11,11,0,11,0,0,1,3556,11050
+summary_s4,generic summary,64,B,1004,0,4,delivered,2,1,0,0,0,0,34,1,0,4,21453,26285
+summary_s4,generic summary,64,C,1004,0,4,delivered,1,0,0,10,10,0,10,0,0,1,3547,10945
+summary_s4,generic summary,64,B,1004,1,0,delivered,1,1,0,0,0,0,0,0,0,2,12276,12756
+summary_s4,generic summary,64,C,1004,1,0,delivered,1,1,0,0,0,0,0,0,0,1,6554,12583
+summary_s4,generic summary,64,B,1004,1,1,delivered,3,1,0,0,0,0,30,2,0,6,32758,35981
+summary_s4,generic summary,64,C,1004,1,1,delivered,1,0,0,7,7,0,7,0,0,1,3617,13647
+summary_s4,generic summary,64,B,1004,1,4,delivered,2,1,0,0,0,0,33,1,0,4,21385,21995
+summary_s4,generic summary,64,C,1004,1,4,delivered,1,0,0,9,9,0,9,0,0,1,3569,10819
+summary_s4,generic summary,64,B,1005,0,0,delivered,1,1,0,0,0,0,0,0,0,2,12212,13285
+summary_s4,generic summary,64,C,1005,0,0,delivered,1,1,0,0,0,0,0,0,0,1,6553,11872
+summary_s4,generic summary,64,B,1005,0,1,delivered,3,1,0,0,0,0,26,2,0,6,32858,32229
+summary_s4,generic summary,64,C,1005,0,1,delivered,1,0,0,9,9,0,9,0,0,1,3635,9064
+summary_s4,generic summary,64,B,1005,0,4,delivered,2,1,0,0,0,0,41,1,0,4,21224,22668
+summary_s4,generic summary,64,C,1005,0,4,delivered,1,0,1,13,14,1,14,0,0,1,3542,11283
+summary_s4,generic summary,64,B,1005,1,0,delivered,1,1,0,0,0,0,0,0,0,2,12211,15283
+summary_s4,generic summary,64,C,1005,1,0,delivered,1,1,0,0,0,0,0,0,0,1,6553,16633
+summary_s4,generic summary,64,B,1005,1,1,delivered,2,1,0,0,0,0,30,1,0,4,21268,25619
+summary_s4,generic summary,64,C,1005,1,1,delivered,1,0,0,10,10,0,10,0,0,1,3628,8962
+summary_s4,generic summary,64,B,1005,1,4,delivered,2,1,0,0,0,0,31,1,0,4,21522,25594
+summary_s4,generic summary,64,C,1005,1,4,delivered,1,0,0,10,10,0,10,0,0,1,3638,11676
+summary_s4,generic summary,64,B,1006,0,0,delivered,1,1,0,0,0,0,0,0,0,2,12270,10362
+summary_s4,generic summary,64,C,1006,0,0,delivered,1,1,0,0,0,0,0,0,0,1,6535,12780
+summary_s4,generic summary,64,B,1006,0,1,delivered,3,1,0,0,0,0,34,2,0,6,32374,25484
+summary_s4,generic summary,64,C,1006,0,1,delivered,1,0,0,8,8,0,8,0,0,1,3581,7640
+summary_s4,generic summary,64,B,1006,0,4,delivered,2,1,0,0,0,0,46,1,0,4,21308,27785
+summary_s4,generic summary,64,C,1006,0,4,delivered,1,0,0,14,14,0,14,0,0,1,3448,8211
+summary_s4,generic summary,64,B,1006,1,0,delivered,1,1,0,0,0,0,0,0,0,2,12273,11954
+summary_s4,generic summary,64,C,1006,1,0,delivered,1,1,0,0,0,0,0,0,0,1,6535,12711
+summary_s4,generic summary,64,B,1006,1,1,delivered,2,1,0,0,0,0,42,1,0,4,21621,22143
+summary_s4,generic summary,64,C,1006,1,1,delivered,1,0,0,10,10,0,10,0,0,1,3555,10240
+summary_s4,generic summary,64,B,1006,1,4,delivered,2,1,0,0,0,0,41,1,0,4,21534,27275
+summary_s4,generic summary,64,C,1006,1,4,delivered,1,0,0,9,9,0,9,0,0,1,3542,8751
+summary_s4,generic summary,64,B,1007,0,0,delivered,1,1,0,0,0,0,0,0,0,2,12166,13290
+summary_s4,generic summary,64,C,1007,0,0,delivered,1,1,0,0,0,0,0,0,0,1,6539,13222
+summary_s4,generic summary,64,B,1007,0,1,delivered,2,1,0,0,0,0,27,1,0,4,21487,27668
+summary_s4,generic summary,64,C,1007,0,1,delivered,1,0,0,8,8,0,8,0,0,1,3666,9246
+summary_s4,generic summary,64,B,1007,0,4,delivered,2,1,0,0,0,0,41,1,0,4,21440,20784
+summary_s4,generic summary,64,C,1007,0,4,delivered,1,0,1,11,12,1,12,0,0,1,3531,9800
+summary_s4,generic summary,64,B,1007,1,0,delivered,1,1,0,0,0,0,0,0,0,2,12163,13535
+summary_s4,generic summary,64,C,1007,1,0,delivered,1,1,0,0,0,0,0,0,0,1,6539,11788
+summary_s4,generic summary,64,B,1007,1,1,delivered,2,1,0,0,0,0,38,1,0,4,21407,19197
+summary_s4,generic summary,64,C,1007,1,1,delivered,1,0,0,8,8,0,8,0,0,1,3607,13056
+summary_s4,generic summary,64,B,1007,1,4,delivered,2,1,0,0,0,0,40,1,0,4,21418,22119
+summary_s4,generic summary,64,C,1007,1,4,delivered,1,0,0,8,8,0,8,0,0,1,3575,9366
+summary_s4_compacted_root,generic summary,64,B,1000,0,1,delivered,2,1,0,0,0,0,33,1,0,4,21453,28478
+summary_s4_compacted_root,generic summary,64,Bc,1000,0,1,delivered,1,0,25,8,33,0,33,0,0,2,6463,9743
+summary_s4_compacted_root,generic summary,64,B,1000,0,4,delivered,2,1,0,0,0,0,31,1,0,4,21506,26917
+summary_s4_compacted_root,generic summary,64,Bc,1000,0,4,delivered,1,0,23,8,31,0,31,0,0,2,6479,10726
+summary_s4_compacted_root,generic summary,64,B,1000,1,1,delivered,2,1,0,0,0,0,26,1,0,4,21560,22512
+summary_s4_compacted_root,generic summary,64,Bc,1000,1,1,delivered,1,0,19,7,26,0,26,0,0,2,6493,9548
+summary_s4_compacted_root,generic summary,64,B,1000,1,4,delivered,2,1,0,0,0,0,39,1,0,4,21175,19110
+summary_s4_compacted_root,generic summary,64,Bc,1000,1,4,delivered,2,0,17,7,24,0,39,1,0,4,14787,14090
+summary_s4_compacted_root,generic summary,64,B,1001,0,1,delivered,2,1,0,0,0,0,28,1,0,4,21976,19431
+summary_s4_compacted_root,generic summary,64,Bc,1001,0,1,delivered,1,0,20,8,28,0,28,0,0,2,6458,8690
+summary_s4_compacted_root,generic summary,64,B,1001,0,4,delivered,2,1,0,0,0,0,40,1,0,4,21768,23264
+summary_s4_compacted_root,generic summary,64,Bc,1001,0,4,delivered,2,0,21,6,27,0,40,1,0,4,15024,13745
+summary_s4_compacted_root,generic summary,64,B,1001,1,1,delivered,2,1,0,0,0,0,32,1,0,4,21560,21595
+summary_s4_compacted_root,generic summary,64,Bc,1001,1,1,delivered,1,0,22,10,32,0,32,0,0,2,6404,8169
+summary_s4_compacted_root,generic summary,64,B,1001,1,4,delivered,2,1,0,0,0,0,30,1,0,4,21573,20972
+summary_s4_compacted_root,generic summary,64,Bc,1001,1,4,delivered,1,0,21,9,30,0,30,0,0,2,6408,6709
+summary_s4_compacted_root,generic summary,64,B,1002,0,1,delivered,3,1,0,0,0,0,28,2,0,6,32893,41397
+summary_s4_compacted_root,generic summary,64,Bc,1002,0,1,delivered,1,0,21,7,28,0,28,0,0,2,6469,13105
+summary_s4_compacted_root,generic summary,64,B,1002,0,4,delivered,2,1,0,0,0,0,34,1,0,4,21091,19542
+summary_s4_compacted_root,generic summary,64,Bc,1002,0,4,delivered,2,0,22,7,29,0,34,1,0,4,14504,10785
+summary_s4_compacted_root,generic summary,64,B,1002,1,1,delivered,2,1,0,0,0,0,31,1,0,4,21641,29983
+summary_s4_compacted_root,generic summary,64,Bc,1002,1,1,delivered,1,0,23,8,31,0,31,0,0,2,6358,7489
+summary_s4_compacted_root,generic summary,64,B,1002,1,4,delivered,2,1,0,0,0,0,36,1,0,4,21540,25779
+summary_s4_compacted_root,generic summary,64,Bc,1002,1,4,delivered,2,0,23,8,31,0,36,1,0,4,14614,13742
+summary_s4_compacted_root,generic summary,64,B,1003,0,1,delivered,2,1,0,0,0,0,37,1,0,4,21469,22840
+summary_s4_compacted_root,generic summary,64,Bc,1003,0,1,delivered,1,0,29,8,37,0,37,0,0,2,6421,7878
+summary_s4_compacted_root,generic summary,64,B,1003,0,4,delivered,2,1,0,0,0,0,43,1,0,4,21563,21458
+summary_s4_compacted_root,generic summary,64,Bc,1003,0,4,delivered,2,0,31,7,38,0,43,1,0,4,14687,10377
+summary_s4_compacted_root,generic summary,64,B,1003,1,1,delivered,2,1,0,0,0,0,29,1,0,4,21720,28075
+summary_s4_compacted_root,generic summary,64,Bc,1003,1,1,delivered,1,0,23,6,29,0,29,0,0,2,6576,12059
+summary_s4_compacted_root,generic summary,64,B,1003,1,4,delivered,2,1,0,0,0,0,39,1,0,4,21747,32548
+summary_s4_compacted_root,generic summary,64,Bc,1003,1,4,delivered,2,0,19,6,25,0,39,1,0,4,15183,15729
+summary_s4_compacted_root,generic summary,64,B,1004,0,1,delivered,2,1,0,0,0,0,31,1,0,4,21406,21019
+summary_s4_compacted_root,generic summary,64,Bc,1004,0,1,delivered,1,0,19,12,31,0,31,0,0,2,6334,8014
+summary_s4_compacted_root,generic summary,64,B,1004,0,4,delivered,2,1,0,0,0,0,34,1,0,4,21453,26285
+summary_s4_compacted_root,generic summary,64,Bc,1004,0,4,delivered,1,0,22,12,34,0,34,0,0,2,6363,6526
+summary_s4_compacted_root,generic summary,64,B,1004,1,1,delivered,3,1,0,0,0,0,30,2,0,6,32758,35981
+summary_s4_compacted_root,generic summary,64,Bc,1004,1,1,delivered,2,0,22,7,29,0,30,1,0,4,14763,15197
+summary_s4_compacted_root,generic summary,64,B,1004,1,4,delivered,2,1,0,0,0,0,33,1,0,4,21385,21995
+summary_s4_compacted_root,generic summary,64,Bc,1004,1,4,delivered,2,0,21,7,28,0,33,1,0,4,14787,12998
+summary_s4_compacted_root,generic summary,64,B,1005,0,1,delivered,3,1,0,0,0,0,26,2,0,6,32858,32229
+summary_s4_compacted_root,generic summary,64,Bc,1005,0,1,delivered,1,0,16,10,26,0,26,0,0,2,6397,9356
+summary_s4_compacted_root,generic summary,64,B,1005,0,4,delivered,2,1,0,0,0,0,41,1,0,4,21224,22668
+summary_s4_compacted_root,generic summary,64,Bc,1005,0,4,delivered,2,0,16,9,25,0,41,1,0,4,14668,16494
+summary_s4_compacted_root,generic summary,64,B,1005,1,1,delivered,2,1,0,0,0,0,30,1,0,4,21268,25619
+summary_s4_compacted_root,generic summary,64,Bc,1005,1,1,delivered,1,0,20,10,30,0,30,0,0,2,6419,9072
+summary_s4_compacted_root,generic summary,64,B,1005,1,4,delivered,2,1,0,0,0,0,31,1,0,4,21522,25594
+summary_s4_compacted_root,generic summary,64,Bc,1005,1,4,delivered,2,0,21,9,30,0,31,1,0,4,14919,11550
+summary_s4_compacted_root,generic summary,64,B,1006,0,1,delivered,3,1,0,0,0,0,34,2,0,6,32374,25484
+summary_s4_compacted_root,generic summary,64,Bc,1006,0,1,delivered,2,0,27,7,34,0,34,1,0,4,14535,10920
+summary_s4_compacted_root,generic summary,64,B,1006,0,4,delivered,2,1,0,0,0,0,46,1,0,4,21308,27785
+summary_s4_compacted_root,generic summary,64,Bc,1006,0,4,delivered,2,0,26,6,32,0,46,1,0,4,14837,14190
+summary_s4_compacted_root,generic summary,64,B,1006,1,1,delivered,2,1,0,0,0,0,42,1,0,4,21621,22143
+summary_s4_compacted_root,generic summary,64,Bc,1006,1,1,delivered,1,0,32,10,42,0,42,0,0,2,6402,8850
+summary_s4_compacted_root,generic summary,64,B,1006,1,4,delivered,2,1,0,0,0,0,41,1,0,4,21534,27275
+summary_s4_compacted_root,generic summary,64,Bc,1006,1,4,delivered,1,0,32,9,41,0,41,0,0,2,6405,7051
+summary_s4_compacted_root,generic summary,64,B,1007,0,1,delivered,2,1,0,0,0,0,27,1,0,4,21487,27668
+summary_s4_compacted_root,generic summary,64,Bc,1007,0,1,delivered,1,0,19,8,27,0,27,0,0,2,6499,10912
+summary_s4_compacted_root,generic summary,64,B,1007,0,4,delivered,2,1,0,0,0,0,41,1,0,4,21440,20784
+summary_s4_compacted_root,generic summary,64,Bc,1007,0,4,delivered,2,0,17,8,25,0,41,1,0,4,14853,12372
+summary_s4_compacted_root,generic summary,64,B,1007,1,1,delivered,2,1,0,0,0,0,38,1,0,4,21407,19197
+summary_s4_compacted_root,generic summary,64,Bc,1007,1,1,delivered,1,0,29,9,38,0,38,0,0,2,6342,7855
+summary_s4_compacted_root,generic summary,64,B,1007,1,4,delivered,2,1,0,0,0,0,40,1,0,4,21418,22119
+summary_s4_compacted_root,generic summary,64,Bc,1007,1,4,delivered,1,0,30,10,40,0,40,0,0,2,6351,8416

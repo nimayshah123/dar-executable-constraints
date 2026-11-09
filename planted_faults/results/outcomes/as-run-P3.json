@@ -1,0 +1,20 @@
+{
+  "arm": "as-run",
+  "fault": "P3",
+  "category": "Root plan",
+  "rule": "A module owns a path outside the workspace (../views.mjs)",
+  "nov3_level": "Blocked by code",
+  "result": "Blocked at plan",
+  "evidence": "ValueError: decomposition must preserve artifact ownership exactly",
+  "checks_fired_at_root": [],
+  "root_failures": [],
+  "module_repairs": [],
+  "suite_runs": [],
+  "run_accepted": false,
+  "states": {},
+  "fault_in_final_workspace": null,
+  "escape_file_written": false,
+  "bridge_requests": 1,
+  "elapsed_s": 0.3,
+  "error": "ValueError: decomposition must preserve artifact ownership exactly"
+}

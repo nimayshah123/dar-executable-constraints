@@ -1,0 +1,2 @@
+# Store every file byte for byte, so recorded results and regenerated outputs compare exactly on any OS.
+* -text

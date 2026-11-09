@@ -1,0 +1,6 @@
+﻿experiment,brief_style,requirements,arm,task_seed,sample,handoffs,attempt,delivered_with_this_plan,conditional_id,conditional,premise_id,premise,premise_formalized,premise_in_brief,premise_required_value,premise_value_in_plan,threshold,consequent_required,consequent_value_in_plan,other_violations_in_plan,checker_pass
+summary_s4,generic summary,64,C,1000,1,4,1,1,R20,if alerts.ttl_s is above 540 then alerts.timeout_s must be at least 120,R46,alerts.ttl_s must be exactly 600,0,lost,600,300,540,>= 120,60,13,1
+summary_s4,generic summary,64,C,1003,1,4,1,1,R02,if session.queue_depth is above 40 then reports.batch_size must be at most 150,R01,session.queue_depth must be exactly 50,0,lost,50,30,40,<= 150,300,10,1
+summary_s4,generic summary,64,C,1003,1,4,1,1,R58,if checkout.timeout_s is above 65 then gateway.timeout_s must be at least 120,R49,checkout.timeout_s must be exactly 75,0,lost,75,60,65,>= 120,60,10,1
+summary_s4,generic summary,64,C,1005,0,4,1,1,R29,if pricing.timeout_s is above 105 then auth.ttl_s must be at most 60,R60,pricing.timeout_s must be exactly 120,0,lost,120,60,105,<= 60,90,13,1
+summary_s4,generic summary,64,C,1007,0,4,1,1,R07,if archive.max_workers is above 22 then gateway.queue_depth must be at least 480,R48,archive.max_workers must be exactly 26,0,lost,26,12,22,>= 480,200,11,1

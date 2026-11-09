@@ -1,0 +1,3 @@
+lib/fulfillment.mjs
+- ensure(!d.lots.some(l=>l.id===c.lotId),'ALREADY_EXISTS');
++ ensure(!d.lots.some(l=>l.id===c.lotId),'INVALID_STATE');

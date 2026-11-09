@@ -1,0 +1,11 @@
+﻿stage,01 original,02 scoped r1,03 scoped r2,02 minus 01
+plan (Root),9.4,0.0,0.0,-9.4
+foundation (Worker),231.0,138.2,133.3,-92.9
+business batch x3 (Workers),58.0,182.4,184.2,+124.5
+transports (Root),164.9,5.6,10.8,-159.3
+integration (Root),20.3,8.7,23.8,-11.6
+"final acceptance (host, no model)",43.0,42.4,47.3,-0.6
+scheduler overhead,1.6,1.5,1.5,-0.1
+total elapsed,528.2,378.8,401.0,-149.4
+sum Root-owned steps,194.6,14.3,34.6,-180.3
+sum Worker steps,289.0,320.6,317.5,+31.6

@@ -1,0 +1,9 @@
+﻿component,01 original,02 scoped r1,03 scoped r2,02 minus 01,share of the cut
+public test fixtures,"165,755",0,0,"-165,755",+74%
+task text,"75,730","26,993","26,993","-48,737",+22%
+interface/verification contract,"33,147","13,084","13,084","-20,063",+9%
+own work-unit contract,"48,341","41,730","37,530","-6,611",+3%
+dependency code,"47,917","63,196","66,125","+15,279",-7%
+boundary rules,0,"3,170","10,382","+3,170",-1%
+instructions,"1,925",635,635,"-1,290",+1%
+total Worker prompt chars,"373,969","149,495","155,801","-224,474",100%

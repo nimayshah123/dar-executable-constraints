@@ -1,0 +1,4 @@
+lib/catalog.mjs
+- import {ensure,safe,get,ordered,paginate,canon,clone} from './base.mjs';
++ import {snapshot} from './views.mjs';
+import {ensure,safe,get,ordered,paginate,canon,clone} from './base.mjs';
